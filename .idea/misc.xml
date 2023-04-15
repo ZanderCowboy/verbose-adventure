@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="Python 3.10 (venv3.10)" project-jdk-type="Python SDK">
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="Python 3.10" project-jdk-type="Python SDK">
+>>>>>>> fe0e8b1aa974fc85e617b504d8a1042e4fbd75ea
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
