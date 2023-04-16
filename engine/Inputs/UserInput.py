@@ -1,9 +1,9 @@
-import Inputs.input_statements as instate
-from Components.AnalizeFunction import analize_statement
+from engine.Inputs.input_statements import statement as instate
+from engine.Components.AnalizeFunction import analize_statement
 
 
 def user_input():
-    statement = instate.statement
+    statement = instate
 
     print("In user_input():")
     # statement = input("Please enter the statement(s): ")

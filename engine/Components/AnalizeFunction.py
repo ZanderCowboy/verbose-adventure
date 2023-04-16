@@ -1,6 +1,6 @@
 # Analize statement, extracts all the relevant information and variables
 
-from Components.BuildFunction import build_statements
+from engine.Components.BuildFunction import build_statements
 
 
 def analize_statement(statement):

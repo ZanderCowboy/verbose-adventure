@@ -24,6 +24,7 @@ def build_statements(from_statement, elements, variables):
     print("print returned_str in build_statement=" + str(returned_str))
 
     print("exit build_statements()")
+    return returned_str
 
 
 # does a check to see whether there is a matching number of opening
