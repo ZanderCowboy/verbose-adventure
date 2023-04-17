@@ -6,3 +6,19 @@
 
 
 # for example: change & to ^, | to v
+
+def add_brackets(statement):
+	pass
+	new_string = ""
+
+	return new_string
+
+
+def sanitize_statements(statement):
+	final_string = ""
+
+	new_string = add_brackets(statement)
+
+
+
+	return final_string

@@ -19,7 +19,7 @@ def analize_statement(statement):
     # print("variables_str=" + variables_str)
 
     # sterilize statement into elements
-    elements = sanitize_statements(statement)
+    elements = create_conditionals(statement)
 
     # print("Out analyze_statement():")
     return len(variables_arr), variables_arr, variables_str, elements
@@ -56,7 +56,7 @@ def find_variables(statement):
 
 
 # creates the conditional -> and biconditional <->
-def sanitize_statements(statement):
+def create_conditionals(statement):
     elements = []
     conditional_symbol = False
     biconditional_symbol = False
