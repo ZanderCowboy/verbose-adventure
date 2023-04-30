@@ -1,3 +1,3 @@
 # verbose-adventure Backend
 
-This is a Python gRPC server that will calculate the final truth column that will be send back
+A Java HTTP server with a gRPC client to talk to the Python Backend on behalf of the Flutter Frontend
