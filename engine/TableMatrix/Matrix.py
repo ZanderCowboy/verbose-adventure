@@ -1,6 +1,6 @@
 # Creates the truth table matrix with initial values.
 
-from engine.TableMatrix.RecursiveFunction import recursive_table
+from TableMatrix.RecursiveFunction import recursive_table
 
 
 def create_matrix(num_of_var):

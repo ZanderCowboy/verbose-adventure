@@ -1,4 +1,4 @@
-from engine.Inputs.UserInput import *
+from Inputs.UserInput import *
 
 # main()
 print("***********************************************************")
