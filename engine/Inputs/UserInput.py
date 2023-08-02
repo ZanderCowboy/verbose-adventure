@@ -2,10 +2,6 @@ from Components.ParseFunction import parse_statements
 from Inputs.input_statements import statement as instate
 from Components.AnalizeFunction import analize_statement
 from Components.Sanitizer import sanitize_statements
-# from engine.Components.ParseFunction import parse_statements
-# from engine.Inputs.input_statements import statement as instate
-# from engine.Components.AnalizeFunction import analize_statement
-# from engine.Components.Sanitizer import sanitize_statements
 
 
 # returns an integer of the number of variables,

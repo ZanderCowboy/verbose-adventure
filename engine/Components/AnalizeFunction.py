@@ -1,6 +1,6 @@
 # Analize statement, extracts all the relevant information and variables
 
-from engine.Components.ParseFunction import parse_statements
+from Components.ParseFunction import parse_statements
 
 
 # returns
