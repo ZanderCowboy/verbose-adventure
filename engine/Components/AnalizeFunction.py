@@ -1,10 +1,11 @@
 # Analize statement, extracts all the relevant information and variables
 
-from Components.BuildFunction import build_statements
+from Components.ParseFunction import parse_statements
 
 
+# returns
 def analize_statement(statement):
-    print("***********************************************************")
+    # print("***********************************************************")
     # print("In analize_statement():")
     # print("given statement=" + statement)
 
@@ -18,19 +19,15 @@ def analize_statement(statement):
     # print("variables_str=" + variables_str)
 
     # sterilize statement into elements
-    elements = sterilize_statement(statement)
-    # print("elements=" + str(elements))
+    elements = create_conditionals(statement)
 
-    # Combine variables and connectives
-    print("\nCalling build_statements():")
-    new_elements = build_statements(statement, elements, variables_arr)
-
-    print("Out analize_statement():")
-    return len(variables_arr), variables_arr, variables_str, new_elements
+    # print("Out analyze_statement():")
+    return len(variables_arr), variables_arr, variables_str, elements
 
 
 # find_variables() runs through the statement to determine all the variables
 # given in the user statement
+# returns an array and string of variables, respectively
 def find_variables(statement):
     variables_arr = []
     variables_str = ""
@@ -46,20 +43,20 @@ def find_variables(statement):
             if len(variables_arr) > 0 and duplicate_int > 0 and var_str_find >= 0:
                 duplicate = True
             # print(duplicate)
-            if duplicate_int == -1:  # no more occurences
+            if duplicate_int == -1:  # no more occurrences
                 if var_str_find >= 0:
                     continue
-            if len(variables_arr) == 0 or duplicate == False:
+            if len(variables_arr) == 0 or duplicate is False:
                 variables_arr.append(char)
                 variables_str += char
-            elif duplicate == True:
+            elif duplicate:
                 continue
 
     return variables_arr, variables_str
 
 
 # creates the conditional -> and biconditional <->
-def sterilize_statement(statement):
+def create_conditionals(statement):
     elements = []
     conditional_symbol = False
     biconditional_symbol = False
@@ -71,15 +68,15 @@ def sterilize_statement(statement):
                     elements.append("<->")
                     biconditional_symbol = True
             continue
-        elif char == '-' and biconditional_symbol == False:
+        elif char == '-' and biconditional_symbol is False:
             if statement[i + 1] == '>':
                 elements.append("->")
                 conditional_symbol = True
                 continue
-        elif char == '>' and conditional_symbol == False:
+        elif char == '>' and conditional_symbol is False:
             continue
         else:
-            if conditional_symbol == False and biconditional_symbol == False:
+            if conditional_symbol is False and biconditional_symbol is False:
                 elements.append(char)
             conditional_symbol = False
             biconditional_symbol = False
