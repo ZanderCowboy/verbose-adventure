@@ -8,5 +8,29 @@ Random Repository
 
 Propositional Logic Calculator.
 
-# Description
+## Description
 Use LogicCalculator to do all the relevant checks and calculations
+
+
+# GRPCServer Package
+To follow
+
+
+# PARSER Package
+## Check Errors
+
+## Parse String
+
+## Validation
+
+
+# VALIDATOR Package
+## Logic Rules
+
+## Connectives
+
+
+# COMPUTATION Package
+## Propositional Rules
+
+##
