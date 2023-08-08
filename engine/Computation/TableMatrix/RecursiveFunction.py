@@ -1,6 +1,13 @@
 # Creates a table of T's and F's recursively
 
+
 def recursive_table(n):
+	"""
+	Creates a table of T's and F's recursively
+
+	:param n: Number of variables
+	:return: Returns an array table with T/F values
+	"""
 	# array_table = []
 	if n == 1:
 		array_table = ['T', 'F']
