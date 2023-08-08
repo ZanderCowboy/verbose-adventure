@@ -1,6 +1,6 @@
-from Components.ParseFunction import parse_statements
-from Inputs.input_statements import statement as instate
-from Components.AnalizeFunction import analize_statement
+from Parser.Parse.ParseFunction import parse_statements
+from Simulator.input_statements import statement
+from Parser.Parse.AnalizeFunction import analize_statement
 from Components.Sanitizer import sanitize_statements
 
 
@@ -8,8 +8,13 @@ from Components.Sanitizer import sanitize_statements
 # an array and string of the variables respectively,
 # a statement that is provided and an array with the individual elements
 def user_input():
+    """
+    Takes a given statement, analyzes it and returns the elements and variables.
+    :return: returns an integer of the number of variables, an array and string
+    of the variables respectively, a statement that is provided and an array
+    with the individual elements
+    """
     # todo add console output with table of connectives in formal logic
-    statement = instate
 
     # print("In user_input():")
     # statement = input("Please enter the statement(s): ")
