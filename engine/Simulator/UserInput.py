@@ -15,6 +15,8 @@ def user_input(statement):
 
     print("Please enter the statement(s): " + statement)
 
+    # todo Edge case, P_1, P_2, P_3, etc
+    # todo Create a possible REGEX function?
     number_of_variables, variables_arr, elements = analize_statement(statement)
 
     # todo add section to handles errors if the Verifier fails
