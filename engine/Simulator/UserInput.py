@@ -15,14 +15,11 @@ def user_input(statement):
 
     print("Please enter the statement(s): " + statement)
 
-    # analyze statement to determine the number of variables,
-    # and split into an array of elements
-    number_of_variables, variables_arr, variables_str, elements = analize_statement(statement)
+    number_of_variables, variables_arr, elements = analize_statement(statement)
 
-    # todo add section to verify statement returned from Sanitizer.py
     # todo add section to handles errors if the Verifier fails
 
     # Combine variables and connectives
     new_elements = parse_array(elements, variables_arr)
 
-    return number_of_variables, variables_arr, variables_str, statement, new_elements
+    return number_of_variables, variables_arr, statement, new_elements
