@@ -62,3 +62,13 @@ parsing, turning it from a string into an array.
 ## Propositional Rules
 
 ##
+
+# Flow
+Start with the GRPCServer
+
+- First checks as pre-flight
+- GRPCServer Checks => checks
+- If good, proceed:
+- GRPCServer Parser => checks, parse, validate
+- If good, proceed:
+- GRPCServer Compute => compute
