@@ -4,9 +4,11 @@ from Components.Constants import TRUE, FALSE
 def recursive_table(n):
 	"""
 	Creates a list of T's and F's recursively, given the number of variables
-	# todo Finish example here.
-	For example: recursive_table(1) => ['T', 'F'] and
+	For example:
+	recursive_table(1) => ['T', 'F'] and
 	recursive_table(3) =>
+	['TTT', 'TTF', 'TFT', 'TFF', 'FTT', 'FTF', 'FFT', 'FFF']
+
 	:param n: (int) Number of variables
 	:return: Returns an array table with T/F values
 	"""
