@@ -9,7 +9,7 @@
 
 def add_brackets(statement):
 	"""
-
+	Adds outer brackets to any statement
 	:param statement:
 	:return:
 	"""
@@ -21,7 +21,7 @@ def add_brackets(statement):
 
 def sanitize_statements(statement):
 	"""
-
+	dummy function
 	:param statement:
 	:return:
 	"""
