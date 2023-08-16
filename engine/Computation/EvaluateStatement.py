@@ -35,6 +35,7 @@ def evaluate_array(array, counter, matrix, variables):
 	:return: returned_array, final_variable_combined, returned_matrix, all_variables
 	"""
 
+	# todo Fix bug for ((!Q) -> (!P))
 	# if negation is encounter, add placeholder value in front
 	if len(array) == 2:
 		blank = '_'
