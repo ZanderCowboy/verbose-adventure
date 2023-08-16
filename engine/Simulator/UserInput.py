@@ -1,7 +1,7 @@
-from Parser.Parse.ParseFunction import parse_statements
-from Simulator.input_statements import statement
+from Components.ParseFunction import parse_statements
 from Parser.Parse.AnalizeFunction import analize_statement
 from Components.Sanitizer import sanitize_statements
+from Inputs.input_statements import statement
 
 
 # returns an integer of the number of variables,
@@ -28,15 +28,8 @@ def user_input():
     sanitized_statement = ""
     sanitized_statement = sanitize_statements(statement)
 
-
     # add section to verify statement returned from Sanitizer.py
-
-
-
     # add section to handles errors if the Verifier fails
-
-
-
 
     # Combine variables and connectives
     # print("\nCalling parse_statements():")
