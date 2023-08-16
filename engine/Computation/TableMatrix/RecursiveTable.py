@@ -1,17 +1,8 @@
 from Components.Constants import TRUE, FALSE
 
 
-
 def recursive_table(n):
 	"""
-<<<<<<<< HEAD:engine/Computation/TableMatrix/RecursiveFunction.py
-	Creates a table of T's and F's recursively
-
-	:param n: Number of variables
-	:return: Returns an array table with T/F values
-	"""
-	array_table = []
-========
 	Creates a list of T's and F's recursively, given the number of variables
 	# todo Finish example here.
 	For example: recursive_table(1) => ['T', 'F'] and
@@ -19,8 +10,8 @@ def recursive_table(n):
 	:param n: (int) Number of variables
 	:return: Returns an array table with T/F values
 	"""
-	# array_table = []
->>>>>>>> main:engine/Computation/TableMatrix/RecursiveTable.py
+
+	array_table = []
 	if n == 1:
 		array_table = [TRUE, FALSE]
 	elif n != 1:
