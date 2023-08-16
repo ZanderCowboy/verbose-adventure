@@ -1,4 +1,4 @@
-from Inputs.UserInput import *
+from Simulator.UserInput import user_input
 
 # main()
 print("***********************************************************")
