@@ -1,15 +1,20 @@
 from Components.ParseFunction import parse_statements
-from Inputs.input_statements import statement as instate
-from Components.AnalizeFunction import analize_statement
+from Parser.Parse.AnalizeFunction import analize_statement
 from Components.Sanitizer import sanitize_statements
+from Inputs.input_statements import statement
 
 
 # returns an integer of the number of variables,
 # an array and string of the variables respectively,
 # a statement that is provided and an array with the individual elements
 def user_input():
+    """
+    Takes a given statement, analyzes it and returns the elements and variables.
+    :return: returns an integer of the number of variables, an array and string
+    of the variables respectively, a statement that is provided and an array
+    with the individual elements
+    """
     # todo add console output with table of connectives in formal logic
-    statement = instate
 
     # print("In user_input():")
     # statement = input("Please enter the statement(s): ")
@@ -23,15 +28,8 @@ def user_input():
     sanitized_statement = ""
     sanitized_statement = sanitize_statements(statement)
 
-
     # add section to verify statement returned from Sanitizer.py
-
-
-
     # add section to handles errors if the Verifier fails
-
-
-
 
     # Combine variables and connectives
     # print("\nCalling parse_statements():")
