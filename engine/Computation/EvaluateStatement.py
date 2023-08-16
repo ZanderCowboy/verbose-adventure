@@ -1,7 +1,8 @@
 from math import log2
 
 from Computation.SwitchConnectives import switch_case
-from Computation.TableMatrix.Matrix import create_matrix
+# from Computation.TableMatrix.Matrix import create_matrix
+from Computation.TableMatrix.CreateTableMatrix import create_matrix
 
 
 # todo restructure to have initial call in one function and another. Function in function
