@@ -5,12 +5,23 @@ from Computation.TableMatrix.RecursiveTable import recursive_table
 
 def create_matrix(num_of_var):
     """
-    This takes a number of variables and produces a corresponding matrix
-    with num_of_var entries and T and F values
-    :param num_of_var: Number of variables used in statement
-    :return: Returns a matrix with alternating T/F values for the number of
-    variables.
+    This takes the number of variables and produces an initial corresponding
+    input matrix (also known as a truth table) with 2*exp(num_of_var) row
+    entries with T and F values.
+    # todo Add example.
+    For example: create_matrix(2) will output
+    [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']] or equivalently
+    [   ['T', 'T'],
+        ['T', 'F'],
+        ['F', 'T'],
+        ['F', 'F']
+    ].
+
+    :param num_of_var: (int) Number of variables used in statement.
+    :return: Returns a matrix, with alternating T/F values for the number of
+    variables as columns and 2*exp(num_of_var) rows.
     """
+
     table_entries = recursive_table(num_of_var)
 
     matrix = [[0] * num_of_var] * (2 ** num_of_var)

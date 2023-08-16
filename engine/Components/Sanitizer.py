@@ -11,7 +11,7 @@ from Components.Constants import *
 
 def add_brackets(statement):
 	"""
-
+	Adds outer brackets to any statement
 	:param statement:
 	:return:
 	"""
@@ -23,7 +23,7 @@ def add_brackets(statement):
 
 def sanitize_statements(statement):
 	"""
-
+	dummy function
 	:param statement:
 	:return:
 	"""
@@ -57,7 +57,7 @@ def clean_whitespaces(statement):
 # returns an array of the parsed statement with individual blocks
 def remove_brackets_around_variables(arr, variables):
 	"""
-
+	Removes brackets around single variables, e.g., (P)
 	:param arr:
 	:param variables:
 	:return:
@@ -75,7 +75,7 @@ def remove_brackets_around_variables(arr, variables):
 
 def add_brackets_around_unary_connectives(arr, variables):
 	"""
-
+	Adds brackets around unary connectives.
 	:param arr:
 	:param variables:
 	:return:

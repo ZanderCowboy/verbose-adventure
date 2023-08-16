@@ -1,9 +1,9 @@
-## Changes in code
+# Changes in code
 
-# v0.0.6
+## v0.0.6
 - Created a constants file containing all the constants that is used in the code
 - Created a new file CreateElements.py, moving the array creation to it and out
-    of CreateConditionals.py
+  of CreateConditionals.py
 - Did code refactoring and restructuring
 - Worked on the DisplayMatrix.py file for the output of the T/F matrix to console
 - Cleaned up the PropositionalRules.py
@@ -16,23 +16,20 @@
 - TODO: Restructured files into Parser/Validate since the Validation package was empty
 - Deleted DumpFile.py and LogicCalculator.py
 
-
-# v0.0.5~
+## v0.0.5
 - created packages: Components, Computation, GRPCServer, Parser, Simulator, Validation
 - refactored exiting code and moved it around
-- added metadata to existing code
+- IN PROGRESS: added metadata to existing code
 - tested a try-catch block with Parser.Checks
 - created Simulator.SimulateServer.py to simulate the input and responses generated 
     from using the GRPCServer
 - Moved existing code into single files, following the SOLID principle
-- Created DisplayMatrix, to display the variables and matrix
-- Created SwitchConnectives.py to be used as a switch statement for the logical
-    operators
 
+## v0.0.2 - v0.0.4
+- Added small changes over time. 
 
-# v0.0.1
+## v0.0.1
 - needs restructuring
-- 
 
-# v0.0.0
+## v0.0.0
 - initial code copied from other project
