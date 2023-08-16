@@ -1,6 +1,6 @@
-## Changes in code
+# Changes in code
 
-# v0.0.5~
+## v0.0.5
 - created packages: Components, Computation, GRPCServer, Parser, Simulator, Validation
 - refactored exiting code and moved it around
 - IN PROGRESS: added metadata to existing code
@@ -10,9 +10,11 @@
 - Moved existing code into single files, following the SOLID principle
 
 
-# v0.0.1
-- needs restructuring
-- 
+## v0.0.2 - v0.0.4
+- Added small changes over time. 
 
-# v0.0.0
+## v0.0.1
+- needs restructuring
+
+## v0.0.0
 - initial code copied from other project
