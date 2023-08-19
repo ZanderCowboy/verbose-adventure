@@ -23,10 +23,10 @@ def conjunction(left, right):
 	num = int(log2(len(left)))
 	new_row_values = []
 	for i in range(0, 2 ** num):
-		if left[i] == FALSE or right[i] == FALSE:
-			new_row_values.append(FALSE)
-		elif left[i] == TRUE and right[i] == TRUE:
+		if left[i] == TRUE and right[i] == TRUE:
 			new_row_values.append(TRUE)
+		else:
+			new_row_values.append(FALSE)
 
 	return new_row_values
 
@@ -46,10 +46,10 @@ def disjunction(left, right):
 	num = int(log2(len(left)))
 	new_row_values = []
 	for i in range(0, 2 ** num):
-		if left[i] == TRUE or right[i] == TRUE:
-			new_row_values.append(TRUE)
-		elif left[i] == FALSE and right[i] == FALSE:
+		if left[i] == FALSE and right[i] == FALSE:
 			new_row_values.append(FALSE)
+		else:
+			new_row_values.append(TRUE)
 
 	return new_row_values
 
