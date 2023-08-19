@@ -1,31 +1,4 @@
-# Contains statement constants
-
-# statement = "(P ^ Q), T v (P -> Q), R ^ (Q v !P) <-> (R ^ Q) v (R ^ P) ^ T, !R ^ P"
-# statement = "(P ^ Q)"  # valid
-# statement = "(T v (P ^ Q))"  # valid
-# statement = "((T v P) ^ Q)"  # valid
-# statement = "(T v (P -> Q))"  # valid
-# statement = "(T v (P -> Q)" # invalid
-# statement = "((T ^ Q) v (P ^ Q))"  # valid
-# statement = "((T ^ T) v (P ^ Q))"  # valid
-# statement = "((T ^ T) v ((P ^ (T ^ Q)) ^ Q))"  # valid
-# statement = "(S ^ (R ^ Q))"  # valid
-# statement = "((R ^ (Q v (!P))) <-> (((R ^ Q) v (R ^ P)) ^ T))"  # valid
-# statement = "((R ^ (Q v (P))) <-> (((R ^ Q) v (R ^ P)) ^ T))"  # valid
-# statement = "((!R) ^ P)"  # valid
-# statement = "(P v Q)"  # valid
-# statement = "(!P)"  # valid
-
-
-# check_brackets tests
-# test_check_brackets = ['(',')']
-# test_check_brackets = ['(','(',')',')']
-# test_check_brackets = ['(', '(',')',    '(',')',    ')']
-# test_check_brackets = ['(',  '(',')',  '(','(',')','(',')',')', ')']
-# test_check_brackets = ['(', '(',')', '(',   '(',')',    ')']  # False
-
-
-# Additional test cases
+# Test cases that is used in SimulateMain.py
 test_cases = [
 	"(P <-> (P <-> (P <-> (P <-> P))))",
 	"(P ^ Q)",  # valid
@@ -39,6 +12,9 @@ test_cases = [
 	"(S ^ (R ^ Q))",  # valid
 	"((R ^ (Q v (!P))) <-> (((R ^ Q) v (R ^ P)) ^ T))",  # valid
 	"((R ^ (Q v (P))) <-> (((R ^ Q) v (R ^ P)) ^ T))",  # valid
+	
+	# "R ^ (Q v !P) <-> (R ^ Q) v (R ^ P) ^ T"  # valid, but binding rules
+	# should be applied.
 	"((!R) ^ P)",  # valid
 	"(P v Q)",  # valid
 	"(!P)",  # valid
@@ -53,6 +29,8 @@ test_cases = [
 	"((P ^ Q) v (R ^ S))",  # valid
 	"(P <-> Q)",  # valid
 	"(!(!P))",  # valid
+
+	# ERROR checking!!!
 	"((P v Q) ^ (!R))",  # valid
 	"((P -> Q) <-> ((!Q) -> (!P)))",  # valid
 ]
