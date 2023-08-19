@@ -4,7 +4,7 @@ from Components.Sanitizer import remove_brackets_around_variables
 from Parser.Checks.CheckBrackets import check_left_and_right_brackets
 
 
-def parse_array(elements, variables):
+def parse_array(elements: list, variables: list) -> list:
     """
 
     :param elements:

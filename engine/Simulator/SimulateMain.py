@@ -8,6 +8,10 @@ from Simulator.input_statements import *
 
 
 def simulate_main():
+	"""
+	This simulates Main.py
+	:return: No return, void function.
+	"""
 
 	for idx, statement in enumerate(test_cases, start=1):
 		print(f"\n\nTest Case {idx}: Processing statement '{statement}'...")
@@ -27,6 +31,8 @@ def simulate_main():
 			# print("No exception occurred!")
 			pass
 
+		# todo Look into why statement is sent to user_input() and then
+		#  returned again
 		number_of_variables, variables_as_array, provided_statement, elements_in_tree = (
 			user_input(statement))
 
