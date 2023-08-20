@@ -1,5 +1,3 @@
-# Creates the truth table matrix with initial values.
-
 from Computation.TableMatrix.RecursiveTable import recursive_table
 
 
@@ -8,9 +6,10 @@ def create_matrix(num_of_var):
     This takes the number of variables and produces an initial corresponding
     input matrix (also known as a truth table) with 2*exp(num_of_var) row
     entries with T and F values.
-    # todo Add example.
-    For example: create_matrix(2) will output
-    [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']] or equivalently
+
+    For example:
+    create_matrix(2) => [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']]
+    or equivalently
     [   ['T', 'T'],
         ['T', 'F'],
         ['F', 'T'],
@@ -29,12 +28,9 @@ def create_matrix(num_of_var):
 
     row_entries = [0] * num_of_var
     for i, row in enumerate(matrix):
-        # print(row)
         get_row_values = str(table_entries[i])
-        # print(get_row_values)
         for j in range(0, num_of_var):
             row_entries[j] = get_row_values[j]
-        # print(row_entries)
         new_row = row_entries.copy()
         new_matrix.append(new_row)
 
