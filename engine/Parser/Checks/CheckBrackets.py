@@ -1,5 +1,4 @@
 from Components.Constants import LEFT_BRACKETS, RIGHT_BRACKETS
-import re
 
 
 class UnequalBracketsExcept(Exception):

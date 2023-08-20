@@ -24,7 +24,7 @@ test_cases = [
 	"%",
 	"A",
 	"B_42",
-	"C_", # questionable
+	"C_",  # questionable
 	"P^Q",
 	"PvQ",
 	"P->Q",
@@ -35,7 +35,7 @@ test_cases = [
 	"0",
 	"5",
 	"P@Q",
-	"abc", # No
+	"abc",  # No
 	"def_",
 	"_xyz",
 	"<",

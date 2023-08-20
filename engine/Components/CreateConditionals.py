@@ -18,7 +18,7 @@ def create_conditionals(array_of_elements: list) -> list:
 
 	# Do a search for '-', and if found continue, o.w. return.
 	end_of_line = False
-	len_of_array = len(array_of_elements)
+	# len_of_array = len(array_of_elements)
 	for i, char in enumerate(array_of_elements):
 		if i == len(array_of_elements) - 1:
 			end_of_line = True

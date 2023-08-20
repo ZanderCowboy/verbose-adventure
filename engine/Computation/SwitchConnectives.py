@@ -22,6 +22,7 @@ def disj(left, right):
 	return disjunction(left, right)
 
 
+# todo Refactor neg() to remove 'right' parameter
 def neg(left, right):
 	# print("in negation")
 	return negation(left)

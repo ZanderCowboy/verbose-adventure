@@ -1,5 +1,3 @@
-from typing import List, Any
-
 from Parser.Parse.AnalizeFunction import analize_statement
 from Parser.Parse.ParseFunction import parse_array
 

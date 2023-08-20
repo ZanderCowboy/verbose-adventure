@@ -91,7 +91,7 @@ def find_connective(arr):
     in_bracket = False
 
     for i in range(len(arr)):
-        j = 0
+        # j = 0
         elem = arr[i]
         if elem in LEFT_BRACKETS:
             in_bracket = True

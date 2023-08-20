@@ -9,7 +9,6 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 		auxiliary_variables.append(all_variables[i])
 	number_of_aux_variables = len(auxiliary_variables)
 
-
 	print("| ", end='')
 	# prints part for variables
 	for j in range(number_of_variables):
@@ -31,7 +30,6 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 
 	print('\n', end='')
 
-
 	# todo Create function to count characters
 	# count_characters = 30
 	count_characters = get_number_of_spaces(number_of_variables, number_of_aux_variables, all_variables)
@@ -51,7 +49,6 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 			else:
 				print(row[j] + " || ", end='')
 
-
 		# prints auxiliary variables
 		index_between_auxiliary_variables_and_last = number_of_variables + len(auxiliary_variables)
 		for j in range(number_of_variables, index_between_auxiliary_variables_and_last):
@@ -66,8 +63,6 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 				for k in range(int(add_len)):
 					add_space += ' '
 				print(row[j] + add_space + " || ", end='')
-
-
 
 		# prints last column
 		temp_length = len(all_variables[-1])
@@ -107,7 +102,6 @@ def get_number_of_spaces(number_of_variables, nr_auxiliary_variables, all_variab
 	total_space += spaces_for_aux_variables
 	spaces_for_single_sep = nr_auxiliary_variables - 1
 	total_space += spaces_for_single_sep
-
 
 	space_for_last_variable = len(all_variables[-1])
 	total_space += space_for_last_variable
