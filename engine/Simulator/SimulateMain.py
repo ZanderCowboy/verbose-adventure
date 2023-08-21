@@ -5,6 +5,7 @@ from Parser.Checks.CheckBrackets import UnequalBracketsExcept
 from Parser.Checks.CheckForIllegalCharacters import IllegalCharactersException
 from Simulator.UserInput import *
 from Simulator.input_statements import *
+from Logging.logging_config import logger
 
 
 def simulate_main():
@@ -13,11 +14,14 @@ def simulate_main():
 	:return: No return, void function.
 	"""
 
+	logger.info("In SimulateMain.py")
 	for idx, statement in enumerate(test_cases, start=1):
 		print(f"\n\nTest Case {idx}: Processing statement '{statement}'...")
 
 		# First complete all checks
 		try:
+			logger.info("Calling CheckBrackets.check_left_and_right_brackets() "
+						"and CheckForIllegalCharacters.check_for_illegal_characters()...")
 			if (CheckBrackets.check_left_and_right_brackets(statement) and
 					CheckForIllegalCharacters.check_for_illegal_characters(statement)):
 				pass

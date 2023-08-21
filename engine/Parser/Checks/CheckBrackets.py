@@ -1,4 +1,5 @@
 from Components.Constants import LEFT_BRACKETS, RIGHT_BRACKETS
+from Logging.logging_config import logger
 
 
 class UnequalBracketsExcept(Exception):
@@ -11,6 +12,7 @@ def check_left_and_right_brackets(statement):
 	:param statement: the given string statement
 	:return: Returns a True if the left and right brackets are equal
 	"""
+	logger.info("In check_left_and_right_brackets()...")
 	count = 0
 	for i in range(len(statement)):
 		if statement[i] in LEFT_BRACKETS:
@@ -18,15 +20,11 @@ def check_left_and_right_brackets(statement):
 		elif statement[i] in RIGHT_BRACKETS:
 			count -= 1
 
-	# pattern = "^(?:(?:[^[\]]*\[[^[\]]*])*(?:[^[\]]*])*?)$"
-	# pattern = "^(?:(?:[^()]*\([^()]*\))*(?:[^()]*))*$"
-	# pattern = "^(?:(?:[^()]*\([^()]*\))*(?:[^()]*))*$"
-	# brackets = get_brackets_from_statement_or_array(statement)
-	# return_obj = re.fullmatch(pattern, brackets) is not None
-	# return return_obj
-
 	if count == 0:
+		logger.info("Returning with True...")
 		return True
+
+	logger.error("Error in check_left_and_right_brackets()!")
 	raise UnequalBracketsExcept("Input statement must have an equal number of opening and closing brackets")
 
 # todo Add to Unit Test
@@ -36,13 +34,3 @@ def check_left_and_right_brackets(statement):
 # test_check_brackets = ['(', '(',')',    '(',')',    ')']
 # test_check_brackets = ['(',  '(',')',  '(','(',')','(',')',')', ')']
 # test_check_brackets = ['(', '(',')', '(',   '(',')',    ')']  # False
-
-
-# def get_brackets_from_statement_or_array(statement):
-# 	string_of_brackets = ""
-#
-# 	for i, char in enumerate(statement):
-# 		if char in LEFT_BRACKETS or char in RIGHT_BRACKETS:
-# 			string_of_brackets += char
-#
-# 	return string_of_brackets

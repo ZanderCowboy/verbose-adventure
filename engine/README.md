@@ -2,6 +2,7 @@
 
 This is a Python gRPC server that will calculate the final truth column that 
 will be sent back
+** Add some details **
 
 ## Propositional Logic Calculator
 
