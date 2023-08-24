@@ -1,3 +1,5 @@
+from Logging.logging_config import logger
+
 OPEN_ARROW = '<'
 DASH = '-'
 CLOSE_ARROW = '>'
@@ -15,6 +17,7 @@ def create_conditionals(array_of_elements: list) -> list:
 	:param array_of_elements: takes a statement with individual pieces in an array.
 	:return: Returns a new array with connectives as one element.
 	"""
+	logger.debug("Calling create_conditionals(%s)...", array_of_elements)
 
 	# Do a search for '-', and if found continue, o.w. return.
 	end_of_line = False
@@ -68,4 +71,6 @@ def create_conditionals(array_of_elements: list) -> list:
 			conditional_symbol = False
 			biconditional_symbol = False
 
+	logger.info("Returning from creating any conditionals that is found in the "
+				"statement. array_of_elements=%s.", array_of_elements)
 	return array_of_elements

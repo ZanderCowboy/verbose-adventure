@@ -23,20 +23,20 @@ if os.path.exists(log_file):
 
 
 # Configure the logger
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s\t- %(message)s')
 
 # Create a logger instance
-logger = logging.getLogger('my_logger')
+logger = logging.getLogger('engine_logger')
 
 # Create a file handler to write logs to a file
 file_handler = logging.FileHandler(log_file)
-file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+file_formatter = logging.Formatter('%(asctime)s - %(levelname)s\t- %(message)s')
 file_handler.setFormatter(file_formatter)
 file_handler.setLevel(logging.DEBUG)  # Set the desired level for file handler
 
 # Create a stream handler to write logs to the console
 console_handler = logging.StreamHandler()
-console_formatter = logging.Formatter('%(levelname)s - %(message)s')
+console_formatter = logging.Formatter('%(levelname)s\t- %(message)s')
 console_handler.setFormatter(console_formatter)
 console_handler.setLevel(logging.WARNING)  # Set the desired level for console handler
 

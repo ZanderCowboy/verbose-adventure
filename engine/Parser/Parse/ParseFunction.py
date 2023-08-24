@@ -1,6 +1,7 @@
 from Components.Constants import *
 from Components.Sanitizer import add_brackets_around_unary_connectives
 from Components.Sanitizer import remove_brackets_around_variables
+from Logging.logging_config import logger
 from Parser.Checks.CheckBrackets import check_left_and_right_brackets
 
 
@@ -11,6 +12,7 @@ def parse_array(elements: list, variables: list) -> list:
     :param variables:
     :return:
     """
+    logger.debug("Calling parse_array(%s, %s)...", elements, variables)
 
     # this removes any brackets around single variables e.g., (P), (R), etc.
     elements_second = remove_brackets_around_variables(elements, variables)
@@ -28,6 +30,8 @@ def parse(arr):
     :param arr: takes a new analyzed statement as an array
     :return:  of the parsed statement with individual blocks
     """
+    logger.debug("Calling parse(%s)...", arr)
+
     # remove brackets
     arr = remove_outer_brackets(arr)
 
@@ -36,6 +40,7 @@ def parse(arr):
     if arr[0] in UNARY_CONNECTIVES:
         temp_arr.append(arr[0])
         temp_arr.append(arr[1])
+        logger.info("Parsed list for unary connectives; temp_arr=%s, returning.", temp_arr)
         return temp_arr
 
     middle, position_middle = find_connective(arr)
@@ -62,6 +67,7 @@ def parse(arr):
     temp_arr.append(middle)
     temp_arr.append(right)
 
+    logger.info("Parsed list for binary connectives; temp_arr=%s, returning.", temp_arr)
     return temp_arr
 
 
@@ -71,10 +77,13 @@ def remove_outer_brackets(array):
     :param array:
     :return: returns a new array with the outer brackets removed
     """
+    logger.debug("Calling remove_outer_brackets(%s)...", array)
+
     len_of_array = len(array)
     array.pop(0)
     array.pop(len_of_array - 2)
 
+    logger.info("Removed outer brackets: array=%s, returning", array)
     return array
 
 
@@ -86,6 +95,8 @@ def find_connective(arr):
     :param arr:
     :return: returns a string with the connective and position in array
     """
+    logger.debug("Calling find_connectives(%s)...", arr)
+
     temp_string = ''
     count = 0
     in_bracket = False
@@ -103,4 +114,5 @@ def find_connective(arr):
         if elem in BINARY_CONNECTIVES and not in_bracket and count == 0:
             return elem, i
 
+    logger.info("Found all connectives: temp_string=%s, returning.", temp_string)
     return temp_string

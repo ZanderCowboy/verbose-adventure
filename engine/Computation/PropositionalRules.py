@@ -1,11 +1,12 @@
 # This file is to give the rules to calculate the propositional logic.
 from math import log2
 from Components.Constants import TRUE, FALSE
+from Logging.logging_config import logger
+
 
 # todo double negation cancel out
 # todo 'negation', 'for all', 'there exists' bind most tightly; then disj and
 #  conj; then impl. (which is right-associative)
-# todo Add global variables T and F
 
 
 def conjunction(left, right):
@@ -15,6 +16,7 @@ def conjunction(left, right):
 	:param left:
 	:return:
 	"""
+	logger.debug("Calling conjunction(%s, %s)...", left, right)
 
 	# todo Add Exception
 	if len(left) != len(right):  # if they are not equal, raise and skip the rest
@@ -28,6 +30,7 @@ def conjunction(left, right):
 		else:
 			new_row_values.append(FALSE)
 
+	logger.info("Returning with new row values. new_row_values=%s. Returning.", new_row_values)
 	return new_row_values
 
 
@@ -87,7 +90,6 @@ def conditional(left, right):
 
 	num = int(log2(len(left)))
 	new_row_value = []
-	# print("Conditional")
 	for i in range(0, 2 ** num):
 		if left[i] == TRUE and right[i] == FALSE:
 			new_row_value.append(FALSE)
@@ -111,7 +113,6 @@ def biconditional(left, right):
 
 	num = int(log2(len(left)))
 	new_row_value = []
-	# print("Biconditional")
 	for i in range(0, 2 ** num):
 		if left[i] == right[i]:
 			new_row_value.append(TRUE)

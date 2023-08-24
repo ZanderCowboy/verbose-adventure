@@ -1,8 +1,8 @@
 from math import log2
 
 from Computation.SwitchConnectives import switch_case
-# from Computation.TableMatrix.Matrix import create_matrix
 from Computation.TableMatrix.CreateTableMatrix import create_matrix
+from Logging.logging_config import logger
 
 
 # todo restructure to have initial call in one function and another. Function in function
@@ -14,6 +14,8 @@ def evaluate_statement_as_array(number_of_variables, variables_as_array, element
 	:param elements_in_tree:
 	:return:
 	"""
+
+	logger.debug("Calling evaluate_statement_as_array(%d, %s, %s)...", number_of_variables, variables_as_array, elements_in_tree)
 	counter = 0
 	# todo Add a new column entry for each row, |.
 	matrix = create_matrix(number_of_variables)
@@ -23,10 +25,12 @@ def evaluate_statement_as_array(number_of_variables, variables_as_array, element
 
 	all_variables.append(final_variable_combined[0])
 
+	logger.info("Finised evaluating statement into an array: \nreturned_array=%s, "
+				"\nreturned_matrix=%s, \nall_variables=%s; \nreturning.", returned_array, returned_matrix, all_variables)
 	return returned_array, returned_matrix, all_variables
 
 
-def evaluate_array(array, counter, matrix, variables):
+def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 	"""
 	acts as inner recursive function
 	:param matrix: matrix
@@ -35,6 +39,7 @@ def evaluate_array(array, counter, matrix, variables):
 	:param array: elements_in_tree
 	:return: returned_array, final_variable_combined, returned_matrix, all_variables
 	"""
+	logger.debug("Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables)
 
 	# todo Fix bug for ((!Q) -> (!P))
 	# if negation is encounter, add placeholder value in front
@@ -106,15 +111,21 @@ def evaluate_array(array, counter, matrix, variables):
 				entry_in_return_array = returned_array[i]
 				matrix[i].append(entry_in_return_array)
 
+		logger.info("Evaluation of statement is done: \nreturned_array=%s, "
+					"\nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s;"
+					"returning.", returned_array, final_variable_combined, matrix, variables)
 		return returned_array, final_variable_combined, matrix, variables
 
 
 def set_new_array(temp_array):
+	# todo Finish documentation
 	"""
 
 	:param temp_array:
 	:return:
 	"""
+	logger.debug("Calling set_new_array(%s)...", temp_array)
+
 	left_part = temp_array[0]
 	connective = temp_array[1]
 	right_part = temp_array[2]
@@ -141,10 +152,12 @@ def set_new_array(temp_array):
 		new_string += temp_part
 	new_array = [new_string]
 
+	logger.info("Finished setting new array. \nnew_array=%s, returning.", new_array)
 	return new_array
 
 
 def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
+	# todo Finish documentation
 	"""
 	this should be a function that adds a new entry in each column of the rows
 	:param matrix:
@@ -153,9 +166,13 @@ def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
 	:param variable_entry:
 	:return:
 	"""
+	logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...", matrix, array_evaluated, variables, variable_entry)
+
 	for i in range(len(matrix)):
 		row_entry = matrix[i]
 		entry_to_add = array_evaluated[i]
 		row_entry.append(entry_to_add)
 	variables.append(variable_entry[0])  # append new 'variable' to array of variables
+
+	logger.info("Added array to matrix, %s, returning.", variables)
 	return variables

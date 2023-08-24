@@ -12,7 +12,8 @@ def check_left_and_right_brackets(statement):
 	:param statement: the given string statement
 	:return: Returns a True if the left and right brackets are equal
 	"""
-	logger.info("In check_left_and_right_brackets()...")
+
+	logger.debug("Calling CheckBrackets.check_left_and_right_brackets(%s)", statement)
 	count = 0
 	for i in range(len(statement)):
 		if statement[i] in LEFT_BRACKETS:
@@ -21,7 +22,7 @@ def check_left_and_right_brackets(statement):
 			count -= 1
 
 	if count == 0:
-		logger.info("Returning with True...")
+		logger.info("The number of left and right brackets are equal, returning.")
 		return True
 
 	logger.error("Error in check_left_and_right_brackets()!")

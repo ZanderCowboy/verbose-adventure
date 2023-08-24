@@ -1,4 +1,5 @@
 from Components.Constants import TRUE, FALSE
+from Logging.logging_config import logger
 
 
 def recursive_table(n):
@@ -12,6 +13,7 @@ def recursive_table(n):
 	:param n: (int) Number of variables
 	:return: Returns an array table with T/F values
 	"""
+	logger.debug("Calling recursive_table(%d)...", n)
 
 	array_table = []
 	if n == 1:
@@ -33,4 +35,6 @@ def recursive_table(n):
 			elif i % 2 == 1:  # odd
 				array_table[i] = str(array_table[i]) + FALSE
 
+	logger.info("Finished creating an array table with T(rue) and F(alse) "
+				"values. \n array_table=%s \n Returning from recursive_table().", array_table)
 	return array_table

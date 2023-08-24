@@ -1,7 +1,9 @@
 from Computation.PropositionalRules import *
+from Logging.logging_config import logger
 
 
 def switch_case(case, temp_left, temp_right):
+	logger.debug("")
 	switch_dict = {
 		'^': conj,
 		'v': disj,

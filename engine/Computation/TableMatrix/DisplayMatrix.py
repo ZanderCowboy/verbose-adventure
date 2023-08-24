@@ -1,8 +1,11 @@
+from Logging.logging_config import logger
+
+
 def display_matrix(number_of_variables, returned_matrix, all_variables):
 	# print("Display Matrix")
+	logger.debug("Calling display_matrix(%d, %s, %s)...", number_of_variables, returned_matrix, all_variables)
 
-	# display variables etc
-	# print("All_variables: " + str(all_variables))
+
 
 	auxiliary_variables = []  # Holds all the placeholder variables
 	for i in range(number_of_variables, len(all_variables) - 1):

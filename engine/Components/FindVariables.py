@@ -1,5 +1,6 @@
 from Components.Constants import VALID_BRACKETS, VALID_CONNECTIVES
 from Components.Sanitizer import clean_whitespaces, clean_commas
+from Logging.logging_config import logger
 
 
 def find_variables(statement):
@@ -10,10 +11,14 @@ def find_variables(statement):
 	:param statement: given user statement
 	:returns: Returns an array and string of variables, respectively
 	"""
+	logger.debug("Calling find_variables(%s)...", statement)
 
+	logger.info("All whitespaces and commas need to be removed, proceeding.")
 	statement = clean_whitespaces(statement)
+	# todo Is the function clean_commas still needed. Only single statements will be passed?
 	statement = clean_commas(statement)
 
+	# todo Remove variables_string, as it is no longer used.
 	variables_array = []
 	variables_string = ""
 	non_variable_characters = VALID_BRACKETS + VALID_CONNECTIVES
@@ -37,4 +42,5 @@ def find_variables(statement):
 			elif duplicate:
 				continue
 
+	logger.info("Found all variables from the given statement. variables_array=%s", variables_array)
 	return variables_array, variables_string
