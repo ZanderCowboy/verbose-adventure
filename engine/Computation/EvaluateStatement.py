@@ -5,44 +5,49 @@ from Computation.TableMatrix.CreateTableMatrix import create_matrix
 from Logging.logging_config import logger
 
 
-# todo restructure to have initial call in one function and another. Function in function
 def evaluate_statement_as_array(number_of_variables, variables_as_array, elements_in_tree):
 	"""
+	This is used to take an array of elements in a tree-like structure, and
+	evaluates the elements from the bottom up, using a recursive internal
+	function.
 
-	:param number_of_variables:
-	:param variables_as_array:
-	:param elements_in_tree:
-	:return:
+	:param number_of_variables: Number of variables in statement
+	:param variables_as_array: Variables as array
+	:param elements_in_tree: Statement with elements in tree-like structure
+	:returns: Returns an array with the last evaluation, a matrix containing
+	all evaluations and an array with all variables, including auxiliary ones.
 	"""
+	logger.info("Evaluating array of elements...")
 
-	logger.debug("Calling evaluate_statement_as_array(%d, %s, %s)...", number_of_variables, variables_as_array, elements_in_tree)
 	counter = 0
-	# todo Add a new column entry for each row, |.
 	matrix = create_matrix(number_of_variables)
 
+	logger.debug("In evaluate_statement_as_array(): \nelements_in_tree=%s, \ncounter=%d, \nmatrix=%s, "
+				 "\nvariables_as_array=%s", elements_in_tree, counter, matrix, variables_as_array)
 	returned_array, final_variable_combined, returned_matrix, all_variables = (
 		evaluate_array(elements_in_tree, counter, matrix, variables_as_array))
 
 	all_variables.append(final_variable_combined[0])
 
-	logger.info("Finised evaluating statement into an array: \nreturned_array=%s, "
-				"\nreturned_matrix=%s, \nall_variables=%s; \nreturning.", returned_array, returned_matrix, all_variables)
+	logger.debug("returned_array=%s, returned_matrix=%s, all_variables=%s", returned_array, returned_matrix, all_variables)
+	logger.info("Finished evaluating array.")
 	return returned_array, returned_matrix, all_variables
 
 
 def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 	"""
-	acts as inner recursive function
-	:param matrix: matrix
-	:param counter: counter
-	:param variables: array
-	:param array: elements_in_tree
+	This acts as inner recursive function to evaluate an array.
+
+	:param array: Array with elements in a tree structure
+	:param counter: Counter to keep track of recursive calls
+	:param matrix: Matrix used by evaluation
+	:param variables: List of variables in statement
 	:return: returned_array, final_variable_combined, returned_matrix, all_variables
 	"""
 	logger.debug("Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables)
 
 	# todo Fix bug for ((!Q) -> (!P))
-	# if negation is encounter, add placeholder value in front
+	# if negation is encountered, add placeholder value in front
 	if len(array) == 2:
 		blank = '_'
 		array = [blank, array[0], array[1]]
@@ -103,7 +108,7 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 		# get array item for combined variable
 		if len(left_array) == 1 and len(right_array) == 1:
 			temp_array = [left_array, connective, right_array]
-			final_variable_combined = set_new_array(temp_array)
+			final_variable_combined = set_new_array_elem(temp_array)
 
 		if len(final_variable_combined) == 1 and counter == 0:
 			# append returned_array to matrix
@@ -111,20 +116,23 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 				entry_in_return_array = returned_array[i]
 				matrix[i].append(entry_in_return_array)
 
-		logger.info("Evaluation of statement is done: \nreturned_array=%s, "
-					"\nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s;"
-					"returning.", returned_array, final_variable_combined, matrix, variables)
+		logger.debug("returned_array=%s, final_variable_combined=%s, matrix=%s, variables=%s",
+					 returned_array, final_variable_combined, matrix, variables)
+		logger.debug("Evaluation of array in evaluate_array() is done.")
 		return returned_array, final_variable_combined, matrix, variables
 
 
-def set_new_array(temp_array):
-	# todo Finish documentation
+def set_new_array_elem(temp_array):
 	"""
+	This is used to set a new array-element from a temporary array of elements
+	after calculations were done.
+	For example:
+	[['T'], 'v', ['P^Q']] => ['Tv(P^Q)']
 
-	:param temp_array:
-	:return:
+	:param temp_array: An array that contains 3 parts
+	:return: Returns an array with a single combined entry
 	"""
-	logger.debug("Calling set_new_array(%s)...", temp_array)
+	logger.debug("Calling set_new_array_elem(%s)...", temp_array)
 
 	left_part = temp_array[0]
 	connective = temp_array[1]
@@ -152,19 +160,21 @@ def set_new_array(temp_array):
 		new_string += temp_part
 	new_array = [new_string]
 
-	logger.info("Finished setting new array. \nnew_array=%s, returning.", new_array)
+	logger.debug("new_array=%s", new_array)
+	logger.debug("Finished setting new array element.")
 	return new_array
 
 
 def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
-	# todo Finish documentation
 	"""
-	this should be a function that adds a new entry in each column of the rows
-	:param matrix:
-	:param array_evaluated:
-	:param variables:
-	:param variable_entry:
-	:return:
+	This iterates over a matrix row-by-row and appends the new values in an
+	evaluated array to the end of it.
+
+	:param matrix: Matrix where the values should be added
+	:param array_evaluated: Evaluated array to append to matrix
+	:param variables: Variables in statement
+	:param variable_entry: Auxiliary entry to add to array of variables
+	:return: Returns an updated array of variables
 	"""
 	logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...", matrix, array_evaluated, variables, variable_entry)
 
@@ -174,5 +184,6 @@ def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
 		row_entry.append(entry_to_add)
 	variables.append(variable_entry[0])  # append new 'variable' to array of variables
 
-	logger.info("Added array to matrix, %s, returning.", variables)
+	logger.debug("variables=%s", variables)
+	logger.debug("Added array to matrix.")
 	return variables

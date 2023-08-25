@@ -1,11 +1,10 @@
 from Logging.logging_config import logger
 
 
-def display_matrix(number_of_variables, returned_matrix, all_variables):
+def display_matrix(number_of_variables: int, returned_matrix: list, all_variables: list) -> None:
 	# print("Display Matrix")
-	logger.debug("Calling display_matrix(%d, %s, %s)...", number_of_variables, returned_matrix, all_variables)
-
-
+	logger.info("Displaying matrix to console...")
+	# logger.debug("Calling display_matrix(%d, %s, %s)...", number_of_variables, returned_matrix, all_variables)
 
 	auxiliary_variables = []  # Holds all the placeholder variables
 	for i in range(number_of_variables, len(all_variables) - 1):
@@ -33,10 +32,7 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 
 	print('\n', end='')
 
-	# todo Create function to count characters
-	# count_characters = 30
 	count_characters = get_number_of_spaces(number_of_variables, number_of_aux_variables, all_variables)
-	# for i in range(count_characters):
 	print("=" * count_characters)
 
 	# prints the T/F values for each row in matrix
@@ -85,7 +81,10 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 	print("=" * count_characters)
 
 
-def get_number_of_spaces(number_of_variables, nr_auxiliary_variables, all_variables):
+# todo Finish Function
+def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, all_variables: list) -> int:
+	logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables, nr_auxiliary_variables, all_variables)
+
 	SPACE = 3
 	total_space = 0
 
@@ -111,4 +110,6 @@ def get_number_of_spaces(number_of_variables, nr_auxiliary_variables, all_variab
 	spaces_for_double_sep = 6
 	total_space += spaces_for_double_sep
 
+	logger.debug("total_space=%d", total_space)
+	logger.debug("Finished calculating the total space.")
 	return total_space

@@ -13,8 +13,10 @@ def recursive_table(n):
 	:param n: (int) Number of variables
 	:return: Returns an array table with T/F values
 	"""
-	logger.debug("Calling recursive_table(%d)...", n)
+	# logger.info("Calling a recursive function to create entry values for matrix...")
+	logger.info("Creating table entries recursively...")
 
+	logger.debug("n=%d", n)
 	array_table = []
 	if n == 1:
 		array_table = [TRUE, FALSE]
@@ -35,6 +37,6 @@ def recursive_table(n):
 			elif i % 2 == 1:  # odd
 				array_table[i] = str(array_table[i]) + FALSE
 
-	logger.info("Finished creating an array table with T(rue) and F(alse) "
-				"values. \n array_table=%s \n Returning from recursive_table().", array_table)
+	logger.debug("array_table=%s", array_table)
+	logger.info("Finished creating array of table entries.")
 	return array_table

@@ -12,8 +12,8 @@ def check_left_and_right_brackets(statement):
 	:param statement: the given string statement
 	:return: Returns a True if the left and right brackets are equal
 	"""
+	logger.debug("Calling check_left_and_right_brackets(%s)...", statement)
 
-	logger.debug("Calling CheckBrackets.check_left_and_right_brackets(%s)", statement)
 	count = 0
 	for i in range(len(statement)):
 		if statement[i] in LEFT_BRACKETS:
@@ -22,11 +22,13 @@ def check_left_and_right_brackets(statement):
 			count -= 1
 
 	if count == 0:
-		logger.info("The number of left and right brackets are equal, returning.")
+		logger.warning("The number of left and right brackets are equal, returning.")
 		return True
 
-	logger.error("Error in check_left_and_right_brackets()!")
-	raise UnequalBracketsExcept("Input statement must have an equal number of opening and closing brackets")
+	logger.exception("Error! Unequal number of left and right brackets. "
+					 "Please check and try again. count=%d", count)
+	raise UnequalBracketsExcept("Input statement must have an equal number "
+								"of opening and closing brackets")
 
 # todo Add to Unit Test
 # check_brackets tests
