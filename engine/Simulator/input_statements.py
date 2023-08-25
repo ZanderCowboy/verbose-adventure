@@ -1,8 +1,8 @@
 # Test cases that is used in SimulateMain.py
 test_cases = [
-	"(P <-> (P <-> (P <-> (P <-> P))))",
+	# "(P <-> (P <-> (P <-> (P <-> P))))",
 	# "(P ^ Q)",  # valid
-	# "(T v (P ^ Q))",  # valid
+	"(T v (P ^ Q))",  # valid
 	# "((T v P) ^ Q)",  # valid
 	# "(T v (P -> Q))",  # valid
 	# "(T v (P -> Q)",  # invalid
@@ -33,5 +33,9 @@ test_cases = [
 	# ERROR checking!!!
 	# "((P v Q) ^ (!R))",  # valid
 	# "((P -> Q) <-> ((!Q) -> (!P)))",  # valid
+
+	# Edge cases
+	# "(P_1 ^ P_2)",
+	# "(Q ^ (R_20 -> T_2))"
 ]
 
