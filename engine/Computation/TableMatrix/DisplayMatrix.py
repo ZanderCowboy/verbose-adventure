@@ -1,16 +1,16 @@
-def display_matrix(number_of_variables, returned_matrix, all_variables):
-	# print("Display Matrix")
+from Logging.logging_config import logger
 
-	# display variables etc
-	# print("All_variables: " + str(all_variables))
+
+def display_matrix(number_of_variables: int, returned_matrix: list, all_variables: list) -> None:
+	logger.debug("Displaying matrix to console...")
 
 	auxiliary_variables = []  # Holds all the placeholder variables
 	for i in range(number_of_variables, len(all_variables) - 1):
 		auxiliary_variables.append(all_variables[i])
 	number_of_aux_variables = len(auxiliary_variables)
 
-	print("| ", end='')
 	# prints part for variables
+	print("| ", end='')
 	for j in range(number_of_variables):
 		if j != number_of_variables-1:
 			print(all_variables[j] + " | ", end='')
@@ -30,10 +30,7 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 
 	print('\n', end='')
 
-	# todo Create function to count characters
-	# count_characters = 30
 	count_characters = get_number_of_spaces(number_of_variables, number_of_aux_variables, all_variables)
-	# for i in range(count_characters):
 	print("=" * count_characters)
 
 	# prints the T/F values for each row in matrix
@@ -75,20 +72,21 @@ def display_matrix(number_of_variables, returned_matrix, all_variables):
 		for k in range(int(add_len)):
 			add_space += ' '
 		print(row[-1] + add_space + " || ", end='')
-		# print(row[-1] + " || ", end='')
-
 		print('\n', end='')
 
 	print("=" * count_characters)
 
 
-def get_number_of_spaces(number_of_variables, nr_auxiliary_variables, all_variables):
-	SPACE = 3
+# todo Finish Function
+def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, all_variables: list) -> int:
+	logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables, nr_auxiliary_variables, all_variables)
+
+	space = 3
 	total_space = 0
 
 	initial_space = 1
 	total_space += initial_space
-	spaces_for_variables = SPACE * number_of_variables
+	spaces_for_variables = space * number_of_variables
 	total_space += spaces_for_variables
 	spaces_for_single_sep = number_of_variables - 1
 	total_space += spaces_for_single_sep
@@ -108,4 +106,6 @@ def get_number_of_spaces(number_of_variables, nr_auxiliary_variables, all_variab
 	spaces_for_double_sep = 6
 	total_space += spaces_for_double_sep
 
+	logger.debug("total_space=%d", total_space)
+	logger.debug("Finished calculating the total space.")
 	return total_space

@@ -1,14 +1,17 @@
-# todo changes statement to something that we can use
-# todo change to something that the system can use
-# todo add brackets
+# todo Changes statement to something that we can use
+# todo Change to something that the system can use
+# todo Add brackets
 # todo Change connectives to one common set
 # todo Change lower case letters to upper case
 
 from Components.Constants import *
+from Logging.logging_config import logger
+
 
 # for example: change & to ^, | to v
 
 
+# todo Refactor to sanitize statement
 def add_brackets(statement):
 	"""
 	Adds outer brackets to any statement
@@ -21,66 +24,50 @@ def add_brackets(statement):
 	return new_string
 
 
-def sanitize_statements(statement):
+def clean_whitespaces(statement: str) -> str:
 	"""
-	dummy function
-	:param statement:
-	:return:
-	"""
-	final_string = ""
-
-	new_string = add_brackets(statement)
-
-	return final_string
-
-
-def clean_commas(statement):
-	"""
-	Removes commas if more than one statement is given.
-
-	:param statement: given statement
-	:return: returns a statement with commas removed
-	"""
-	return statement.replace(",", "")
-
-
-def clean_whitespaces(statement):
-	"""
-
+	This clears a statement of all whitespaces that are present.
 	:param statement: given statement
 	:return: returns a statement with whitespaces removed
 	"""
+	logger.debug("Calling clean_whitespaces(%s)...", statement)
+
+	logger.debug("Finished removing whitespaces: statement=%s", statement.replace(" ", ""))
 	return statement.replace(" ", "")
 
 
-# takes a new analyzed statement as array and
-# returns an array of the parsed statement with individual blocks
-def remove_brackets_around_variables(arr, variables):
+def remove_brackets_around_variables(arr: list, variables: list) -> list:
 	"""
-	Removes brackets around single variables, e.g., (P)
+	This removes brackets around single variables in an array, e.g., (P) => P
 	:param arr:
-	:param variables:
-	:return:
+	:param variables: Array of variables from statement.
+	:return: Returns an array without brackets around variables.
 	"""
+	logger.debug("Removing brackets around standalone variables...")
+
 	for i in range(0, len(arr) - 2):
 		if arr[i] in variables:
 			left_of_variable = arr[i - 1]
-			# variable_itself = arr[i]
 			right_of_variable = arr[i + 1]
 			if left_of_variable in LEFT_BRACKETS and right_of_variable in RIGHT_BRACKETS:
 				arr.pop(i - 1)
 				arr.pop(i)
+	# todo Add another loop to make sure that no 'single brackets' are found
+
+	logger.debug("arr=%s", arr)
+	logger.debug("Finished removing all brackets around variables.")
 	return arr
 
 
-def add_brackets_around_unary_connectives(arr, variables):
+def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
 	"""
-	Adds brackets around unary connectives.
+	This adds brackets around unary connectives.
 	:param arr:
-	:param variables:
-	:return:
+	:param variables: Array of variables from statement.
+	:return: Returns an array with brackets around unary connectives.
 	"""
-	# print("Debug: ", arr, variables, sep='\n')
+	logger.debug("Adding brackets around unary connectives...")
+
 	for i in range(len(arr)):
 		if arr[i] in UNARY_CONNECTIVES:  # we have a unary connective
 			if arr[i+1] in variables:  # unary connective is next to a variable
@@ -90,4 +77,8 @@ def add_brackets_around_unary_connectives(arr, variables):
 				elif arr[i-1] in BINARY_CONNECTIVES or arr[i+2] in BINARY_CONNECTIVES:  # there is no brackets around it
 					arr.insert(i, '(')
 					arr.insert(i+3, ')')
+	# todo Add a final check to makes sure that no unary connectives was missed.
+
+	logger.debug("arr=%s", arr)
+	logger.debug("Finished adding brackets around all unary connectives.")
 	return arr

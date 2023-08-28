@@ -1,19 +1,21 @@
 from Components.Constants import VALID_BRACKETS, VALID_CONNECTIVES
-from Components.Sanitizer import clean_whitespaces, clean_commas
+from Logging.logging_config import logger
 
 
-def find_variables(statement):
+def find_variables(statement: str) -> list:
 	"""
-	Runs through the statement to determine all the variables given in the user
+	Runs through the statement to determine all the variables given in the
 	statement.
 
+	:rtype: list
 	:param statement: given user statement
-	:returns: Returns an array and string of variables, respectively
+	:return: Returns an array variables
 	"""
+	logger.info("Finding variables in statement...")
 
-	statement = clean_whitespaces(statement)
-	statement = clean_commas(statement)
+	# todo Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
 
+	logger.debug("statement=%s", statement)
 	variables_array = []
 	variables_string = ""
 	non_variable_characters = VALID_BRACKETS + VALID_CONNECTIVES
@@ -22,7 +24,6 @@ def find_variables(statement):
 		char = statement[i]
 
 		if char not in non_variable_characters:  # if char is not a bracket or a connective
-
 			# Testing for duplicates
 			duplicate_int = statement.find(char, i + 1)
 			var_str_find = variables_string.find(char)
@@ -37,4 +38,7 @@ def find_variables(statement):
 			elif duplicate:
 				continue
 
-	return variables_array, variables_string
+	logger.debug("variables_array=%s", variables_array)
+	logger.info("Found all variables in statement.")
+	logger.info("*** Variables:\t%s ***", variables_array)
+	return variables_array
