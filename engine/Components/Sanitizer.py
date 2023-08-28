@@ -24,19 +24,6 @@ def add_brackets(statement):
 	return new_string
 
 
-# def clean_commas(statement: str) -> str:
-# 	"""
-# 	Removes commas if more than one statement is given.
-#
-# 	:param statement: given statement
-# 	:return: returns a statement with commas removed
-# 	"""
-# 	logger.debug("Calling clean_commas(%s)...", statement)
-#
-# 	logger.debug("Returning without commas: statement=%s", statement.replace(",", ""))
-# 	return statement.replace(",", "")
-
-
 def clean_whitespaces(statement: str) -> str:
 	"""
 	This clears a statement of all whitespaces that are present.
@@ -45,7 +32,7 @@ def clean_whitespaces(statement: str) -> str:
 	"""
 	logger.debug("Calling clean_whitespaces(%s)...", statement)
 
-	logger.debug("Returning without whitespaces: statement=%s", statement.replace(" ", ""))
+	logger.debug("Finished removing whitespaces: statement=%s", statement.replace(" ", ""))
 	return statement.replace(" ", "")
 
 
@@ -56,7 +43,7 @@ def remove_brackets_around_variables(arr: list, variables: list) -> list:
 	:param variables: Array of variables from statement.
 	:return: Returns an array without brackets around variables.
 	"""
-	logger.info("Removing brackets around standalone variables...")
+	logger.debug("Removing brackets around standalone variables...")
 
 	for i in range(0, len(arr) - 2):
 		if arr[i] in variables:
@@ -68,7 +55,7 @@ def remove_brackets_around_variables(arr: list, variables: list) -> list:
 	# todo Add another loop to make sure that no 'single brackets' are found
 
 	logger.debug("arr=%s", arr)
-	logger.info("Removed all brackets around variables.")
+	logger.debug("Finished removing all brackets around variables.")
 	return arr
 
 
@@ -79,7 +66,7 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
 	:param variables: Array of variables from statement.
 	:return: Returns an array with brackets around unary connectives.
 	"""
-	logger.info("Adding brackets around unary connectives...")
+	logger.debug("Adding brackets around unary connectives...")
 
 	for i in range(len(arr)):
 		if arr[i] in UNARY_CONNECTIVES:  # we have a unary connective
@@ -93,5 +80,5 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
 	# todo Add a final check to makes sure that no unary connectives was missed.
 
 	logger.debug("arr=%s", arr)
-	logger.info("Finished adding brackets around all unary connectives.")
+	logger.debug("Finished adding brackets around all unary connectives.")
 	return arr

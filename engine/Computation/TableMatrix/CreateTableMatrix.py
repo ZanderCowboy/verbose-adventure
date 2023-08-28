@@ -21,16 +21,14 @@ def create_matrix(num_of_var: int) -> list:
     :return: Returns a matrix, with alternating T/F values for the number of
     variables as columns and 2*exp(num_of_var) rows.
     """
-    logger.info("Creating initial matrix...")
+    logger.debug("Creating initial matrix...")
 
     # Getting the array with the values that will be converted into a matrix
     table_entries = recursive_table(num_of_var)
 
-    # matrix = [[0] * num_of_var] * (2 ** num_of_var)
     new_matrix = []
 
     row_entries = [0] * num_of_var
-    # for i, row in enumerate(matrix):
     for i in range(2 ** num_of_var):
         get_row_values = str(table_entries[i])
         for j in range(0, num_of_var):
@@ -40,4 +38,5 @@ def create_matrix(num_of_var: int) -> list:
 
     logger.debug("In create_matrix(): new_matrix=%s", new_matrix)
     logger.info("Finished creating the initial 'truth' matrix.")
+    logger.info("*** Initial Matrix:\t%s ***", new_matrix)
     return new_matrix

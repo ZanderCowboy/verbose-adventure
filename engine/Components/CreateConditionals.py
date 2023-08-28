@@ -11,7 +11,7 @@ def create_conditionals(array_of_elements: list) -> list:
 	:param array_of_elements: takes a statement with individual pieces in an array.
 	:return: Returns a new array with connectives as one element.
 	"""
-	logger.info("Creating one-piece conditionals from single elements.")
+	logger.debug("Creating one-piece conditionals from single elements.")
 
 	# Do a search for '-', and if found continue, o.w. return.
 	logger.debug("Searching for a '-' in array_of_elements=%s", array_of_elements)
@@ -21,7 +21,7 @@ def create_conditionals(array_of_elements: list) -> list:
 			end_of_line = True
 		if char not in PRE_CHECK:  # no symbols present
 			if end_of_line:
-				logger.info("Search for conditionals finished and none were found, returning.")
+				logger.debug("Search for conditionals finished and none were found, returning.")
 				return array_of_elements
 			continue
 		elif char in PRE_CHECK:
@@ -59,5 +59,5 @@ def create_conditionals(array_of_elements: list) -> list:
 			biconditional_symbol = False
 
 	logger.debug("array_of_elements=%s", array_of_elements)
-	logger.info("Finished creating conditionals.")
+	logger.debug("Finished creating conditionals.")
 	return array_of_elements

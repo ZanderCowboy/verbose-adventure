@@ -1,6 +1,7 @@
 import logging
 import os
 
+
 MAX_LOG_FILES = 10
 LOG_FILE_NAME = 'engine.log'
 log_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'Output')
@@ -23,23 +24,24 @@ if os.path.exists(log_file):
 
 
 # Configure the logger
-# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s\t- %(message)s')
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s\t- %(funcName)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s\t- %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s\t- %(funcName)s - %(message)s')
 
 # Create a logger instance
 logger = logging.getLogger('engine_logger')
 
 # Create a file handler to write logs to a file
 file_handler = logging.FileHandler(log_file)
-file_formatter = logging.Formatter('%(asctime)s - %(levelname)s\t- %(message)s')
+file_formatter = logging.Formatter('%(asctime)s - %(levelname)s\t- %(funcName)s - %(message)s')
+# file_formatter = logging.Formatter('%(asctime)s - %(levelname)s\t- %(message)s')
 file_handler.setFormatter(file_formatter)
-file_handler.setLevel(logging.DEBUG)  # Set the desired level for file handler
+file_handler.setLevel(logging.DEBUG)
 
 # Create a stream handler to write logs to the console
-# console_handler = logging.StreamHandler()
+console_handler = logging.StreamHandler()
 # console_formatter = logging.Formatter('%(levelname)s\t- %(message)s')
 # console_handler.setFormatter(console_formatter)
-# console_handler.setLevel(logging.DEBUG)  # Set the desired level for console handler
+console_handler.setLevel(logging.DEBUG)
 
 # Add both handlers to the logger
 logger.addHandler(file_handler)

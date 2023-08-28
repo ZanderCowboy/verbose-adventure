@@ -5,7 +5,7 @@ from Computation.TableMatrix.CreateTableMatrix import create_matrix
 from Logging.logging_config import logger
 
 
-def evaluate_statement_as_array(number_of_variables, variables_as_array, elements_in_tree):
+def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_tree):
 	"""
 	This is used to take an array of elements in a tree-like structure, and
 	evaluates the elements from the bottom up, using a recursive internal
@@ -17,12 +17,12 @@ def evaluate_statement_as_array(number_of_variables, variables_as_array, element
 	:returns: Returns an array with the last evaluation, a matrix containing
 	all evaluations and an array with all variables, including auxiliary ones.
 	"""
-	logger.info("Evaluating array of elements...")
+	logger.info("Starting evaluation of array of elements...")
 
 	counter = 0
 	matrix = create_matrix(number_of_variables)
 
-	logger.debug("In evaluate_statement_as_array(): \nelements_in_tree=%s, \ncounter=%d, \nmatrix=%s, "
+	logger.debug("In evaluate_array_as_tree(): \nelements_in_tree=%s, \ncounter=%d, \nmatrix=%s, "
 				 "\nvariables_as_array=%s", elements_in_tree, counter, matrix, variables_as_array)
 	returned_array, final_variable_combined, returned_matrix, all_variables = (
 		evaluate_array(elements_in_tree, counter, matrix, variables_as_array))
@@ -30,7 +30,7 @@ def evaluate_statement_as_array(number_of_variables, variables_as_array, element
 	all_variables.append(final_variable_combined[0])
 
 	logger.debug("returned_array=%s, returned_matrix=%s, all_variables=%s", returned_array, returned_matrix, all_variables)
-	logger.info("Finished evaluating array.")
+	logger.debug("Finished evaluating array.")
 	return returned_array, returned_matrix, all_variables
 
 
@@ -116,7 +116,7 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 				entry_in_return_array = returned_array[i]
 				matrix[i].append(entry_in_return_array)
 
-		logger.debug("returned_array=%s, final_variable_combined=%s, matrix=%s, variables=%s",
+		logger.debug("In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
 					 returned_array, final_variable_combined, matrix, variables)
 		logger.debug("Evaluation of array in evaluate_array() is done.")
 		return returned_array, final_variable_combined, matrix, variables

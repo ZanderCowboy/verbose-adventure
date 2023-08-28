@@ -22,10 +22,10 @@ def check_left_and_right_brackets(statement):
 			count -= 1
 
 	if count == 0:
-		logger.warning("The number of left and right brackets are equal, returning.")
+		logger.info("PASS: The number of left and right brackets are equal.")
 		return True
 
-	logger.exception("Error! Unequal number of left and right brackets. "
+	logger.exception("FAIL: Unequal number of left and right brackets. "
 					 "Please check and try again. count=%d", count)
 	raise UnequalBracketsExcept("Input statement must have an equal number "
 								"of opening and closing brackets")

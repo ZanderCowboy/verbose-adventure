@@ -10,7 +10,7 @@ def validate_input(input_string: str) -> bool:
 	pattern = r"^(?:[a-zA-Z](?:_\d+)?|[a-zA-Z])$|[\^v!<>-]"
 	result = re.fullmatch(pattern, input_string) is not None
 
-	logger.debug("Checked against a regex. result(is it valid?)=%s. Returning.", result)
+	logger.debug("Checked against a regex. result(is it valid?)=%s.", result)
 	return result
 
 # todo Create Unit Test

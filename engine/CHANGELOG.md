@@ -9,7 +9,8 @@
 - Finished some documentation. 
 - Refactored code, removing redundant parts. 
 - Added more TODOs for later development.
-- 
+- Created a new generalized printing function in PrintDetails.py used to do 
+'sections of output' logging
 
 ## v0.0.6
 - Created a constants file containing all the constants that is used in the code

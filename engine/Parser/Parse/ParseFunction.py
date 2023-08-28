@@ -3,6 +3,7 @@ from Components.Sanitizer import add_brackets_around_unary_connectives
 from Components.Sanitizer import remove_brackets_around_variables
 from Logging.logging_config import logger
 from Parser.Checks.CheckBrackets import check_left_and_right_brackets
+from Components.PrintDetails import print_details
 
 
 def parse_array(elements: list, variables: list) -> list:
@@ -23,10 +24,12 @@ def parse_array(elements: list, variables: list) -> list:
     logger.debug("In parse_array(): elements_second=%s", elements_second)
 
     # first checks if brackets are equal
+    logger.info("Final checks are ran before parsing concludes.")
     is_parsable = check_left_and_right_brackets(elements_second)
     if is_parsable:
         tree_structured_array = parse(elements_second)
         logger.debug("tree_structured_array=%s", tree_structured_array)
+        print_details("PARSE", ("Parsed Array", tree_structured_array))
         logger.info("Finished parsing array.")
         return tree_structured_array
 
@@ -44,7 +47,7 @@ def parse(arr):
 
     # remove outer brackets
     arr = remove_outer_brackets(arr)
-    logger.debug("Removed outer brackets: arr=%s", arr)
+    logger.debug("In parse(): arr=%s", arr)
 
     # parse the binary/unary into left, middle, and right
     temp_arr = []
@@ -112,7 +115,6 @@ def find_connective(arr):
     """
     logger.debug("Calling find_connectives(%s)...", arr)
 
-    temp_string = ''
     count = 0
     in_bracket = False
 
@@ -126,8 +128,6 @@ def find_connective(arr):
                 in_bracket = False
             count -= 1
         if elem in BINARY_CONNECTIVES and not in_bracket and count == 0:
+            logger.debug("In find_connective(): elem=%s, i=%d", elem, i)
+            logger.debug("Found connective.")
             return elem, i
-
-    logger.debug("temp_string=%s", temp_string)
-    logger.debug("Found all connectives.")
-    return temp_string

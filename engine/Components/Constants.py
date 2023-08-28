@@ -7,17 +7,16 @@ RIGHT_BRACKETS = ")}]"
 BINARY_CONNECTIVES = ['^', 'v', '->', '<->']
 UNARY_CONNECTIVES = ['!']
 
-# Comment?
+# Constants used in the Computation package
 TRUE = 'T'
 FALSE = 'F'
 
-# Comment?
+# Constants used in the Components package
 # todo Add other connectives such as &&, ||, etc.
 VALID_BRACKETS = "(){}[]"
 VALID_CONNECTIVES = "^v!<->"
 
-WHITE_SPACES =\
-	" "
+WHITE_SPACES = " "
 
 # Constants used in CreateConditionals.py
 OPEN_ARROW = '<'

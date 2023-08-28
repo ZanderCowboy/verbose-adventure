@@ -1,5 +1,5 @@
 from Logging.logging_config import logger
-from Parser.Parse.AnalizeFunction import analize_statement
+from Parser.Parse.AnalizeFunction import analyze_statement
 from Parser.Parse.ParseFunction import parse_array
 
 
@@ -19,12 +19,12 @@ def user_input(statement: str) -> [int, list, str, list]:
     #  For this, would it be wise to use brackets around variables? Create ISSUE.
     # todo Create a possible REGEX function?
 
-    number_of_variables, variables_as_array, elements_as_array = analize_statement(statement)
+    number_of_variables, variables_as_array, elements_as_array = analyze_statement(statement)
 
     # Combine variables and connectives
     new_elements = parse_array(elements_as_array, variables_as_array)
 
-    logger.debug("number_of_variables=%d, \nvariables_as_array=%s, \nstatement=%s, \nnew_elements=%s.",
+    logger.debug("In user_input(): \nnumber_of_variables=%d, \nvariables_as_array=%s, \nstatement=%s, \nnew_elements=%s.",
                 number_of_variables, variables_as_array, statement, new_elements)
-    logger.info("Gathered all information needed.")
+    logger.info("Gathered all information needed including variables and parsed array.")
     return number_of_variables, variables_as_array, statement, new_elements

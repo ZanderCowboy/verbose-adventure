@@ -1,6 +1,4 @@
 from Components.Constants import VALID_BRACKETS, VALID_CONNECTIVES
-# from Components.Sanitizer import clean_whitespaces, clean_commas
-from Components.Sanitizer import clean_whitespaces
 from Logging.logging_config import logger
 
 
@@ -15,14 +13,7 @@ def find_variables(statement: str) -> list:
 	"""
 	logger.info("Finding variables in statement...")
 
-	# logger.info("All whitespaces and commas need to be removed, proceeding.")
-	logger.info("All whitespaces need to be removed, proceeding.")
-	statement = clean_whitespaces(statement)
-	# statement = clean_commas(statement)
-	# logger.warning("Removed any whitespaces or commas found in statement. "
-	# 			   "Proceeding with finding variables.")
-	logger.warning("Removed any whitespaces found in statement. "
-				   "Proceeding with finding variables.")
+	# todo Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
 
 	logger.debug("statement=%s", statement)
 	variables_array = []
@@ -48,5 +39,6 @@ def find_variables(statement: str) -> list:
 				continue
 
 	logger.debug("variables_array=%s", variables_array)
-	logger.info("Found all variables in statement. ")
+	logger.info("Found all variables in statement.")
+	logger.info("*** Variables:\t%s ***", variables_array)
 	return variables_array

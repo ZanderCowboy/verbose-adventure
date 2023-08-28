@@ -2,6 +2,6 @@ from Logging.logging_config import logger
 from Simulator.SimulateMain import simulate_main
 
 
-logger.warning("Starting engine...")
+logger.info("Starting Engine...")
 simulate_main()
-logger.warning("Exiting engine...")
+logger.info("Exiting Engine...")

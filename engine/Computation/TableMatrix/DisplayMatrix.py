@@ -2,17 +2,15 @@ from Logging.logging_config import logger
 
 
 def display_matrix(number_of_variables: int, returned_matrix: list, all_variables: list) -> None:
-	# print("Display Matrix")
-	logger.info("Displaying matrix to console...")
-	# logger.debug("Calling display_matrix(%d, %s, %s)...", number_of_variables, returned_matrix, all_variables)
+	logger.debug("Displaying matrix to console...")
 
 	auxiliary_variables = []  # Holds all the placeholder variables
 	for i in range(number_of_variables, len(all_variables) - 1):
 		auxiliary_variables.append(all_variables[i])
 	number_of_aux_variables = len(auxiliary_variables)
 
-	print("| ", end='')
 	# prints part for variables
+	print("| ", end='')
 	for j in range(number_of_variables):
 		if j != number_of_variables-1:
 			print(all_variables[j] + " | ", end='')
@@ -74,8 +72,6 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
 		for k in range(int(add_len)):
 			add_space += ' '
 		print(row[-1] + add_space + " || ", end='')
-		# print(row[-1] + " || ", end='')
-
 		print('\n', end='')
 
 	print("=" * count_characters)
@@ -85,12 +81,12 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
 def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, all_variables: list) -> int:
 	logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables, nr_auxiliary_variables, all_variables)
 
-	SPACE = 3
+	space = 3
 	total_space = 0
 
 	initial_space = 1
 	total_space += initial_space
-	spaces_for_variables = SPACE * number_of_variables
+	spaces_for_variables = space * number_of_variables
 	total_space += spaces_for_variables
 	spaces_for_single_sep = number_of_variables - 1
 	total_space += spaces_for_single_sep

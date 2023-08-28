@@ -43,4 +43,3 @@ def bicond(left, right):
 def default_case():
 	logger.debug("In default case...")
 	return "Default case executed."
-
