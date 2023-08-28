@@ -13,6 +13,7 @@ def validate_input(input_string: str) -> bool:
 	logger.debug("Checked against a regex. result(is it valid?)=%s.", result)
 	return result
 
+
 # todo Create Unit Test
 # Test cases
 test_cases = [

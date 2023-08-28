@@ -8,7 +8,7 @@ from Components.PrintDetails import print_details
 
 def parse_array(elements: list, variables: list) -> list:
     """
-    This takes an array of elements and variables, completes some santizing and
+    This takes an array of elements and variables, completes some sanitizing and
     checks and then calls an internal parse function to complete the parsing.
 
     :param elements: Array of elements in no particular structure

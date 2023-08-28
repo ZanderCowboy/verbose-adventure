@@ -21,7 +21,7 @@
 - Cleaned up the PropositionalRules.py
 - Created CheckBrackets.py, to be used as one of the checks for incoming statements
 - Created CheckForIllegalCharacters.py that checks for illegal characters as above
-- Cleaned up AnalizeFunction.py
+- Cleaned up AnalyzeFunction.py
 - Cleanup up and refactored ParseFunction.py
 - Created SimulateMain.py that can be used as main instead of Main.py
 - Cleaned up UserInput.py
