@@ -17,6 +17,7 @@ def analyze_statement(statement: str) -> [int, list, list]:
     """
     logger.info("Starting to analyze statement...")
 
+    logger.info("The statement is sanitized from any whitespaces.")
     logger.debug("All whitespaces need to be removed, proceeding.")
     statement = clean_whitespaces(statement)
     logger.debug("Finished removing any whitespaces found in statement. "

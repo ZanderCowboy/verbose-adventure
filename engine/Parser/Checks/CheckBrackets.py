@@ -26,7 +26,7 @@ def check_left_and_right_brackets(statement):
 		return True
 
 	logger.exception("FAIL: Unequal number of left and right brackets. "
-					 "Please check and try again. count=%d", count)
+					 "Please check: count=%d", count)
 	raise UnequalBracketsExcept("Input statement must have an equal number "
 								"of opening and closing brackets")
 

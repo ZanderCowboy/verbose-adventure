@@ -1,5 +1,5 @@
 from Logging.logging_config import logger
-from Parser.Parse.AnalizeFunction import analyze_statement
+from Parser.Parse.AnalyzeFunction import analyze_statement
 from Parser.Parse.ParseFunction import parse_array
 
 

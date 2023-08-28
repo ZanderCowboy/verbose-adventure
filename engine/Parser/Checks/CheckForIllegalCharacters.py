@@ -23,8 +23,8 @@ def check_for_illegal_characters(statement):
 		if validate_input(char):
 			continue
 		else:
-			logger.exception("FAIL: String contains illegal characters, please check and try again: char=%s", char)
-			raise IllegalCharactersException("String contains illegal characters, please check and try again")
+			logger.exception("FAIL: String contains illegal characters, please inspect: char=%s", char)
+			raise IllegalCharactersException("Exception: String contains illegal characters.")
 	logger.debug("******************** finished input validation *******************")
 
 	logger.info("PASS: There were no illegal characters found.")

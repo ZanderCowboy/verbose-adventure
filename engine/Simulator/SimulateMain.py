@@ -57,7 +57,7 @@ def simulate_main():
 		logger.debug("In simulate_main(): \nfinal_value_array=%s, \nreturned_matrix=%s, \nall_variables=%s",
 					 final_value_array, returned_matrix, all_variables)
 
-		print_details("Evaluate", ("Statement", statement),
+		print_details("EVALUATE", ("Statement", statement),
 					  ("Final Calculated Array", final_value_array),
 					  ("All Variables", all_variables),
 					  ("Final Matrix", returned_matrix))
