@@ -8,6 +8,7 @@ from Parser.Checks.CheckBrackets import UnequalBracketsExcept
 from Parser.Checks.CheckForIllegalCharacters import IllegalCharactersException
 from Simulator.UserInput import user_input
 from Simulator.input_statements import *
+from Parser.Checks.CheckConditionals import InvalidConditionalSymbolsExcept
 
 
 def simulate_main():
@@ -26,25 +27,38 @@ def simulate_main():
 			if (check_left_and_right_brackets(statement) and
 					check_for_illegal_characters(statement)):
 				pass
+
+			# todo Look into why statement is sent to user_input() and then
+			#  returned again
+
+			logger.info("All checks are valid, proceeding with extracting information from statement.")
+			number_of_variables, variables_as_array, provided_statement, elements_in_tree = user_input(statement)
+			logger.debug("In simulate_main(): \nnumber_of_variables=%d, \nvariables_as_array=%s, "
+						 "\nprovided_statement=%s, \nelements_in_tree=%s",
+						 number_of_variables, variables_as_array, provided_statement, elements_in_tree)
+
 		except UnequalBracketsExcept as ce:
-			logger.exception("Unequal Brackets Exception: ", ce)
+			logger.exception("Unequal Brackets Exception: %s", ce)
 			continue
 		except IllegalCharactersException as ice:
-			logger.exception("Illegal Characters Exception: ", ice)
+			logger.exception("Illegal Characters Exception: %s", ice)
+			continue
+		except InvalidConditionalSymbolsExcept as icse:
+			logger.exception("Invalid Conditional Symbols Exception: %s", icse)
 			continue
 		else:
 			pass
 
-		# todo Look into why statement is sent to user_input() and then
-		#  returned again
-
-		logger.info("All checks are valid, proceeding with extracting "
-					"information from statement.")
-		number_of_variables, variables_as_array, provided_statement, elements_in_tree = (
-			user_input(statement))
-		logger.debug("In simulate_main(): \nnumber_of_variables=%d, \nvariables_as_array=%s, "
-					 "\nprovided_statement=%s, \nelements_in_tree=%s",
-					 number_of_variables, variables_as_array, provided_statement, elements_in_tree)
+		# # todo Look into why statement is sent to user_input() and then
+		# #  returned again
+		#
+		# logger.info("All checks are valid, proceeding with extracting "
+		# 			"information from statement.")
+		# number_of_variables, variables_as_array, provided_statement, elements_in_tree = (
+		# 	user_input(statement))
+		# logger.debug("In simulate_main(): \nnumber_of_variables=%d, \nvariables_as_array=%s, "
+		# 			 "\nprovided_statement=%s, \nelements_in_tree=%s",
+		# 			 number_of_variables, variables_as_array, provided_statement, elements_in_tree)
 
 		print_details("SUMMARY",
 					  ("number_of_variables", number_of_variables),

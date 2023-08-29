@@ -1,6 +1,7 @@
 from Components.RegularExpression import validate_input
 from Components.Constants import *
 from Logging.logging_config import logger
+import re
 
 
 class IllegalCharactersException(Exception):
@@ -11,7 +12,7 @@ def check_for_illegal_characters(statement):
 	"""
 	Checks for illegal characters in the given statement
 	:param statement: (string)
-	:return: returns true in case statement is clear of illegal characters and
+	:return: returns True if case statement is clear of illegal characters and
 	raises an exception if not.
 	"""
 	logger.debug("Calling check_for_illegal_characters(%s)", statement)

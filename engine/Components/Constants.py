@@ -14,7 +14,9 @@ FALSE = 'F'
 # Constants used in the Components package
 # todo Add other connectives such as &&, ||, etc.
 VALID_BRACKETS = "(){}[]"
+VALID_BRACKETS_ARR = ['(', '{', '[', ')', '}', ']']
 VALID_CONNECTIVES = "^v!<->"
+VALID_CONNECTIVES_ARR = ['^', 'v', '!', '<->', '->']
 
 WHITE_SPACES = " "
 
@@ -25,6 +27,9 @@ CLOSE_ARROW = '>'
 COND_ELEM = "->"
 BICOND_ELEM = "<->"
 PRE_CHECK = ['<', '-', '>']
+OR_SYMBOL = ['v', 'V']
+AND_SYMBOL = ['^']
+NOT_SYMBOL = ['!']
 
 
 # todo What are illegal characters

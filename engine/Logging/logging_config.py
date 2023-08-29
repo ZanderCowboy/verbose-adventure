@@ -24,7 +24,7 @@ if os.path.exists(log_file):
 
 
 # Configure the logger
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s\t- %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s\t- %(message)s')
 # logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s\t- %(funcName)s - %(message)s')
 
 # Create a logger instance

@@ -4,6 +4,7 @@ from Components.FindVariables import find_variables
 from Components.Sanitizer import clean_whitespaces
 from Logging.logging_config import logger
 from Components.PrintDetails import print_details
+from Parser.Checks.CheckConditionals import check_conditionals
 
 
 def analyze_statement(statement: str) -> [int, list, list]:
@@ -31,7 +32,8 @@ def analyze_statement(statement: str) -> [int, list, list]:
     logger.info("The statement is converted to an array and any conditionals "
                 "are sanitized.")
     array_of_elements: list = create_array_of_elements(statement)
-    array_of_elements = create_conditionals(array_of_elements)
+    if check_conditionals(array_of_elements, variables_arr):
+        array_of_elements = create_conditionals(array_of_elements)
 
     logger.debug("In analyze_statement(): \nlen(variables_arr)=%d, \nvariables_arr=%s, \narray_of_elements=%s",
                  len(variables_arr), variables_arr, array_of_elements)
