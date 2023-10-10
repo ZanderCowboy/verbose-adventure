@@ -24,4 +24,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Flutter for Android" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="ddfd7467-5885-4574-b218-05a216c6d2d0" />
+  </component>
 </module>
