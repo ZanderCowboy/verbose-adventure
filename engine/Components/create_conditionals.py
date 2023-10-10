@@ -1,5 +1,7 @@
-"""
-Insert
+"""_summary_
+
+Returns:
+    _type_: _description_
 """
 from components.constants import OPEN_ARROW, DASH, CLOSE_ARROW, COND_ELEM, BICOND_ELEM, PRE_CHECK
 from engine_logging.logging_config import logger

@@ -1,9 +1,14 @@
-from Components.CreateConditionals import create_conditionals
-from Components.CreateElements import create_array_of_elements
-from Components.FindVariables import find_variables
-from Components.Sanitizer import clean_whitespaces
-from Logging.logging_config import logger
-from Components.PrintDetails import print_details
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
+import components.create_conditionals
+from components.create_elements import create_array_of_elements
+from components.find_variables import find_variables
+from components.sanitizer import clean_whitespaces
+from components.print_details import print_details
+from engine_logging.logging_config import logger
 
 
 def analyze_statement(statement: str) -> [int, list, list]:
@@ -31,9 +36,10 @@ def analyze_statement(statement: str) -> [int, list, list]:
     logger.info("The statement is converted to an array and any conditionals "
                 "are sanitized.")
     array_of_elements: list = create_array_of_elements(statement)
-    array_of_elements = create_conditionals(array_of_elements)
+    array_of_elements = components.create_conditionals.create_conditionals(array_of_elements)
 
-    logger.debug("In analyze_statement(): \nlen(variables_arr)=%d, \nvariables_arr=%s, \narray_of_elements=%s",
+    logger.debug("In analyze_statement(): \nlen(variables_arr)=%d, "
+                 "\nvariables_arr=%s, \narray_of_elements=%s",
                  len(variables_arr), variables_arr, array_of_elements)
     print_details("ANALYSIS",
                   ("Number of Variables", len(variables_arr)),

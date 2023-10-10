@@ -1,4 +1,5 @@
-from Logging.logging_config import logger
+""" Insert """
+from engine_logging.logging_config import logger
 
 
 def display_matrix(number_of_variables: int, returned_matrix: list, all_variables: list) -> None:

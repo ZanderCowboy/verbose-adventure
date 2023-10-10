@@ -1,5 +1,6 @@
+""" Insert """
 from Computation.TableMatrix.RecursiveTable import recursive_table
-from Logging.logging_config import logger
+from engine_logging.logging_config import logger
 
 
 def create_matrix(num_of_var: int) -> list:

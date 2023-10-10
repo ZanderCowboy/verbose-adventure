@@ -1,3 +1,5 @@
+"""_summary_
+"""
 # Global Variables
 # todo Change to UPPER CASE, for constants
 
@@ -18,14 +20,13 @@ VALID_CONNECTIVES = "^v!<->"
 
 WHITE_SPACES = " "
 
-# Constants used in CreateConditionals.py
+# Constants used in create_conditionals.py
 OPEN_ARROW = '<'
 DASH = '-'
 CLOSE_ARROW = '>'
 COND_ELEM = "->"
 BICOND_ELEM = "<->"
 PRE_CHECK = ['<', '-', '>']
-
 
 # todo What are illegal characters
 # What are illegal characters
@@ -39,4 +40,3 @@ PRE_CHECK = ['<', '-', '>']
 # Disjunction:	v | ||
 # Conditional:	-> => →(Alt 26)
 # Biconditional:	<-> <=>
-

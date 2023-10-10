@@ -1,5 +1,7 @@
-"""
-Insert
+"""_summary_
+
+Returns:
+    _type_: _description_
 """
 from engine_logging import logger
 from components import VALID_BRACKETS, VALID_CONNECTIVES

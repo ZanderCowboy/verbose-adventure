@@ -1,5 +1,6 @@
-from Components.Constants import TRUE, FALSE
-from Logging.logging_config import logger
+""" Insert """
+from components.constants import TRUE, FALSE
+from engine_logging.logging_config import logger
 
 
 def recursive_table(n):

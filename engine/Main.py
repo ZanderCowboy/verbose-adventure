@@ -1,5 +1,6 @@
-from Logging.logging_config import logger
-from Simulator.SimulateMain import simulate_main
+""" Insert """
+from engine_logging import logger
+from Simulator.simulate_main import simulate_main
 
 
 logger.info("Starting Engine...")

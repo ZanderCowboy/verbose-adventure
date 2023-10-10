@@ -1,9 +1,9 @@
-from Components.Constants import *
-from Components.Sanitizer import add_brackets_around_unary_connectives
-from Components.Sanitizer import remove_brackets_around_variables
-from Logging.logging_config import logger
+from components.constants import *
+from components.sanitizer import add_brackets_around_unary_connectives
+from components.sanitizer import remove_brackets_around_variables
+from engine_logging.logging_config import logger
 from Parser.Checks.CheckBrackets import check_left_and_right_brackets
-from Components.PrintDetails import print_details
+from components.print_details import print_details
 
 
 def parse_array(elements: list, variables: list) -> list:

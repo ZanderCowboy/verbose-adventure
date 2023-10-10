@@ -1,6 +1,11 @@
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 from math import log2
 
-from Computation.SwitchConnectives import switch_case
+from Computation.switch_connectives import switch_case
 from Computation.TableMatrix.CreateTableMatrix import create_matrix
 from engine_logging.logging_config import logger
 

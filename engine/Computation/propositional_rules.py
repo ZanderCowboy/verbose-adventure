@@ -1,5 +1,13 @@
-"""
-Insert
+"""_summary_
+
+Raises:
+    UnequalArraysExcept: _description_
+    UnequalArraysExcept: _description_
+    UnequalArraysExcept: _description_
+    UnequalArraysExcept: _description_
+
+Returns:
+    _type_: _description_
 """
 # This file is to give the rules to calculate the propositional logic.
 from math import log2
