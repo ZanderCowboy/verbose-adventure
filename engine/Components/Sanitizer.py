@@ -3,9 +3,6 @@
 Returns:
     _type_: _description_
 """
-# todo Changes statement to something that we can use
-# todo Change to something that the system can use
-# todo Add brackets
 # todo Change connectives to one common set
 # todo Change lower case letters to upper case
 

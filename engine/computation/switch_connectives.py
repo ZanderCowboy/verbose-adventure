@@ -58,16 +58,17 @@ def disj(left, right):
     return disjunction(left, right)
 
 
-# todo Refactor neg() to remove 'right' parameter
 def neg(left, _):
     """_summary_
 
     Args:
         left (_type_): _description_
-        right (_type_): _description_
+        _ (_type_): _description_
 
     Returns:
         _type_: _description_
+        :param left:
+        :param _:
     """
     logger.debug("In neg. case...")
     return negation(left)

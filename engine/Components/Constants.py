@@ -14,7 +14,6 @@ TRUE = 'T'
 FALSE = 'F'
 
 # Constants used in the Components package
-# todo Add other connectives such as &&, ||, etc.
 VALID_BRACKETS = "(){}[]"
 VALID_CONNECTIVES = "^v!<->"
 

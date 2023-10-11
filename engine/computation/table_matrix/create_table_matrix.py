@@ -29,7 +29,7 @@ def create_matrix(num_of_var: int) -> list:
 
     new_matrix = []
 
-    row_entries = [] * num_of_var
+    row_entries = [''] * num_of_var
     for i in range(2 ** num_of_var):
         get_row_values = str(table_entries[i])
         for j in range(0, num_of_var):

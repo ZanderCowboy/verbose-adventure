@@ -66,7 +66,6 @@ def simulate_main():
                         ("Final Matrix", returned_matrix))
         logger.info("Finished evaluating statement.")
 
-        # todo Ticket: Add and Modify Code for Console Output
         display_matrix(number_of_variables, returned_matrix, all_variables)
 
         logger.debug("Returning from simulate_main()...")

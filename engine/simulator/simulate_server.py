@@ -1,10 +1,6 @@
 """
 This can be used to simulate the calls that are made by the GRPC Server
 """
-# from parser.checks import check_brackets, check_for_illegal_characters
-# from parser.checks.check_brackets import UnequalBracketsExcept
-# from parser.checks.check_for_illegal_characters import IllegalCharactersException
-# from input_statements import statement
 from parser.checks import check_brackets
 from parser.checks import check_for_illegal_characters
 from parser.checks.check_brackets import UnequalBracketsExcept
