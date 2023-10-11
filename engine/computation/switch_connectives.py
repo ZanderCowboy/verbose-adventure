@@ -3,7 +3,7 @@
 Returns:
 	_type_: _description_
 """
-from Computation.propositional_rules import *
+from computation.propositional_rules import *
 from engine_logging.logging_config import logger
 
 

@@ -5,8 +5,8 @@ Returns:
 """
 from math import log2
 
-from Computation.switch_connectives import switch_case
-from Computation.TableMatrix.CreateTableMatrix import create_matrix
+from computation.switch_connectives import switch_case
+from computation.table_matrix.create_table_matrix import create_matrix
 from engine_logging.logging_config import logger
 
 

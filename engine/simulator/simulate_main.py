@@ -1,18 +1,19 @@
+""" Insert """
 from components.print_details import print_details
-from Computation.evaluate_statement import *
-from Computation.TableMatrix.DisplayMatrix import display_matrix
+from computation.evaluate_statement import *
+from computation.table_matrix.display_matrix import display_matrix
 from engine_logging.logging_config import logger
-from Parser.Checks.CheckBrackets import check_left_and_right_brackets
-from Parser.Checks.CheckForIllegalCharacters import check_for_illegal_characters
-from Parser.Checks.CheckBrackets import UnequalBracketsExcept
-from Parser.Checks.CheckForIllegalCharacters import IllegalCharactersException
-from Simulator.UserInput import user_input
-from Simulator.input_statements import *
+from parser.checks.check_brackets import check_left_and_right_brackets
+from parser.checks.check_for_illegal_characters import check_for_illegal_characters
+from parser.checks.check_brackets import UnequalBracketsExcept
+from parser.checks.check_for_illegal_characters import IllegalCharactersException
+from simulator.user_input import user_input
+from simulator.input_statements import *
 
 
 def simulate_main():
 	"""
-	This simulates Main.py
+	This simulates main.py
 	"""
 	logger.debug("Calling simulate_main()...")
 

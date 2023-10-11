@@ -6,7 +6,7 @@ import os
 
 MAX_LOG_FILES = 10
 LOG_FILE_NAME = 'engine.log'
-log_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'Output')
+log_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'output')
 log_file = os.path.join(log_folder, LOG_FILE_NAME)
 
 # Create the Output directory if it doesn't exist

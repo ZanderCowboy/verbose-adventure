@@ -4,8 +4,8 @@ Returns:
     _type_: _description_
 """
 from engine_logging.logging_config import logger
-from Parser.Parse.AnalyzeFunction import analyze_statement
-from Parser.Parse.ParseFunction import parse_array
+from parser.parse.analyze_function import analyze_statement
+from parser.parse.parse_function import parse_array
 
 
 def user_input(statement: str) -> [int, list, str, list]:
