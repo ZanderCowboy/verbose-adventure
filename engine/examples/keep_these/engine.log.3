@@ -1,0 +1,1203 @@
+2023-10-10 00:25:30,256 - INFO	- <module> - Starting Engine...
+2023-10-10 00:25:30,257 - DEBUG	- simulate_main - Calling simulate_main()...
+2023-10-10 00:25:30,257 - INFO	- simulate_main - Statement:	(T v (P -> Q))
+2023-10-10 00:25:30,257 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,257 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets((T v (P -> Q)))...
+2023-10-10 00:25:30,257 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,257 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters((T v (P -> Q)))
+2023-10-10 00:25:30,258 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Calling validate_input(T)...
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Calling validate_input(v)...
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,258 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Calling validate_input(-)...
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Calling validate_input(>)...
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,259 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,259 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,259 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,259 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,259 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,259 - DEBUG	- user_input - statement=(T v (P -> Q))
+2023-10-10 00:25:30,260 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,260 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,260 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,260 - DEBUG	- clean_whitespaces - Calling clean_whitespaces((T v (P -> Q)))...
+2023-10-10 00:25:30,260 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=(Tv(P->Q))
+2023-10-10 00:25:30,260 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,260 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,261 - DEBUG	- find_variables - statement=(Tv(P->Q))
+2023-10-10 00:25:30,261 - DEBUG	- find_variables - variables_array=['T', 'P', 'Q']
+2023-10-10 00:25:30,261 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,261 - INFO	- find_variables - *** Variables:	['T', 'P', 'Q'] ***
+2023-10-10 00:25:30,261 - DEBUG	- analyze_statement - variables_arr=['T', 'P', 'Q']
+2023-10-10 00:25:30,261 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,261 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,261 - DEBUG	- create_array_of_elements - Calling create_array_of_elements((Tv(P->Q)))
+2023-10-10 00:25:30,262 - DEBUG	- create_array_of_elements - array_of_elements=['(', 'T', 'v', '(', 'P', '-', '>', 'Q', ')', ')']
+2023-10-10 00:25:30,262 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,262 - DEBUG	- check_conditionals - Calling check_conditionals(['(', 'T', 'v', '(', 'P', '-', '>', 'Q', ')', ')'], ['T', 'P', 'Q'])...
+2023-10-10 00:25:30,262 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,262 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,262 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', 'T', 'v', '(', 'P', '-', '>', 'Q', ')', ')']
+2023-10-10 00:25:30,263 - DEBUG	- create_conditionals - Conditional symbols were found in ['(', 'T', 'v', '(', 'P', '-', '>', 'Q', ')', ')']
+2023-10-10 00:25:30,263 - DEBUG	- create_conditionals - array_of_elements=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,263 - DEBUG	- create_conditionals - Finished creating conditionals.
+2023-10-10 00:25:30,263 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=3, 
+variables_arr=['T', 'P', 'Q'], 
+array_of_elements=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,263 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,264 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,264 - INFO	- print_details - -> Number of Variables: 	3
+2023-10-10 00:25:30,264 - INFO	- print_details - -> Variables: 	['T', 'P', 'Q']
+2023-10-10 00:25:30,264 - INFO	- print_details - -> Array of Elements: 	['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,264 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,264 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,265 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,265 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,265 - DEBUG	- remove_brackets_around_variables - arr=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,265 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,265 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,265 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,265 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,266 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,266 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')']
+2023-10-10 00:25:30,266 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,266 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')'])...
+2023-10-10 00:25:30,266 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,266 - DEBUG	- parse - Calling parse(['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')'])...
+2023-10-10 00:25:30,266 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'T', 'v', '(', 'P', '->', 'Q', ')', ')'])...
+2023-10-10 00:25:30,266 - DEBUG	- remove_outer_brackets - array=['T', 'v', '(', 'P', '->', 'Q', ')']
+2023-10-10 00:25:30,267 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,267 - DEBUG	- parse - In parse(): arr=['T', 'v', '(', 'P', '->', 'Q', ')']
+2023-10-10 00:25:30,267 - DEBUG	- find_connective - Calling find_connectives(['T', 'v', '(', 'P', '->', 'Q', ')'])...
+2023-10-10 00:25:30,267 - DEBUG	- find_connective - In find_connective(): elem=v, i=1
+2023-10-10 00:25:30,267 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,267 - DEBUG	- parse - Calling parse(['(', 'P', '->', 'Q', ')'])...
+2023-10-10 00:25:30,268 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'P', '->', 'Q', ')'])...
+2023-10-10 00:25:30,268 - DEBUG	- remove_outer_brackets - array=['P', '->', 'Q']
+2023-10-10 00:25:30,268 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,268 - DEBUG	- parse - In parse(): arr=['P', '->', 'Q']
+2023-10-10 00:25:30,268 - DEBUG	- find_connective - Calling find_connectives(['P', '->', 'Q'])...
+2023-10-10 00:25:30,268 - DEBUG	- find_connective - In find_connective(): elem=->, i=1
+2023-10-10 00:25:30,268 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,269 - DEBUG	- parse - temp_array=[['P'], '->', ['Q']]
+2023-10-10 00:25:30,269 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,269 - DEBUG	- parse - temp_array=[['T'], 'v', [['P'], '->', ['Q']]]
+2023-10-10 00:25:30,269 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,269 - DEBUG	- parse_array - tree_structured_array=[['T'], 'v', [['P'], '->', ['Q']]]
+2023-10-10 00:25:30,269 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,269 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,270 - INFO	- print_details - -> Parsed Array: 	[['T'], 'v', [['P'], '->', ['Q']]]
+2023-10-10 00:25:30,270 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,270 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,270 - DEBUG	- user_input - In user_input(): 
+number_of_variables=3, 
+variables_as_array=['T', 'P', 'Q'], 
+statement=(T v (P -> Q)), 
+new_elements=[['T'], 'v', [['P'], '->', ['Q']]].
+2023-10-10 00:25:30,270 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,271 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=3, 
+variables_as_array=['T', 'P', 'Q'], 
+provided_statement=(T v (P -> Q)), 
+elements_in_tree=[['T'], 'v', [['P'], '->', ['Q']]]
+2023-10-10 00:25:30,271 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,271 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,271 - INFO	- print_details - -> number_of_variables: 	3
+2023-10-10 00:25:30,271 - INFO	- print_details - -> variables_as_array: 	['T', 'P', 'Q']
+2023-10-10 00:25:30,271 - INFO	- print_details - -> provided_statement: 	(T v (P -> Q))
+2023-10-10 00:25:30,272 - INFO	- print_details - -> elements_in_tree: 	[['T'], 'v', [['P'], '->', ['Q']]]
+2023-10-10 00:25:30,272 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,272 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,272 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,272 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,272 - DEBUG	- recursive_table - n=3
+2023-10-10 00:25:30,272 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,273 - DEBUG	- recursive_table - array_table=['TTT', 'TTF', 'TFT', 'TFF', 'FTT', 'FTF', 'FFT', 'FFF']
+2023-10-10 00:25:30,274 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,274 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']]
+2023-10-10 00:25:30,274 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,274 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']] ***
+2023-10-10 00:25:30,274 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[['T'], 'v', [['P'], '->', ['Q']]], 
+counter=0, 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables_as_array=['T', 'P', 'Q']
+2023-10-10 00:25:30,275 - DEBUG	- evaluate_array - Calling evaluate_array([['T'], 'v', [['P'], '->', ['Q']]], 0, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'P', 'Q'])...
+2023-10-10 00:25:30,275 - DEBUG	- evaluate_array - Calling evaluate_array([['P'], '->', ['Q']], 1, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'P', 'Q'])...
+2023-10-10 00:25:30,275 - DEBUG	- switch_case - Entering switch_case(->, ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,275 - DEBUG	- cond - In cond. case...
+2023-10-10 00:25:30,276 - DEBUG	- conditional - Calling conditional(['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,276 - DEBUG	- conditional - new_row_values=['T', 'F', 'T', 'T', 'T', 'F', 'T', 'T']
+2023-10-10 00:25:30,276 - DEBUG	- conditional - Returning with new row values.
+2023-10-10 00:25:30,276 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P'], '->', ['Q']])...
+2023-10-10 00:25:30,276 - DEBUG	- set_new_array_elem - new_array=['P->Q']
+2023-10-10 00:25:30,276 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,277 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'T', 'T', 'T', 'F', 'T', 'T'], 
+final_variable_combined=['P->Q'], 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables=['T', 'P', 'Q']
+2023-10-10 00:25:30,277 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,277 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'F', 'T', 'T', 'T', 'F', 'T', 'T'], ['T', 'P', 'Q'], ['P->Q'])...
+2023-10-10 00:25:30,278 - DEBUG	- add_array_to_matrix - variables=['T', 'P', 'Q', 'P->Q']
+2023-10-10 00:25:30,278 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,278 - DEBUG	- switch_case - Entering switch_case(v, ['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'T', 'T', 'T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,278 - DEBUG	- disj - In disj. case...
+2023-10-10 00:25:30,278 - DEBUG	- disjunction - Calling disjunction(['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'T', 'T', 'T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,278 - DEBUG	- disjunction - new_row_values=['T', 'T', 'T', 'T', 'T', 'F', 'T', 'T']
+2023-10-10 00:25:30,279 - DEBUG	- disjunction - Returning with new row values.
+2023-10-10 00:25:30,279 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['T'], 'v', ['P->Q']])...
+2023-10-10 00:25:30,279 - DEBUG	- set_new_array_elem - new_array=['Tv(P->Q)']
+2023-10-10 00:25:30,279 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,279 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'T', 'T', 'T', 'T', 'F', 'T', 'T'], 
+final_variable_combined=['Tv(P->Q)'], 
+matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'T'], ['T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'T'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'T', 'T'], ['F', 'F', 'F', 'T', 'T']], 
+variables=['T', 'P', 'Q', 'P->Q']
+2023-10-10 00:25:30,280 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,280 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'T', 'T', 'T', 'T', 'F', 'T', 'T'], returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'T'], ['T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'T'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'T', 'T'], ['F', 'F', 'F', 'T', 'T']], all_variables=['T', 'P', 'Q', 'P->Q', 'Tv(P->Q)']
+2023-10-10 00:25:30,280 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,280 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'T', 'T', 'T', 'T', 'F', 'T', 'T'], 
+returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'T'], ['T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'T'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'T', 'T'], ['F', 'F', 'F', 'T', 'T']], 
+all_variables=['T', 'P', 'Q', 'P->Q', 'Tv(P->Q)']
+2023-10-10 00:25:30,281 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,281 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,281 - INFO	- print_details - -> Statement: 	(T v (P -> Q))
+2023-10-10 00:25:30,281 - INFO	- print_details - -> Final Calculated Array: 	['T', 'T', 'T', 'T', 'T', 'F', 'T', 'T']
+2023-10-10 00:25:30,281 - INFO	- print_details - -> All Variables: 	['T', 'P', 'Q', 'P->Q', 'Tv(P->Q)']
+2023-10-10 00:25:30,281 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'T'], ['T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'T'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'T', 'T'], ['F', 'F', 'F', 'T', 'T']]
+2023-10-10 00:25:30,282 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,282 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,282 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,282 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(3, 1, ['T', 'P', 'Q', 'P->Q', 'Tv(P->Q)'])...
+2023-10-10 00:25:30,282 - DEBUG	- get_number_of_spaces - total_space=32
+2023-10-10 00:25:30,283 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,284 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,284 - INFO	- simulate_main - Statement:	((T ^ Q) v (P ^ Q))
+2023-10-10 00:25:30,284 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,284 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(((T ^ Q) v (P ^ Q)))...
+2023-10-10 00:25:30,284 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,285 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters(((T ^ Q) v (P ^ Q)))
+2023-10-10 00:25:30,285 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,285 - DEBUG	- validate_input - Calling validate_input(T)...
+2023-10-10 00:25:30,285 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,285 - DEBUG	- validate_input - Calling validate_input(^)...
+2023-10-10 00:25:30,285 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,285 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Calling validate_input(v)...
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Calling validate_input(^)...
+2023-10-10 00:25:30,286 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,287 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,287 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,287 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,287 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,287 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,287 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,288 - DEBUG	- user_input - statement=((T ^ Q) v (P ^ Q))
+2023-10-10 00:25:30,288 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,288 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,288 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,288 - DEBUG	- clean_whitespaces - Calling clean_whitespaces(((T ^ Q) v (P ^ Q)))...
+2023-10-10 00:25:30,289 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=((T^Q)v(P^Q))
+2023-10-10 00:25:30,289 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,289 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,289 - DEBUG	- find_variables - statement=((T^Q)v(P^Q))
+2023-10-10 00:25:30,289 - DEBUG	- find_variables - variables_array=['T', 'Q', 'P']
+2023-10-10 00:25:30,289 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,290 - INFO	- find_variables - *** Variables:	['T', 'Q', 'P'] ***
+2023-10-10 00:25:30,290 - DEBUG	- analyze_statement - variables_arr=['T', 'Q', 'P']
+2023-10-10 00:25:30,290 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,290 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,290 - DEBUG	- create_array_of_elements - Calling create_array_of_elements(((T^Q)v(P^Q)))
+2023-10-10 00:25:30,290 - DEBUG	- create_array_of_elements - array_of_elements=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,291 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,291 - DEBUG	- check_conditionals - Calling check_conditionals(['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')'], ['T', 'Q', 'P'])...
+2023-10-10 00:25:30,291 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,291 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,291 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,292 - DEBUG	- create_conditionals - Search for conditionals finished and none were found, returning.
+2023-10-10 00:25:30,292 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=3, 
+variables_arr=['T', 'Q', 'P'], 
+array_of_elements=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,292 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,293 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,293 - INFO	- print_details - -> Number of Variables: 	3
+2023-10-10 00:25:30,293 - INFO	- print_details - -> Variables: 	['T', 'Q', 'P']
+2023-10-10 00:25:30,293 - INFO	- print_details - -> Array of Elements: 	['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,293 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,293 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,295 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,295 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,295 - DEBUG	- remove_brackets_around_variables - arr=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,295 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,295 - DEBUG	- parse_array - In parse_array(): elements_second=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,296 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,296 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,296 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,296 - DEBUG	- parse_array - In parse_array(): elements_second=['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,296 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,297 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,297 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,297 - DEBUG	- parse - Calling parse(['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,297 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', '(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,297 - DEBUG	- remove_outer_brackets - array=['(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')']
+2023-10-10 00:25:30,297 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,298 - DEBUG	- parse - In parse(): arr=['(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')']
+2023-10-10 00:25:30,298 - DEBUG	- find_connective - Calling find_connectives(['(', 'T', '^', 'Q', ')', 'v', '(', 'P', '^', 'Q', ')'])...
+2023-10-10 00:25:30,298 - DEBUG	- find_connective - In find_connective(): elem=v, i=5
+2023-10-10 00:25:30,298 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,298 - DEBUG	- parse - Calling parse(['(', 'T', '^', 'Q', ')'])...
+2023-10-10 00:25:30,298 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'T', '^', 'Q', ')'])...
+2023-10-10 00:25:30,299 - DEBUG	- remove_outer_brackets - array=['T', '^', 'Q']
+2023-10-10 00:25:30,299 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,299 - DEBUG	- parse - In parse(): arr=['T', '^', 'Q']
+2023-10-10 00:25:30,299 - DEBUG	- find_connective - Calling find_connectives(['T', '^', 'Q'])...
+2023-10-10 00:25:30,299 - DEBUG	- find_connective - In find_connective(): elem=^, i=1
+2023-10-10 00:25:30,299 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,299 - DEBUG	- parse - temp_array=[['T'], '^', ['Q']]
+2023-10-10 00:25:30,300 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,300 - DEBUG	- parse - Calling parse(['(', 'P', '^', 'Q', ')'])...
+2023-10-10 00:25:30,300 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'P', '^', 'Q', ')'])...
+2023-10-10 00:25:30,300 - DEBUG	- remove_outer_brackets - array=['P', '^', 'Q']
+2023-10-10 00:25:30,300 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,300 - DEBUG	- parse - In parse(): arr=['P', '^', 'Q']
+2023-10-10 00:25:30,300 - DEBUG	- find_connective - Calling find_connectives(['P', '^', 'Q'])...
+2023-10-10 00:25:30,300 - DEBUG	- find_connective - In find_connective(): elem=^, i=1
+2023-10-10 00:25:30,300 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,300 - DEBUG	- parse - temp_array=[['P'], '^', ['Q']]
+2023-10-10 00:25:30,300 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,300 - DEBUG	- parse - temp_array=[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]]
+2023-10-10 00:25:30,301 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,301 - DEBUG	- parse_array - tree_structured_array=[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]]
+2023-10-10 00:25:30,301 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,301 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,302 - INFO	- print_details - -> Parsed Array: 	[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]]
+2023-10-10 00:25:30,302 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,302 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,302 - DEBUG	- user_input - In user_input(): 
+number_of_variables=3, 
+variables_as_array=['T', 'Q', 'P'], 
+statement=((T ^ Q) v (P ^ Q)), 
+new_elements=[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]].
+2023-10-10 00:25:30,302 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,302 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=3, 
+variables_as_array=['T', 'Q', 'P'], 
+provided_statement=((T ^ Q) v (P ^ Q)), 
+elements_in_tree=[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]]
+2023-10-10 00:25:30,303 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,303 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,303 - INFO	- print_details - -> number_of_variables: 	3
+2023-10-10 00:25:30,303 - INFO	- print_details - -> variables_as_array: 	['T', 'Q', 'P']
+2023-10-10 00:25:30,303 - INFO	- print_details - -> provided_statement: 	((T ^ Q) v (P ^ Q))
+2023-10-10 00:25:30,303 - INFO	- print_details - -> elements_in_tree: 	[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]]
+2023-10-10 00:25:30,304 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,304 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,304 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,304 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,304 - DEBUG	- recursive_table - n=3
+2023-10-10 00:25:30,304 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,304 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,305 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,305 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,305 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,305 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,305 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,306 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,306 - DEBUG	- recursive_table - array_table=['TTT', 'TTF', 'TFT', 'TFF', 'FTT', 'FTF', 'FFT', 'FFF']
+2023-10-10 00:25:30,306 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,306 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']]
+2023-10-10 00:25:30,306 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,306 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']] ***
+2023-10-10 00:25:30,306 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]], 
+counter=0, 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables_as_array=['T', 'Q', 'P']
+2023-10-10 00:25:30,307 - DEBUG	- evaluate_array - Calling evaluate_array([[['T'], '^', ['Q']], 'v', [['P'], '^', ['Q']]], 0, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'Q', 'P'])...
+2023-10-10 00:25:30,307 - DEBUG	- evaluate_array - Calling evaluate_array([['T'], '^', ['Q']], 1, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'Q', 'P'])...
+2023-10-10 00:25:30,307 - DEBUG	- switch_case - Entering switch_case(^, ['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,307 - DEBUG	- conj - In conj. case...
+2023-10-10 00:25:30,307 - DEBUG	- conjunction - Calling conjunction(['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,308 - DEBUG	- conjunction - new_row_values=['T', 'T', 'F', 'F', 'F', 'F', 'F', 'F']
+2023-10-10 00:25:30,308 - DEBUG	- conjunction - Returning with new row values.
+2023-10-10 00:25:30,308 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['T'], '^', ['Q']])...
+2023-10-10 00:25:30,308 - DEBUG	- set_new_array_elem - new_array=['T^Q']
+2023-10-10 00:25:30,308 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,308 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'T', 'F', 'F', 'F', 'F', 'F', 'F'], 
+final_variable_combined=['T^Q'], 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables=['T', 'Q', 'P']
+2023-10-10 00:25:30,309 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,309 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'T', 'F', 'F', 'F', 'F', 'F', 'F'], ['T', 'Q', 'P'], ['T^Q'])...
+2023-10-10 00:25:30,309 - DEBUG	- add_array_to_matrix - variables=['T', 'Q', 'P', 'T^Q']
+2023-10-10 00:25:30,309 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,309 - DEBUG	- evaluate_array - Calling evaluate_array([['P'], '^', ['Q']], 1, [['T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T'], ['T', 'F', 'T', 'F'], ['T', 'F', 'F', 'F'], ['F', 'T', 'T', 'F'], ['F', 'T', 'F', 'F'], ['F', 'F', 'T', 'F'], ['F', 'F', 'F', 'F']], ['T', 'Q', 'P', 'T^Q'])...
+2023-10-10 00:25:30,309 - DEBUG	- switch_case - Entering switch_case(^, ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'], ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,310 - DEBUG	- conj - In conj. case...
+2023-10-10 00:25:30,310 - DEBUG	- conjunction - Calling conjunction(['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'], ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,310 - DEBUG	- conjunction - new_row_values=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F']
+2023-10-10 00:25:30,310 - DEBUG	- conjunction - Returning with new row values.
+2023-10-10 00:25:30,310 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P'], '^', ['Q']])...
+2023-10-10 00:25:30,310 - DEBUG	- set_new_array_elem - new_array=['P^Q']
+2023-10-10 00:25:30,310 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,311 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], 
+final_variable_combined=['P^Q'], 
+matrix=[['T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T'], ['T', 'F', 'T', 'F'], ['T', 'F', 'F', 'F'], ['F', 'T', 'T', 'F'], ['F', 'T', 'F', 'F'], ['F', 'F', 'T', 'F'], ['F', 'F', 'F', 'F']], 
+variables=['T', 'Q', 'P', 'T^Q']
+2023-10-10 00:25:30,312 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,312 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T'], ['T', 'F', 'T', 'F'], ['T', 'F', 'F', 'F'], ['F', 'T', 'T', 'F'], ['F', 'T', 'F', 'F'], ['F', 'F', 'T', 'F'], ['F', 'F', 'F', 'F']], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], ['T', 'Q', 'P', 'T^Q'], ['P^Q'])...
+2023-10-10 00:25:30,312 - DEBUG	- add_array_to_matrix - variables=['T', 'Q', 'P', 'T^Q', 'P^Q']
+2023-10-10 00:25:30,312 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,313 - DEBUG	- switch_case - Entering switch_case(v, ['T', 'T', 'F', 'F', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,313 - DEBUG	- disj - In disj. case...
+2023-10-10 00:25:30,313 - DEBUG	- disjunction - Calling disjunction(['T', 'T', 'F', 'F', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,313 - DEBUG	- disjunction - new_row_values=['T', 'T', 'F', 'F', 'T', 'F', 'F', 'F']
+2023-10-10 00:25:30,314 - DEBUG	- disjunction - Returning with new row values.
+2023-10-10 00:25:30,314 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['T^Q'], 'v', ['P^Q']])...
+2023-10-10 00:25:30,314 - DEBUG	- set_new_array_elem - new_array=['(T^Q)v(P^Q)']
+2023-10-10 00:25:30,314 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,314 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'T', 'F', 'F', 'T', 'F', 'F', 'F'], 
+final_variable_combined=['(T^Q)v(P^Q)'], 
+matrix=[['T', 'T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T', 'F', 'T'], ['T', 'F', 'T', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'F', 'T', 'T'], ['F', 'T', 'F', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F', 'F'], ['F', 'F', 'F', 'F', 'F', 'F']], 
+variables=['T', 'Q', 'P', 'T^Q', 'P^Q']
+2023-10-10 00:25:30,315 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,315 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'T', 'F', 'F', 'T', 'F', 'F', 'F'], returned_matrix=[['T', 'T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T', 'F', 'T'], ['T', 'F', 'T', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'F', 'T', 'T'], ['F', 'T', 'F', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F', 'F'], ['F', 'F', 'F', 'F', 'F', 'F']], all_variables=['T', 'Q', 'P', 'T^Q', 'P^Q', '(T^Q)v(P^Q)']
+2023-10-10 00:25:30,315 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,315 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'T', 'F', 'F', 'T', 'F', 'F', 'F'], 
+returned_matrix=[['T', 'T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T', 'F', 'T'], ['T', 'F', 'T', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'F', 'T', 'T'], ['F', 'T', 'F', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F', 'F'], ['F', 'F', 'F', 'F', 'F', 'F']], 
+all_variables=['T', 'Q', 'P', 'T^Q', 'P^Q', '(T^Q)v(P^Q)']
+2023-10-10 00:25:30,316 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,316 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,316 - INFO	- print_details - -> Statement: 	((T ^ Q) v (P ^ Q))
+2023-10-10 00:25:30,316 - INFO	- print_details - -> Final Calculated Array: 	['T', 'T', 'F', 'F', 'T', 'F', 'F', 'F']
+2023-10-10 00:25:30,316 - INFO	- print_details - -> All Variables: 	['T', 'Q', 'P', 'T^Q', 'P^Q', '(T^Q)v(P^Q)']
+2023-10-10 00:25:30,316 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'T', 'F', 'T'], ['T', 'F', 'T', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'F', 'T', 'T'], ['F', 'T', 'F', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F', 'F'], ['F', 'F', 'F', 'F', 'F', 'F']]
+2023-10-10 00:25:30,316 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,317 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,317 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,317 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(3, 2, ['T', 'Q', 'P', 'T^Q', 'P^Q', '(T^Q)v(P^Q)'])...
+2023-10-10 00:25:30,317 - DEBUG	- get_number_of_spaces - total_space=40
+2023-10-10 00:25:30,318 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,319 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,319 - INFO	- simulate_main - Statement:	(S ^ (R ^ Q))
+2023-10-10 00:25:30,319 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,320 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets((S ^ (R ^ Q)))...
+2023-10-10 00:25:30,320 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,320 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters((S ^ (R ^ Q)))
+2023-10-10 00:25:30,320 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,320 - DEBUG	- validate_input - Calling validate_input(S)...
+2023-10-10 00:25:30,320 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,320 - DEBUG	- validate_input - Calling validate_input(^)...
+2023-10-10 00:25:30,320 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,320 - DEBUG	- validate_input - Calling validate_input(R)...
+2023-10-10 00:25:30,321 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,321 - DEBUG	- validate_input - Calling validate_input(^)...
+2023-10-10 00:25:30,321 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,322 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,322 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,322 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,322 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,322 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,322 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,323 - DEBUG	- user_input - statement=(S ^ (R ^ Q))
+2023-10-10 00:25:30,323 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,323 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,323 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,323 - DEBUG	- clean_whitespaces - Calling clean_whitespaces((S ^ (R ^ Q)))...
+2023-10-10 00:25:30,323 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=(S^(R^Q))
+2023-10-10 00:25:30,323 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,324 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,324 - DEBUG	- find_variables - statement=(S^(R^Q))
+2023-10-10 00:25:30,324 - DEBUG	- find_variables - variables_array=['S', 'R', 'Q']
+2023-10-10 00:25:30,324 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,324 - INFO	- find_variables - *** Variables:	['S', 'R', 'Q'] ***
+2023-10-10 00:25:30,325 - DEBUG	- analyze_statement - variables_arr=['S', 'R', 'Q']
+2023-10-10 00:25:30,325 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,325 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,325 - DEBUG	- create_array_of_elements - Calling create_array_of_elements((S^(R^Q)))
+2023-10-10 00:25:30,325 - DEBUG	- create_array_of_elements - array_of_elements=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,326 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,326 - DEBUG	- check_conditionals - Calling check_conditionals(['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')'], ['S', 'R', 'Q'])...
+2023-10-10 00:25:30,326 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,326 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,326 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,326 - DEBUG	- create_conditionals - Search for conditionals finished and none were found, returning.
+2023-10-10 00:25:30,327 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=3, 
+variables_arr=['S', 'R', 'Q'], 
+array_of_elements=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,327 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,327 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,327 - INFO	- print_details - -> Number of Variables: 	3
+2023-10-10 00:25:30,327 - INFO	- print_details - -> Variables: 	['S', 'R', 'Q']
+2023-10-10 00:25:30,328 - INFO	- print_details - -> Array of Elements: 	['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,328 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,328 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,328 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,328 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,328 - DEBUG	- remove_brackets_around_variables - arr=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,329 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,329 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,329 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,329 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,329 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,329 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')']
+2023-10-10 00:25:30,329 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,329 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,330 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,330 - DEBUG	- parse - Calling parse(['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,330 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'S', '^', '(', 'R', '^', 'Q', ')', ')'])...
+2023-10-10 00:25:30,330 - DEBUG	- remove_outer_brackets - array=['S', '^', '(', 'R', '^', 'Q', ')']
+2023-10-10 00:25:30,330 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,330 - DEBUG	- parse - In parse(): arr=['S', '^', '(', 'R', '^', 'Q', ')']
+2023-10-10 00:25:30,330 - DEBUG	- find_connective - Calling find_connectives(['S', '^', '(', 'R', '^', 'Q', ')'])...
+2023-10-10 00:25:30,330 - DEBUG	- find_connective - In find_connective(): elem=^, i=1
+2023-10-10 00:25:30,330 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,330 - DEBUG	- parse - Calling parse(['(', 'R', '^', 'Q', ')'])...
+2023-10-10 00:25:30,331 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'R', '^', 'Q', ')'])...
+2023-10-10 00:25:30,331 - DEBUG	- remove_outer_brackets - array=['R', '^', 'Q']
+2023-10-10 00:25:30,331 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,332 - DEBUG	- parse - In parse(): arr=['R', '^', 'Q']
+2023-10-10 00:25:30,332 - DEBUG	- find_connective - Calling find_connectives(['R', '^', 'Q'])...
+2023-10-10 00:25:30,332 - DEBUG	- find_connective - In find_connective(): elem=^, i=1
+2023-10-10 00:25:30,332 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,332 - DEBUG	- parse - temp_array=[['R'], '^', ['Q']]
+2023-10-10 00:25:30,332 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,333 - DEBUG	- parse - temp_array=[['S'], '^', [['R'], '^', ['Q']]]
+2023-10-10 00:25:30,333 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,333 - DEBUG	- parse_array - tree_structured_array=[['S'], '^', [['R'], '^', ['Q']]]
+2023-10-10 00:25:30,333 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,333 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,333 - INFO	- print_details - -> Parsed Array: 	[['S'], '^', [['R'], '^', ['Q']]]
+2023-10-10 00:25:30,333 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,334 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,334 - DEBUG	- user_input - In user_input(): 
+number_of_variables=3, 
+variables_as_array=['S', 'R', 'Q'], 
+statement=(S ^ (R ^ Q)), 
+new_elements=[['S'], '^', [['R'], '^', ['Q']]].
+2023-10-10 00:25:30,334 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,334 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=3, 
+variables_as_array=['S', 'R', 'Q'], 
+provided_statement=(S ^ (R ^ Q)), 
+elements_in_tree=[['S'], '^', [['R'], '^', ['Q']]]
+2023-10-10 00:25:30,334 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,335 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,335 - INFO	- print_details - -> number_of_variables: 	3
+2023-10-10 00:25:30,335 - INFO	- print_details - -> variables_as_array: 	['S', 'R', 'Q']
+2023-10-10 00:25:30,335 - INFO	- print_details - -> provided_statement: 	(S ^ (R ^ Q))
+2023-10-10 00:25:30,335 - INFO	- print_details - -> elements_in_tree: 	[['S'], '^', [['R'], '^', ['Q']]]
+2023-10-10 00:25:30,335 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,335 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,335 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - n=3
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,336 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - array_table=['TTT', 'TTF', 'TFT', 'TFF', 'FTT', 'FTF', 'FFT', 'FFF']
+2023-10-10 00:25:30,337 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,338 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']]
+2023-10-10 00:25:30,338 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,338 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']] ***
+2023-10-10 00:25:30,338 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[['S'], '^', [['R'], '^', ['Q']]], 
+counter=0, 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables_as_array=['S', 'R', 'Q']
+2023-10-10 00:25:30,339 - DEBUG	- evaluate_array - Calling evaluate_array([['S'], '^', [['R'], '^', ['Q']]], 0, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['S', 'R', 'Q'])...
+2023-10-10 00:25:30,339 - DEBUG	- evaluate_array - Calling evaluate_array([['R'], '^', ['Q']], 1, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['S', 'R', 'Q'])...
+2023-10-10 00:25:30,339 - DEBUG	- switch_case - Entering switch_case(^, ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,340 - DEBUG	- conj - In conj. case...
+2023-10-10 00:25:30,340 - DEBUG	- conjunction - Calling conjunction(['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,340 - DEBUG	- conjunction - new_row_values=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F']
+2023-10-10 00:25:30,340 - DEBUG	- conjunction - Returning with new row values.
+2023-10-10 00:25:30,340 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['R'], '^', ['Q']])...
+2023-10-10 00:25:30,340 - DEBUG	- set_new_array_elem - new_array=['R^Q']
+2023-10-10 00:25:30,340 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,340 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], 
+final_variable_combined=['R^Q'], 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables=['S', 'R', 'Q']
+2023-10-10 00:25:30,340 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,340 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], ['S', 'R', 'Q'], ['R^Q'])...
+2023-10-10 00:25:30,341 - DEBUG	- add_array_to_matrix - variables=['S', 'R', 'Q', 'R^Q']
+2023-10-10 00:25:30,341 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,341 - DEBUG	- switch_case - Entering switch_case(^, ['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,342 - DEBUG	- conj - In conj. case...
+2023-10-10 00:25:30,342 - DEBUG	- conjunction - Calling conjunction(['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,342 - DEBUG	- conjunction - new_row_values=['T', 'F', 'F', 'F', 'F', 'F', 'F', 'F']
+2023-10-10 00:25:30,342 - DEBUG	- conjunction - Returning with new row values.
+2023-10-10 00:25:30,342 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['S'], '^', ['R^Q']])...
+2023-10-10 00:25:30,342 - DEBUG	- set_new_array_elem - new_array=['S^(R^Q)']
+2023-10-10 00:25:30,343 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,343 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'F', 'F', 'F', 'F', 'F', 'F'], 
+final_variable_combined=['S^(R^Q)'], 
+matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'F'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F'], ['F', 'F', 'F', 'F', 'F']], 
+variables=['S', 'R', 'Q', 'R^Q']
+2023-10-10 00:25:30,344 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,344 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'F', 'F', 'F', 'F', 'F', 'F', 'F'], returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'F'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F'], ['F', 'F', 'F', 'F', 'F']], all_variables=['S', 'R', 'Q', 'R^Q', 'S^(R^Q)']
+2023-10-10 00:25:30,344 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,344 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'F', 'F', 'F', 'F', 'F', 'F', 'F'], 
+returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'F'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F'], ['F', 'F', 'F', 'F', 'F']], 
+all_variables=['S', 'R', 'Q', 'R^Q', 'S^(R^Q)']
+2023-10-10 00:25:30,345 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,345 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,345 - INFO	- print_details - -> Statement: 	(S ^ (R ^ Q))
+2023-10-10 00:25:30,345 - INFO	- print_details - -> Final Calculated Array: 	['T', 'F', 'F', 'F', 'F', 'F', 'F', 'F']
+2023-10-10 00:25:30,345 - INFO	- print_details - -> All Variables: 	['S', 'R', 'Q', 'R^Q', 'S^(R^Q)']
+2023-10-10 00:25:30,345 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'F'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F'], ['F', 'F', 'F', 'F', 'F']]
+2023-10-10 00:25:30,346 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,346 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,346 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,346 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(3, 1, ['S', 'R', 'Q', 'R^Q', 'S^(R^Q)'])...
+2023-10-10 00:25:30,346 - DEBUG	- get_number_of_spaces - total_space=30
+2023-10-10 00:25:30,347 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,348 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,348 - INFO	- simulate_main - Statement:	(P v Q)
+2023-10-10 00:25:30,348 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,348 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets((P v Q))...
+2023-10-10 00:25:30,348 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,348 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters((P v Q))
+2023-10-10 00:25:30,349 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Calling validate_input(v)...
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,349 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,349 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,350 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,350 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,350 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,350 - DEBUG	- user_input - statement=(P v Q)
+2023-10-10 00:25:30,350 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,350 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,350 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,351 - DEBUG	- clean_whitespaces - Calling clean_whitespaces((P v Q))...
+2023-10-10 00:25:30,351 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=(PvQ)
+2023-10-10 00:25:30,351 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,351 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,351 - DEBUG	- find_variables - statement=(PvQ)
+2023-10-10 00:25:30,351 - DEBUG	- find_variables - variables_array=['P', 'Q']
+2023-10-10 00:25:30,351 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,351 - INFO	- find_variables - *** Variables:	['P', 'Q'] ***
+2023-10-10 00:25:30,351 - DEBUG	- analyze_statement - variables_arr=['P', 'Q']
+2023-10-10 00:25:30,352 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,352 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,352 - DEBUG	- create_array_of_elements - Calling create_array_of_elements((PvQ))
+2023-10-10 00:25:30,352 - DEBUG	- create_array_of_elements - array_of_elements=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,352 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,352 - DEBUG	- check_conditionals - Calling check_conditionals(['(', 'P', 'v', 'Q', ')'], ['P', 'Q'])...
+2023-10-10 00:25:30,352 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,353 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,353 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,353 - DEBUG	- create_conditionals - Search for conditionals finished and none were found, returning.
+2023-10-10 00:25:30,353 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=2, 
+variables_arr=['P', 'Q'], 
+array_of_elements=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,353 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,354 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,354 - INFO	- print_details - -> Number of Variables: 	2
+2023-10-10 00:25:30,354 - INFO	- print_details - -> Variables: 	['P', 'Q']
+2023-10-10 00:25:30,354 - INFO	- print_details - -> Array of Elements: 	['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,354 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,354 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,354 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,355 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,355 - DEBUG	- remove_brackets_around_variables - arr=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,355 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,355 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,355 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,355 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,356 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,356 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'P', 'v', 'Q', ')']
+2023-10-10 00:25:30,356 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,356 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', 'P', 'v', 'Q', ')'])...
+2023-10-10 00:25:30,356 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,356 - DEBUG	- parse - Calling parse(['(', 'P', 'v', 'Q', ')'])...
+2023-10-10 00:25:30,356 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'P', 'v', 'Q', ')'])...
+2023-10-10 00:25:30,356 - DEBUG	- remove_outer_brackets - array=['P', 'v', 'Q']
+2023-10-10 00:25:30,357 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,357 - DEBUG	- parse - In parse(): arr=['P', 'v', 'Q']
+2023-10-10 00:25:30,357 - DEBUG	- find_connective - Calling find_connectives(['P', 'v', 'Q'])...
+2023-10-10 00:25:30,357 - DEBUG	- find_connective - In find_connective(): elem=v, i=1
+2023-10-10 00:25:30,357 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,357 - DEBUG	- parse - temp_array=[['P'], 'v', ['Q']]
+2023-10-10 00:25:30,357 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,358 - DEBUG	- parse_array - tree_structured_array=[['P'], 'v', ['Q']]
+2023-10-10 00:25:30,358 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,358 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,358 - INFO	- print_details - -> Parsed Array: 	[['P'], 'v', ['Q']]
+2023-10-10 00:25:30,358 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,358 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,359 - DEBUG	- user_input - In user_input(): 
+number_of_variables=2, 
+variables_as_array=['P', 'Q'], 
+statement=(P v Q), 
+new_elements=[['P'], 'v', ['Q']].
+2023-10-10 00:25:30,359 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,359 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=2, 
+variables_as_array=['P', 'Q'], 
+provided_statement=(P v Q), 
+elements_in_tree=[['P'], 'v', ['Q']]
+2023-10-10 00:25:30,360 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,360 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,360 - INFO	- print_details - -> number_of_variables: 	2
+2023-10-10 00:25:30,361 - INFO	- print_details - -> variables_as_array: 	['P', 'Q']
+2023-10-10 00:25:30,361 - INFO	- print_details - -> provided_statement: 	(P v Q)
+2023-10-10 00:25:30,361 - INFO	- print_details - -> elements_in_tree: 	[['P'], 'v', ['Q']]
+2023-10-10 00:25:30,361 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,361 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,362 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,362 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,363 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,363 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,363 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']]
+2023-10-10 00:25:30,363 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,363 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']] ***
+2023-10-10 00:25:30,363 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[['P'], 'v', ['Q']], 
+counter=0, 
+matrix=[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], 
+variables_as_array=['P', 'Q']
+2023-10-10 00:25:30,364 - DEBUG	- evaluate_array - Calling evaluate_array([['P'], 'v', ['Q']], 0, [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], ['P', 'Q'])...
+2023-10-10 00:25:30,364 - DEBUG	- switch_case - Entering switch_case(v, ['T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,364 - DEBUG	- disj - In disj. case...
+2023-10-10 00:25:30,364 - DEBUG	- disjunction - Calling disjunction(['T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,364 - DEBUG	- disjunction - new_row_values=['T', 'T', 'T', 'F']
+2023-10-10 00:25:30,364 - DEBUG	- disjunction - Returning with new row values.
+2023-10-10 00:25:30,364 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P'], 'v', ['Q']])...
+2023-10-10 00:25:30,364 - DEBUG	- set_new_array_elem - new_array=['PvQ']
+2023-10-10 00:25:30,365 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,365 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'T', 'T', 'F'], 
+final_variable_combined=['PvQ'], 
+matrix=[['T', 'T', 'T'], ['T', 'F', 'T'], ['F', 'T', 'T'], ['F', 'F', 'F']], 
+variables=['P', 'Q']
+2023-10-10 00:25:30,365 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,365 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'T', 'T', 'F'], returned_matrix=[['T', 'T', 'T'], ['T', 'F', 'T'], ['F', 'T', 'T'], ['F', 'F', 'F']], all_variables=['P', 'Q', 'PvQ']
+2023-10-10 00:25:30,365 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,366 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'T', 'T', 'F'], 
+returned_matrix=[['T', 'T', 'T'], ['T', 'F', 'T'], ['F', 'T', 'T'], ['F', 'F', 'F']], 
+all_variables=['P', 'Q', 'PvQ']
+2023-10-10 00:25:30,366 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,366 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,366 - INFO	- print_details - -> Statement: 	(P v Q)
+2023-10-10 00:25:30,366 - INFO	- print_details - -> Final Calculated Array: 	['T', 'T', 'T', 'F']
+2023-10-10 00:25:30,367 - INFO	- print_details - -> All Variables: 	['P', 'Q', 'PvQ']
+2023-10-10 00:25:30,367 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T'], ['T', 'F', 'T'], ['F', 'T', 'T'], ['F', 'F', 'F']]
+2023-10-10 00:25:30,367 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,367 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,367 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,367 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(2, 0, ['P', 'Q', 'PvQ'])...
+2023-10-10 00:25:30,368 - DEBUG	- get_number_of_spaces - total_space=16
+2023-10-10 00:25:30,368 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,368 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,369 - INFO	- simulate_main - Statement:	(P -> (Q ^ R))
+2023-10-10 00:25:30,369 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,369 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets((P -> (Q ^ R)))...
+2023-10-10 00:25:30,369 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,369 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters((P -> (Q ^ R)))
+2023-10-10 00:25:30,369 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,369 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Calling validate_input(-)...
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Calling validate_input(>)...
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,370 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,371 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,371 - DEBUG	- validate_input - Calling validate_input(^)...
+2023-10-10 00:25:30,371 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,371 - DEBUG	- validate_input - Calling validate_input(R)...
+2023-10-10 00:25:30,371 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,371 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,371 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,372 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,372 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,372 - DEBUG	- user_input - statement=(P -> (Q ^ R))
+2023-10-10 00:25:30,372 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,372 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,372 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,373 - DEBUG	- clean_whitespaces - Calling clean_whitespaces((P -> (Q ^ R)))...
+2023-10-10 00:25:30,373 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=(P->(Q^R))
+2023-10-10 00:25:30,373 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,373 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,373 - DEBUG	- find_variables - statement=(P->(Q^R))
+2023-10-10 00:25:30,373 - DEBUG	- find_variables - variables_array=['P', 'Q', 'R']
+2023-10-10 00:25:30,374 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,374 - INFO	- find_variables - *** Variables:	['P', 'Q', 'R'] ***
+2023-10-10 00:25:30,374 - DEBUG	- analyze_statement - variables_arr=['P', 'Q', 'R']
+2023-10-10 00:25:30,374 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,374 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,374 - DEBUG	- create_array_of_elements - Calling create_array_of_elements((P->(Q^R)))
+2023-10-10 00:25:30,374 - DEBUG	- create_array_of_elements - array_of_elements=['(', 'P', '-', '>', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,375 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,375 - DEBUG	- check_conditionals - Calling check_conditionals(['(', 'P', '-', '>', '(', 'Q', '^', 'R', ')', ')'], ['P', 'Q', 'R'])...
+2023-10-10 00:25:30,375 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,375 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,375 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', 'P', '-', '>', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,375 - DEBUG	- create_conditionals - Conditional symbols were found in ['(', 'P', '-', '>', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,375 - DEBUG	- create_conditionals - array_of_elements=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,376 - DEBUG	- create_conditionals - Finished creating conditionals.
+2023-10-10 00:25:30,376 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=3, 
+variables_arr=['P', 'Q', 'R'], 
+array_of_elements=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,376 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,376 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,376 - INFO	- print_details - -> Number of Variables: 	3
+2023-10-10 00:25:30,376 - INFO	- print_details - -> Variables: 	['P', 'Q', 'R']
+2023-10-10 00:25:30,376 - INFO	- print_details - -> Array of Elements: 	['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,377 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,377 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,377 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,377 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,377 - DEBUG	- remove_brackets_around_variables - arr=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,377 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,377 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,378 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,378 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,378 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,378 - DEBUG	- parse_array - In parse_array(): elements_second=['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')']
+2023-10-10 00:25:30,378 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,378 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')'])...
+2023-10-10 00:25:30,378 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,378 - DEBUG	- parse - Calling parse(['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')'])...
+2023-10-10 00:25:30,379 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'P', '->', '(', 'Q', '^', 'R', ')', ')'])...
+2023-10-10 00:25:30,379 - DEBUG	- remove_outer_brackets - array=['P', '->', '(', 'Q', '^', 'R', ')']
+2023-10-10 00:25:30,379 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,379 - DEBUG	- parse - In parse(): arr=['P', '->', '(', 'Q', '^', 'R', ')']
+2023-10-10 00:25:30,379 - DEBUG	- find_connective - Calling find_connectives(['P', '->', '(', 'Q', '^', 'R', ')'])...
+2023-10-10 00:25:30,379 - DEBUG	- find_connective - In find_connective(): elem=->, i=1
+2023-10-10 00:25:30,379 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,380 - DEBUG	- parse - Calling parse(['(', 'Q', '^', 'R', ')'])...
+2023-10-10 00:25:30,380 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'Q', '^', 'R', ')'])...
+2023-10-10 00:25:30,380 - DEBUG	- remove_outer_brackets - array=['Q', '^', 'R']
+2023-10-10 00:25:30,380 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,380 - DEBUG	- parse - In parse(): arr=['Q', '^', 'R']
+2023-10-10 00:25:30,380 - DEBUG	- find_connective - Calling find_connectives(['Q', '^', 'R'])...
+2023-10-10 00:25:30,380 - DEBUG	- find_connective - In find_connective(): elem=^, i=1
+2023-10-10 00:25:30,381 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,381 - DEBUG	- parse - temp_array=[['Q'], '^', ['R']]
+2023-10-10 00:25:30,381 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,381 - DEBUG	- parse - temp_array=[['P'], '->', [['Q'], '^', ['R']]]
+2023-10-10 00:25:30,381 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,381 - DEBUG	- parse_array - tree_structured_array=[['P'], '->', [['Q'], '^', ['R']]]
+2023-10-10 00:25:30,381 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,382 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,382 - INFO	- print_details - -> Parsed Array: 	[['P'], '->', [['Q'], '^', ['R']]]
+2023-10-10 00:25:30,382 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,382 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,382 - DEBUG	- user_input - In user_input(): 
+number_of_variables=3, 
+variables_as_array=['P', 'Q', 'R'], 
+statement=(P -> (Q ^ R)), 
+new_elements=[['P'], '->', [['Q'], '^', ['R']]].
+2023-10-10 00:25:30,382 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,383 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=3, 
+variables_as_array=['P', 'Q', 'R'], 
+provided_statement=(P -> (Q ^ R)), 
+elements_in_tree=[['P'], '->', [['Q'], '^', ['R']]]
+2023-10-10 00:25:30,383 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,383 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,383 - INFO	- print_details - -> number_of_variables: 	3
+2023-10-10 00:25:30,383 - INFO	- print_details - -> variables_as_array: 	['P', 'Q', 'R']
+2023-10-10 00:25:30,383 - INFO	- print_details - -> provided_statement: 	(P -> (Q ^ R))
+2023-10-10 00:25:30,384 - INFO	- print_details - -> elements_in_tree: 	[['P'], '->', [['Q'], '^', ['R']]]
+2023-10-10 00:25:30,384 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,384 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,384 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,384 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,384 - DEBUG	- recursive_table - n=3
+2023-10-10 00:25:30,384 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,385 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,386 - DEBUG	- recursive_table - array_table=['TTT', 'TTF', 'TFT', 'TFF', 'FTT', 'FTF', 'FFT', 'FFF']
+2023-10-10 00:25:30,386 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,386 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']]
+2023-10-10 00:25:30,386 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,386 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']] ***
+2023-10-10 00:25:30,386 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[['P'], '->', [['Q'], '^', ['R']]], 
+counter=0, 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables_as_array=['P', 'Q', 'R']
+2023-10-10 00:25:30,387 - DEBUG	- evaluate_array - Calling evaluate_array([['P'], '->', [['Q'], '^', ['R']]], 0, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['P', 'Q', 'R'])...
+2023-10-10 00:25:30,387 - DEBUG	- evaluate_array - Calling evaluate_array([['Q'], '^', ['R']], 1, [['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['P', 'Q', 'R'])...
+2023-10-10 00:25:30,387 - DEBUG	- switch_case - Entering switch_case(^, ['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,387 - DEBUG	- conj - In conj. case...
+2023-10-10 00:25:30,387 - DEBUG	- conjunction - Calling conjunction(['T', 'T', 'F', 'F', 'T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F', 'T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,388 - DEBUG	- conjunction - new_row_values=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F']
+2023-10-10 00:25:30,388 - DEBUG	- conjunction - Returning with new row values.
+2023-10-10 00:25:30,388 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['Q'], '^', ['R']])...
+2023-10-10 00:25:30,388 - DEBUG	- set_new_array_elem - new_array=['Q^R']
+2023-10-10 00:25:30,388 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,388 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], 
+final_variable_combined=['Q^R'], 
+matrix=[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], 
+variables=['P', 'Q', 'R']
+2023-10-10 00:25:30,389 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,389 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'], ['P', 'Q', 'R'], ['Q^R'])...
+2023-10-10 00:25:30,389 - DEBUG	- add_array_to_matrix - variables=['P', 'Q', 'R', 'Q^R']
+2023-10-10 00:25:30,389 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,389 - DEBUG	- switch_case - Entering switch_case(->, ['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,390 - DEBUG	- cond - In cond. case...
+2023-10-10 00:25:30,390 - DEBUG	- conditional - Calling conditional(['T', 'T', 'T', 'T', 'F', 'F', 'F', 'F'], ['T', 'F', 'F', 'F', 'T', 'F', 'F', 'F'])...
+2023-10-10 00:25:30,390 - DEBUG	- conditional - new_row_values=['T', 'F', 'F', 'F', 'T', 'T', 'T', 'T']
+2023-10-10 00:25:30,390 - DEBUG	- conditional - Returning with new row values.
+2023-10-10 00:25:30,390 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P'], '->', ['Q^R']])...
+2023-10-10 00:25:30,390 - DEBUG	- set_new_array_elem - new_array=['P->(Q^R)']
+2023-10-10 00:25:30,390 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,391 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'F', 'F', 'T', 'T', 'T', 'T'], 
+final_variable_combined=['P->(Q^R)'], 
+matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'T'], ['F', 'F', 'T', 'F', 'T'], ['F', 'F', 'F', 'F', 'T']], 
+variables=['P', 'Q', 'R', 'Q^R']
+2023-10-10 00:25:30,391 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,391 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'F', 'F', 'F', 'T', 'T', 'T', 'T'], returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'T'], ['F', 'F', 'T', 'F', 'T'], ['F', 'F', 'F', 'F', 'T']], all_variables=['P', 'Q', 'R', 'Q^R', 'P->(Q^R)']
+2023-10-10 00:25:30,391 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,391 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'F', 'F', 'F', 'T', 'T', 'T', 'T'], 
+returned_matrix=[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'T'], ['F', 'F', 'T', 'F', 'T'], ['F', 'F', 'F', 'F', 'T']], 
+all_variables=['P', 'Q', 'R', 'Q^R', 'P->(Q^R)']
+2023-10-10 00:25:30,392 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,392 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,392 - INFO	- print_details - -> Statement: 	(P -> (Q ^ R))
+2023-10-10 00:25:30,393 - INFO	- print_details - -> Final Calculated Array: 	['T', 'F', 'F', 'F', 'T', 'T', 'T', 'T']
+2023-10-10 00:25:30,393 - INFO	- print_details - -> All Variables: 	['P', 'Q', 'R', 'Q^R', 'P->(Q^R)']
+2023-10-10 00:25:30,393 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'F'], ['T', 'F', 'T', 'F', 'F'], ['T', 'F', 'F', 'F', 'F'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'T'], ['F', 'F', 'T', 'F', 'T'], ['F', 'F', 'F', 'F', 'T']]
+2023-10-10 00:25:30,393 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,393 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,393 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,394 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(3, 1, ['P', 'Q', 'R', 'Q^R', 'P->(Q^R)'])...
+2023-10-10 00:25:30,394 - DEBUG	- get_number_of_spaces - total_space=31
+2023-10-10 00:25:30,394 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,395 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,395 - INFO	- simulate_main - Statement:	((P -> Q) <-> ((!Q) -> (!P)))
+2023-10-10 00:25:30,396 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-10-10 00:25:30,396 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(((P -> Q) <-> ((!Q) -> (!P))))...
+2023-10-10 00:25:30,396 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,396 - DEBUG	- check_for_illegal_characters - Calling check_for_illegal_characters(((P -> Q) <-> ((!Q) -> (!P))))
+2023-10-10 00:25:30,396 - DEBUG	- check_for_illegal_characters - ******************** starting input validation *******************
+2023-10-10 00:25:30,396 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,396 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Calling validate_input(-)...
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Calling validate_input(>)...
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Calling validate_input(<)...
+2023-10-10 00:25:30,397 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Calling validate_input(-)...
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Calling validate_input(>)...
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Calling validate_input(!)...
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,398 - DEBUG	- validate_input - Calling validate_input(Q)...
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Calling validate_input(-)...
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Calling validate_input(>)...
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Calling validate_input(!)...
+2023-10-10 00:25:30,399 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,400 - DEBUG	- validate_input - Calling validate_input(P)...
+2023-10-10 00:25:30,400 - DEBUG	- validate_input - Checked against a regex. result(is it valid?)=True.
+2023-10-10 00:25:30,400 - DEBUG	- check_for_illegal_characters - ******************** finished input validation *******************
+2023-10-10 00:25:30,400 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-10-10 00:25:30,400 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-10-10 00:25:30,400 - INFO	- user_input - Processing statement...
+2023-10-10 00:25:30,401 - DEBUG	- user_input - statement=((P -> Q) <-> ((!Q) -> (!P)))
+2023-10-10 00:25:30,401 - INFO	- analyze_statement - Starting to analyze statement...
+2023-10-10 00:25:30,401 - INFO	- analyze_statement - The statement is sanitized from any whitespaces.
+2023-10-10 00:25:30,402 - DEBUG	- analyze_statement - All whitespaces need to be removed, proceeding.
+2023-10-10 00:25:30,402 - DEBUG	- clean_whitespaces - Calling clean_whitespaces(((P -> Q) <-> ((!Q) -> (!P))))...
+2023-10-10 00:25:30,402 - DEBUG	- clean_whitespaces - Finished removing whitespaces: statement=((P->Q)<->((!Q)->(!P)))
+2023-10-10 00:25:30,402 - DEBUG	- analyze_statement - Finished removing any whitespaces found in statement. Proceeding with finding variables.
+2023-10-10 00:25:30,403 - INFO	- find_variables - Finding variables in statement...
+2023-10-10 00:25:30,403 - DEBUG	- find_variables - statement=((P->Q)<->((!Q)->(!P)))
+2023-10-10 00:25:30,403 - DEBUG	- find_variables - variables_array=['P', 'Q']
+2023-10-10 00:25:30,403 - INFO	- find_variables - Found all variables in statement.
+2023-10-10 00:25:30,403 - INFO	- find_variables - *** Variables:	['P', 'Q'] ***
+2023-10-10 00:25:30,404 - DEBUG	- analyze_statement - variables_arr=['P', 'Q']
+2023-10-10 00:25:30,404 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-10-10 00:25:30,404 - DEBUG	- create_array_of_elements - Creating an array from a string...
+2023-10-10 00:25:30,404 - DEBUG	- create_array_of_elements - Calling create_array_of_elements(((P->Q)<->((!Q)->(!P))))
+2023-10-10 00:25:30,404 - DEBUG	- create_array_of_elements - array_of_elements=['(', '(', 'P', '-', '>', 'Q', ')', '<', '-', '>', '(', '(', '!', 'Q', ')', '-', '>', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,404 - DEBUG	- create_array_of_elements - Finished creating array.
+2023-10-10 00:25:30,405 - DEBUG	- check_conditionals - Calling check_conditionals(['(', '(', 'P', '-', '>', 'Q', ')', '<', '-', '>', '(', '(', '!', 'Q', ')', '-', '>', '(', '!', 'P', ')', ')', ')'], ['P', 'Q'])...
+2023-10-10 00:25:30,405 - INFO	- check_conditionals - PASS: Any conditional symbols present, are in the desired form.
+2023-10-10 00:25:30,405 - DEBUG	- create_conditionals - Creating one-piece conditionals from single elements.
+2023-10-10 00:25:30,405 - DEBUG	- create_conditionals - Searching for a '-' in array_of_elements=['(', '(', 'P', '-', '>', 'Q', ')', '<', '-', '>', '(', '(', '!', 'Q', ')', '-', '>', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,405 - DEBUG	- create_conditionals - Conditional symbols were found in ['(', '(', 'P', '-', '>', 'Q', ')', '<', '-', '>', '(', '(', '!', 'Q', ')', '-', '>', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,405 - DEBUG	- create_conditionals - array_of_elements=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,406 - DEBUG	- create_conditionals - Finished creating conditionals.
+2023-10-10 00:25:30,406 - DEBUG	- analyze_statement - In analyze_statement(): 
+len(variables_arr)=2, 
+variables_arr=['P', 'Q'], 
+array_of_elements=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,406 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,406 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,406 - INFO	- print_details - -> Number of Variables: 	2
+2023-10-10 00:25:30,406 - INFO	- print_details - -> Variables: 	['P', 'Q']
+2023-10-10 00:25:30,407 - INFO	- print_details - -> Array of Elements: 	['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,407 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-10-10 00:25:30,407 - INFO	- analyze_statement - Analyzing concluded.
+2023-10-10 00:25:30,407 - INFO	- parse_array - Starting to parse array...
+2023-10-10 00:25:30,407 - DEBUG	- remove_brackets_around_variables - Removing brackets around standalone variables...
+2023-10-10 00:25:30,407 - DEBUG	- remove_brackets_around_variables - arr=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,407 - DEBUG	- remove_brackets_around_variables - Finished removing all brackets around variables.
+2023-10-10 00:25:30,408 - DEBUG	- parse_array - In parse_array(): elements_second=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,408 - DEBUG	- add_brackets_around_unary_connectives - Adding brackets around unary connectives...
+2023-10-10 00:25:30,408 - DEBUG	- add_brackets_around_unary_connectives - arr=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,408 - DEBUG	- add_brackets_around_unary_connectives - Finished adding brackets around all unary connectives.
+2023-10-10 00:25:30,408 - DEBUG	- parse_array - In parse_array(): elements_second=['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')']
+2023-10-10 00:25:30,408 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-10-10 00:25:30,409 - DEBUG	- check_left_and_right_brackets - Calling check_left_and_right_brackets(['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')'])...
+2023-10-10 00:25:30,409 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-10-10 00:25:30,409 - DEBUG	- parse - Calling parse(['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')'])...
+2023-10-10 00:25:30,409 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', '(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')', ')'])...
+2023-10-10 00:25:30,409 - DEBUG	- remove_outer_brackets - array=['(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')']
+2023-10-10 00:25:30,409 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,410 - DEBUG	- parse - In parse(): arr=['(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')']
+2023-10-10 00:25:30,410 - DEBUG	- find_connective - Calling find_connectives(['(', 'P', '->', 'Q', ')', '<->', '(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')'])...
+2023-10-10 00:25:30,410 - DEBUG	- find_connective - In find_connective(): elem=<->, i=5
+2023-10-10 00:25:30,410 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,410 - DEBUG	- parse - Calling parse(['(', 'P', '->', 'Q', ')'])...
+2023-10-10 00:25:30,410 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', 'P', '->', 'Q', ')'])...
+2023-10-10 00:25:30,411 - DEBUG	- remove_outer_brackets - array=['P', '->', 'Q']
+2023-10-10 00:25:30,411 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,411 - DEBUG	- parse - In parse(): arr=['P', '->', 'Q']
+2023-10-10 00:25:30,411 - DEBUG	- find_connective - Calling find_connectives(['P', '->', 'Q'])...
+2023-10-10 00:25:30,411 - DEBUG	- find_connective - In find_connective(): elem=->, i=1
+2023-10-10 00:25:30,411 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,412 - DEBUG	- parse - temp_array=[['P'], '->', ['Q']]
+2023-10-10 00:25:30,412 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,412 - DEBUG	- parse - Calling parse(['(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')'])...
+2023-10-10 00:25:30,412 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', '(', '!', 'Q', ')', '->', '(', '!', 'P', ')', ')'])...
+2023-10-10 00:25:30,412 - DEBUG	- remove_outer_brackets - array=['(', '!', 'Q', ')', '->', '(', '!', 'P', ')']
+2023-10-10 00:25:30,412 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,412 - DEBUG	- parse - In parse(): arr=['(', '!', 'Q', ')', '->', '(', '!', 'P', ')']
+2023-10-10 00:25:30,413 - DEBUG	- find_connective - Calling find_connectives(['(', '!', 'Q', ')', '->', '(', '!', 'P', ')'])...
+2023-10-10 00:25:30,413 - DEBUG	- find_connective - In find_connective(): elem=->, i=4
+2023-10-10 00:25:30,413 - DEBUG	- find_connective - Found connective.
+2023-10-10 00:25:30,413 - DEBUG	- parse - Calling parse(['(', '!', 'Q', ')'])...
+2023-10-10 00:25:30,413 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', '!', 'Q', ')'])...
+2023-10-10 00:25:30,413 - DEBUG	- remove_outer_brackets - array=['!', 'Q']
+2023-10-10 00:25:30,413 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,414 - DEBUG	- parse - In parse(): arr=['!', 'Q']
+2023-10-10 00:25:30,414 - DEBUG	- parse - temp_arr=['!', 'Q']
+2023-10-10 00:25:30,414 - DEBUG	- parse - Returning with parsed list of unary connectives.
+2023-10-10 00:25:30,414 - DEBUG	- parse - Calling parse(['(', '!', 'P', ')'])...
+2023-10-10 00:25:30,414 - DEBUG	- remove_outer_brackets - Calling remove_outer_brackets(['(', '!', 'P', ')'])...
+2023-10-10 00:25:30,414 - DEBUG	- remove_outer_brackets - array=['!', 'P']
+2023-10-10 00:25:30,414 - DEBUG	- remove_outer_brackets - Finished removing outer brackets.
+2023-10-10 00:25:30,414 - DEBUG	- parse - In parse(): arr=['!', 'P']
+2023-10-10 00:25:30,415 - DEBUG	- parse - temp_arr=['!', 'P']
+2023-10-10 00:25:30,415 - DEBUG	- parse - Returning with parsed list of unary connectives.
+2023-10-10 00:25:30,415 - DEBUG	- parse - temp_array=[['!', 'Q'], '->', ['!', 'P']]
+2023-10-10 00:25:30,415 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,415 - DEBUG	- parse - temp_array=[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]]
+2023-10-10 00:25:30,415 - DEBUG	- parse - Returning with parsed list for binary connectives.
+2023-10-10 00:25:30,416 - DEBUG	- parse_array - tree_structured_array=[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]]
+2023-10-10 00:25:30,416 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,416 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,416 - INFO	- print_details - -> Parsed Array: 	[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]]
+2023-10-10 00:25:30,416 - INFO	- print_details - *************************** PARSE ***************************
+2023-10-10 00:25:30,416 - INFO	- parse_array - Finished parsing array.
+2023-10-10 00:25:30,417 - DEBUG	- user_input - In user_input(): 
+number_of_variables=2, 
+variables_as_array=['P', 'Q'], 
+statement=((P -> Q) <-> ((!Q) -> (!P))), 
+new_elements=[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]].
+2023-10-10 00:25:30,417 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-10-10 00:25:30,417 - DEBUG	- simulate_main - In simulate_main(): 
+number_of_variables=2, 
+variables_as_array=['P', 'Q'], 
+provided_statement=((P -> Q) <-> ((!Q) -> (!P))), 
+elements_in_tree=[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]]
+2023-10-10 00:25:30,417 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,418 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,418 - INFO	- print_details - -> number_of_variables: 	2
+2023-10-10 00:25:30,418 - INFO	- print_details - -> variables_as_array: 	['P', 'Q']
+2023-10-10 00:25:30,418 - INFO	- print_details - -> provided_statement: 	((P -> Q) <-> ((!Q) -> (!P)))
+2023-10-10 00:25:30,418 - INFO	- print_details - -> elements_in_tree: 	[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]]
+2023-10-10 00:25:30,418 - INFO	- print_details - ************************** SUMMARY **************************
+2023-10-10 00:25:30,418 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-10-10 00:25:30,418 - DEBUG	- create_matrix - Creating initial matrix...
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - n=2
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - Creating table entries recursively...
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - n=1
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - array_table=['T', 'F']
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - array_table=['TT', 'TF', 'FT', 'FF']
+2023-10-10 00:25:30,419 - DEBUG	- recursive_table - Finished creating array of table entries.
+2023-10-10 00:25:30,420 - DEBUG	- create_matrix - In create_matrix(): new_matrix=[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']]
+2023-10-10 00:25:30,420 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-10-10 00:25:30,420 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']] ***
+2023-10-10 00:25:30,420 - DEBUG	- evaluate_array_as_tree - In evaluate_array_as_tree(): 
+elements_in_tree=[[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]], 
+counter=0, 
+matrix=[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], 
+variables_as_array=['P', 'Q']
+2023-10-10 00:25:30,420 - DEBUG	- evaluate_array - Calling evaluate_array([[['P'], '->', ['Q']], '<->', [['!', 'Q'], '->', ['!', 'P']]], 0, [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], ['P', 'Q'])...
+2023-10-10 00:25:30,421 - DEBUG	- evaluate_array - Calling evaluate_array([['P'], '->', ['Q']], 1, [['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], ['P', 'Q'])...
+2023-10-10 00:25:30,421 - DEBUG	- switch_case - Entering switch_case(->, ['T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,421 - DEBUG	- cond - In cond. case...
+2023-10-10 00:25:30,421 - DEBUG	- conditional - Calling conditional(['T', 'T', 'F', 'F'], ['T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,422 - DEBUG	- conditional - new_row_values=['T', 'F', 'T', 'T']
+2023-10-10 00:25:30,422 - DEBUG	- conditional - Returning with new row values.
+2023-10-10 00:25:30,422 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P'], '->', ['Q']])...
+2023-10-10 00:25:30,422 - DEBUG	- set_new_array_elem - new_array=['P->Q']
+2023-10-10 00:25:30,422 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,422 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'T', 'T'], 
+final_variable_combined=['P->Q'], 
+matrix=[['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], 
+variables=['P', 'Q']
+2023-10-10 00:25:30,423 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,423 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T'], ['T', 'F'], ['F', 'T'], ['F', 'F']], ['T', 'F', 'T', 'T'], ['P', 'Q'], ['P->Q'])...
+2023-10-10 00:25:30,423 - DEBUG	- add_array_to_matrix - variables=['P', 'Q', 'P->Q']
+2023-10-10 00:25:30,423 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,424 - DEBUG	- evaluate_array - Calling evaluate_array([['!', 'Q'], '->', ['!', 'P']], 1, [['T', 'T', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'F', 'T']], ['P', 'Q', 'P->Q'])...
+2023-10-10 00:25:30,424 - DEBUG	- evaluate_array - Calling evaluate_array(['!', 'Q'], 2, [['T', 'T', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'F', 'T']], ['P', 'Q', 'P->Q'])...
+2023-10-10 00:25:30,424 - DEBUG	- switch_case - Entering switch_case(!, ['T', 'F', 'T', 'T'], ['T', 'F', 'T', 'F'])...
+2023-10-10 00:25:30,424 - DEBUG	- neg - In neg. case...
+2023-10-10 00:25:30,424 - DEBUG	- negation - Calling negation(['T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,425 - DEBUG	- negation - new_row_values=['F', 'T', 'F', 'F']
+2023-10-10 00:25:30,425 - DEBUG	- negation - Returning with new row values.
+2023-10-10 00:25:30,425 - DEBUG	- set_new_array_elem - Calling set_new_array_elem(['_', '!', 'Q'])...
+2023-10-10 00:25:30,425 - DEBUG	- set_new_array_elem - new_array=['!Q']
+2023-10-10 00:25:30,425 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,425 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['F', 'T', 'F', 'F'], 
+final_variable_combined=['!Q'], 
+matrix=[['T', 'T', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'F', 'T']], 
+variables=['P', 'Q', 'P->Q']
+2023-10-10 00:25:30,426 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,426 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'F', 'T']], ['F', 'T', 'F', 'F'], ['P', 'Q', 'P->Q'], ['!Q'])...
+2023-10-10 00:25:30,426 - DEBUG	- add_array_to_matrix - variables=['P', 'Q', 'P->Q', '!Q']
+2023-10-10 00:25:30,426 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,426 - DEBUG	- evaluate_array - Calling evaluate_array(['!', 'P'], 2, [['T', 'T', 'T', 'F'], ['T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F'], ['F', 'F', 'T', 'F']], ['P', 'Q', 'P->Q', '!Q'])...
+2023-10-10 00:25:30,426 - DEBUG	- switch_case - Entering switch_case(!, ['F', 'T', 'F', 'F'], ['T', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,426 - DEBUG	- neg - In neg. case...
+2023-10-10 00:25:30,427 - DEBUG	- negation - Calling negation(['F', 'T', 'F', 'F'])...
+2023-10-10 00:25:30,427 - DEBUG	- negation - new_row_values=['T', 'F', 'T', 'T']
+2023-10-10 00:25:30,427 - DEBUG	- negation - Returning with new row values.
+2023-10-10 00:25:30,427 - DEBUG	- set_new_array_elem - Calling set_new_array_elem(['_', '!', 'P'])...
+2023-10-10 00:25:30,427 - DEBUG	- set_new_array_elem - new_array=['!P']
+2023-10-10 00:25:30,427 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,427 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'T', 'T'], 
+final_variable_combined=['!P'], 
+matrix=[['T', 'T', 'T', 'F'], ['T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F'], ['F', 'F', 'T', 'F']], 
+variables=['P', 'Q', 'P->Q', '!Q']
+2023-10-10 00:25:30,428 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,428 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T', 'F'], ['T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F'], ['F', 'F', 'T', 'F']], ['T', 'F', 'T', 'T'], ['P', 'Q', 'P->Q', '!Q'], ['!P'])...
+2023-10-10 00:25:30,428 - DEBUG	- add_array_to_matrix - variables=['P', 'Q', 'P->Q', '!Q', '!P']
+2023-10-10 00:25:30,428 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,428 - DEBUG	- switch_case - Entering switch_case(->, ['F', 'T', 'F', 'F'], ['T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,429 - DEBUG	- cond - In cond. case...
+2023-10-10 00:25:30,429 - DEBUG	- conditional - Calling conditional(['F', 'T', 'F', 'F'], ['T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,429 - DEBUG	- conditional - new_row_values=['T', 'F', 'T', 'T']
+2023-10-10 00:25:30,429 - DEBUG	- conditional - Returning with new row values.
+2023-10-10 00:25:30,429 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['!Q'], '->', ['!P']])...
+2023-10-10 00:25:30,430 - DEBUG	- set_new_array_elem - new_array=['(!Q)->(!P)']
+2023-10-10 00:25:30,430 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,430 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'F', 'T', 'T'], 
+final_variable_combined=['(!Q)->(!P)'], 
+matrix=[['T', 'T', 'T', 'F', 'T'], ['T', 'F', 'F', 'T', 'F'], ['F', 'T', 'T', 'F', 'T'], ['F', 'F', 'T', 'F', 'T']], 
+variables=['P', 'Q', 'P->Q', '!Q', '!P']
+2023-10-10 00:25:30,430 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,430 - DEBUG	- add_array_to_matrix - Calling add_array_to_matrix([['T', 'T', 'T', 'F', 'T'], ['T', 'F', 'F', 'T', 'F'], ['F', 'T', 'T', 'F', 'T'], ['F', 'F', 'T', 'F', 'T']], ['T', 'F', 'T', 'T'], ['P', 'Q', 'P->Q', '!Q', '!P'], ['(!Q)->(!P)'])...
+2023-10-10 00:25:30,430 - DEBUG	- add_array_to_matrix - variables=['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)']
+2023-10-10 00:25:30,430 - DEBUG	- add_array_to_matrix - Added array to matrix.
+2023-10-10 00:25:30,430 - DEBUG	- switch_case - Entering switch_case(<->, ['T', 'F', 'T', 'T'], ['T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,430 - DEBUG	- bicond - In bicond. case...
+2023-10-10 00:25:30,430 - DEBUG	- biconditional - Calling biconditional(['T', 'F', 'T', 'T'], ['T', 'F', 'T', 'T'])...
+2023-10-10 00:25:30,431 - DEBUG	- biconditional - new_row_values=['T', 'T', 'T', 'T']
+2023-10-10 00:25:30,431 - DEBUG	- biconditional - Returning with new row values.
+2023-10-10 00:25:30,431 - DEBUG	- set_new_array_elem - Calling set_new_array_elem([['P->Q'], '<->', ['(!Q)->(!P)']])...
+2023-10-10 00:25:30,432 - DEBUG	- set_new_array_elem - new_array=['(P->Q)<->((!Q)->(!P))']
+2023-10-10 00:25:30,432 - DEBUG	- set_new_array_elem - Finished setting new array element.
+2023-10-10 00:25:30,432 - DEBUG	- evaluate_array - In evaluate_array(): 
+returned_array=['T', 'T', 'T', 'T'], 
+final_variable_combined=['(P->Q)<->((!Q)->(!P))'], 
+matrix=[['T', 'T', 'T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F', 'T', 'T', 'T'], ['F', 'F', 'T', 'F', 'T', 'T', 'T']], 
+variables=['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)']
+2023-10-10 00:25:30,432 - DEBUG	- evaluate_array - Evaluation of array in evaluate_array() is done.
+2023-10-10 00:25:30,432 - DEBUG	- evaluate_array_as_tree - returned_array=['T', 'T', 'T', 'T'], returned_matrix=[['T', 'T', 'T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F', 'T', 'T', 'T'], ['F', 'F', 'T', 'F', 'T', 'T', 'T']], all_variables=['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)', '(P->Q)<->((!Q)->(!P))']
+2023-10-10 00:25:30,433 - DEBUG	- evaluate_array_as_tree - Finished evaluating array.
+2023-10-10 00:25:30,433 - DEBUG	- simulate_main - In simulate_main(): 
+final_value_array=['T', 'T', 'T', 'T'], 
+returned_matrix=[['T', 'T', 'T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F', 'T', 'T', 'T'], ['F', 'F', 'T', 'F', 'T', 'T', 'T']], 
+all_variables=['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)', '(P->Q)<->((!Q)->(!P))']
+2023-10-10 00:25:30,433 - DEBUG	- print_details - Printing details...
+2023-10-10 00:25:30,433 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,433 - INFO	- print_details - -> Statement: 	((P -> Q) <-> ((!Q) -> (!P)))
+2023-10-10 00:25:30,434 - INFO	- print_details - -> Final Calculated Array: 	['T', 'T', 'T', 'T']
+2023-10-10 00:25:30,434 - INFO	- print_details - -> All Variables: 	['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)', '(P->Q)<->((!Q)->(!P))']
+2023-10-10 00:25:30,434 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'F', 'T', 'T', 'T'], ['T', 'F', 'F', 'T', 'F', 'F', 'T'], ['F', 'T', 'T', 'F', 'T', 'T', 'T'], ['F', 'F', 'T', 'F', 'T', 'T', 'T']]
+2023-10-10 00:25:30,434 - INFO	- print_details - ************************** EVALUATE **************************
+2023-10-10 00:25:30,434 - INFO	- simulate_main - Finished evaluating statement.
+2023-10-10 00:25:30,434 - DEBUG	- display_matrix - Displaying matrix to console...
+2023-10-10 00:25:30,435 - DEBUG	- get_number_of_spaces - Calling get_number_of_spaces(2, 4, ['P', 'Q', 'P->Q', '!Q', '!P', '(!Q)->(!P)', '(P->Q)<->((!Q)->(!P))'])...
+2023-10-10 00:25:30,435 - DEBUG	- get_number_of_spaces - total_space=64
+2023-10-10 00:25:30,435 - DEBUG	- get_number_of_spaces - Finished calculating the total space.
+2023-10-10 00:25:30,436 - DEBUG	- simulate_main - Returning from simulate_main()...
+2023-10-10 00:25:30,436 - INFO	- <module> - Exiting Engine...
