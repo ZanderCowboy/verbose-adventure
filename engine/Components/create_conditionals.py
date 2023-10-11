@@ -29,7 +29,7 @@ def create_conditionals(array_of_elements: list) -> list:
                 logger.debug("Search for conditionals finished and none were found, returning.")
                 return array_of_elements
             continue
-        elif char in PRE_CHECK:
+        if char in PRE_CHECK:
             break
 
     logger.debug("Conditional symbols were found in %s", array_of_elements)

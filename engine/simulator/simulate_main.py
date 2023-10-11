@@ -1,14 +1,14 @@
 """ Insert """
-from engine_logging.logging_config import logger
-from computation.evaluate_statement import *
-from computation.table_matrix.display_matrix import display_matrix
 from parser.checks.check_brackets import check_left_and_right_brackets
 from parser.checks.check_brackets import UnequalBracketsExcept
 from parser.checks.check_for_illegal_characters import check_for_illegal_characters
 from parser.checks.check_for_illegal_characters import IllegalCharactersException
+from computation.evaluate_statement import evaluate_array_as_tree
+from computation.table_matrix.display_matrix import display_matrix
 from simulator.user_input import user_input
-from simulator.input_statements import *
+from simulator.input_statements import test_cases
 from components.print_details import print_details
+from engine_logging.logging_config import logger
 
 
 def simulate_main():
@@ -45,7 +45,8 @@ def simulate_main():
             user_input(statement))
         logger.debug("In simulate_main(): \nnumber_of_variables=%d, \nvariables_as_array=%s, "
                         "\nprovided_statement=%s, \nelements_in_tree=%s",
-                        number_of_variables, variables_as_array, provided_statement, elements_in_tree)
+                        number_of_variables, variables_as_array, provided_statement,
+                     elements_in_tree)
 
         print_details("SUMMARY",
                         ("number_of_variables", number_of_variables),
@@ -55,7 +56,8 @@ def simulate_main():
 
         final_value_array, returned_matrix, all_variables = (
             evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_tree))
-        logger.debug("In simulate_main(): \nfinal_value_array=%s, \nreturned_matrix=%s, \nall_variables=%s",
+        logger.debug("In simulate_main(): \nfinal_value_array=%s, "
+                     "\nreturned_matrix=%s, \nall_variables=%s",
                         final_value_array, returned_matrix, all_variables)
 
         print_details("EVALUATE", ("Statement", statement),

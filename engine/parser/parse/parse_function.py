@@ -1,10 +1,11 @@
 """ Insert """
-from components.constants import *
+from parser.checks.check_brackets import check_left_and_right_brackets
+from components.constants import (UNARY_CONNECTIVES, LEFT_BRACKETS,
+                                  RIGHT_BRACKETS, BINARY_CONNECTIVES)
 from components.sanitizer import add_brackets_around_unary_connectives
 from components.sanitizer import remove_brackets_around_variables
-from engine_logging.logging_config import logger
-from parser.checks.check_brackets import check_left_and_right_brackets
 from components.print_details import print_details
+from engine_logging.logging_config import logger
 
 
 def parse_array(elements: list, variables: list):

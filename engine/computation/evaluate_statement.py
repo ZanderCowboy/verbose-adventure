@@ -34,7 +34,8 @@ def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_
 
     all_variables.append(final_variable_combined[0])
 
-    logger.debug("returned_array=%s, returned_matrix=%s, all_variables=%s", returned_array, returned_matrix, all_variables)
+    logger.debug("returned_array=%s, returned_matrix=%s, "
+                 "all_variables=%s", returned_array, returned_matrix, all_variables)
     logger.debug("Finished evaluating array.")
     return returned_array, returned_matrix, all_variables
 
@@ -51,7 +52,6 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
     """
     logger.debug("Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables)
 
-    # todo Fix bug for ((!Q) -> (!P))
     # if negation is encountered, add placeholder value in front
     if len(array) == 2:
         blank = '_'
@@ -67,7 +67,8 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_left_array = left_array
 
         counter += 1
-        array_evaluated, left_array, _, _ = evaluate_array(temp_left_array, counter, matrix, variables)
+        array_evaluated, left_array, _, _ = evaluate_array(temp_left_array,
+                                                           counter, matrix, variables)
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, left_array)
 
@@ -76,7 +77,8 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_right_array = right_array
 
         counter += 1
-        array_evaluated, right_array, _, _ = evaluate_array(temp_right_array, counter, matrix, variables)
+        array_evaluated, right_array, _, _ = evaluate_array(temp_right_array,
+                                                            counter, matrix, variables)
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, right_array)
 
@@ -118,10 +120,10 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         if len(final_variable_combined) == 1 and counter == 0:
             # append returned_array to matrix
             for i, entry_in_return_array in enumerate(returned_array):
-                entry_in_return_array = returned_array[i]
                 matrix[i].append(entry_in_return_array)
 
-        logger.debug("In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
+        logger.debug("In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, "
+                     "\nmatrix=%s, \nvariables=%s",
                      returned_array, final_variable_combined, matrix, variables)
         logger.debug("Evaluation of array in evaluate_array() is done.")
         return returned_array, final_variable_combined, matrix, variables
@@ -181,7 +183,8 @@ def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
     :param variable_entry: Auxiliary entry to add to array of variables
     :return: Returns an updated array of variables
     """
-    logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...", matrix, array_evaluated, variables, variable_entry)
+    logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...",
+                 matrix, array_evaluated, variables, variable_entry)
 
     for i, row_entry in enumerate(matrix):
         entry_to_add = array_evaluated[i]

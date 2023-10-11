@@ -3,12 +3,12 @@
 Returns:
     _type_: _description_
 """
-from engine_logging.logging_config import logger
 from parser.parse.analyze_function import analyze_statement
 from parser.parse.parse_function import parse_array
+from engine_logging.logging_config import logger
 
 
-def user_input(statement: str) -> [int, list, str, list]:
+def user_input(statement: str):
     """
     Takes a given statement, analyzes it and returns the elements and variables.
     :returns: (int) number of variables,

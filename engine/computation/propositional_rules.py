@@ -15,14 +15,12 @@ from engine_logging import logger
 from components import TRUE, FALSE
 
 
-# todo double negation cancel out
-# todo 'negation', 'for all', 'there exists' bind most tightly; then disj and
-#  conj; then impl. (which is right-associative)
-
 UNEQUAL_LEFT_AND_RIGHT_ARRAYS = ("The left '%s' and right '%s' arrays are "
                                  "unequal! Exiting.")
 UNEQUAL_LEFT_AND_RIGHT_ARRAYS_EXCEPT = ("The left and right arrays are unequal. "
                                         "Please investigate.")
+NEW_ROW_VALUES = "new_row_values=%s"
+RETURN_NEW_ROW_VALUES_MESSAGE = "Returning with new row values."
 
 
 class UnequalArraysExcept(Exception):
@@ -52,8 +50,8 @@ def conjunction(left, right):
         else:
             new_row_values.append(FALSE)
 
-    logger.debug("new_row_values=%s", new_row_values)
-    logger.debug("Returning with new row values.")
+    logger.debug(NEW_ROW_VALUES, new_row_values)
+    logger.debug(RETURN_NEW_ROW_VALUES_MESSAGE)
     return new_row_values
 
 
@@ -77,8 +75,8 @@ def disjunction(left, right):
         else:
             new_row_values.append(TRUE)
 
-    logger.debug("new_row_values=%s", new_row_values)
-    logger.debug("Returning with new row values.")
+    logger.debug(NEW_ROW_VALUES, new_row_values)
+    logger.debug(RETURN_NEW_ROW_VALUES_MESSAGE)
     return new_row_values
 
 
@@ -97,8 +95,8 @@ def negation(left):
         elif left[i] == FALSE:
             new_row_values.append(TRUE)
 
-    logger.debug("new_row_values=%s", new_row_values)
-    logger.debug("Returning with new row values.")
+    logger.debug(NEW_ROW_VALUES, new_row_values)
+    logger.debug(RETURN_NEW_ROW_VALUES_MESSAGE)
     return new_row_values
 
 
@@ -123,8 +121,8 @@ def conditional(left, right):
         else:
             new_row_values.append(TRUE)
 
-    logger.debug("new_row_values=%s", new_row_values)
-    logger.debug("Returning with new row values.")
+    logger.debug(NEW_ROW_VALUES, new_row_values)
+    logger.debug(RETURN_NEW_ROW_VALUES_MESSAGE)
     return new_row_values
 
 
@@ -148,6 +146,6 @@ def biconditional(left, right):
         else:
             new_row_values.append(FALSE)
 
-    logger.debug("new_row_values=%s", new_row_values)
-    logger.debug("Returning with new row values.")
+    logger.debug(NEW_ROW_VALUES, new_row_values)
+    logger.debug(RETURN_NEW_ROW_VALUES_MESSAGE)
     return new_row_values

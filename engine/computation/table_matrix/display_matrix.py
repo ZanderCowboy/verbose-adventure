@@ -26,9 +26,9 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
             print(all_variables[j] + " || ", end='')
 
     # prints auxiliary variables
-    index_between_auxiliary_variables_and_last = number_of_variables + len(auxiliary_variables)
-    for j in range(number_of_variables, index_between_auxiliary_variables_and_last):
-        if j != index_between_auxiliary_variables_and_last - 1:
+    index_between_aux_variables_and_last = number_of_variables + len(auxiliary_variables)
+    for j in range(number_of_variables, index_between_aux_variables_and_last):
+        if j != index_between_aux_variables_and_last - 1:
             print(all_variables[j] + " | ", end='')
         else:
             print(all_variables[j] + " || ", end='')
@@ -38,7 +38,8 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
 
     print('\n', end='')
 
-    count_characters = get_number_of_spaces(number_of_variables, number_of_aux_variables, all_variables)
+    count_characters = get_number_of_spaces(number_of_variables,
+                                            number_of_aux_variables, all_variables)
     print("=" * count_characters)
 
     # prints the T/F values for each row in matrix
@@ -54,9 +55,10 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
                 print(row[j] + " || ", end='')
 
         # prints auxiliary variables
-        index_between_auxiliary_variables_and_last = number_of_variables + len(auxiliary_variables)
-        for j in range(number_of_variables, index_between_auxiliary_variables_and_last):
-            if j != index_between_auxiliary_variables_and_last - 1:
+        index_between_aux_variables_and_last = (number_of_variables +
+                                                len(auxiliary_variables))
+        for j in range(number_of_variables, index_between_aux_variables_and_last):
+            if j != index_between_aux_variables_and_last - 1:
                 print(row[j] + " | ", end='')
             else:
                 temp_length = len(all_variables[j])
@@ -64,7 +66,7 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
                 if temp_length % 2 == 1:  # odd
                     add_len = temp_length/2 + 1
                 add_space = ''
-                for k in range(int(add_len)):
+                for _ in range(int(add_len)):
                     add_space += ' '
                 print(row[j] + add_space + " || ", end='')
 
@@ -76,7 +78,7 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
         elif temp_length % 2 == 0:  # even
             add_len = temp_length/2
         add_space = ''
-        for k in range(int(add_len)):
+        for _ in range(int(add_len)):
             add_space += ' '
         print(row[-1] + add_space + " || ", end='')
         print('\n', end='')
@@ -85,7 +87,8 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
 
 
 # todo Finish Function
-def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, all_variables: list) -> int:
+def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int,
+                         all_variables: list) -> int:
     """_summary_
 
     Args:
@@ -96,7 +99,8 @@ def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, 
     Returns:
         int: _description_
     """
-    logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables, nr_auxiliary_variables, all_variables)
+    logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables,
+                 nr_auxiliary_variables, all_variables)
 
     space = 3
     total_space = 0

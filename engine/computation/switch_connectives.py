@@ -3,7 +3,8 @@
 Returns:
 	_type_: _description_
 """
-from computation.propositional_rules import *
+from computation.propositional_rules import (conjunction, disjunction, negation, 
+                                             conditional, biconditional)
 from engine_logging.logging_config import logger
 
 
