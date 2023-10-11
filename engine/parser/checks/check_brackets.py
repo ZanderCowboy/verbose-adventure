@@ -4,6 +4,11 @@ from engine_logging.logging_config import logger
 
 
 class UnequalBracketsExcept(Exception):
+    """_summary_
+
+    Args:
+        Exception (_type_): _description_
+    """
     pass
 
 

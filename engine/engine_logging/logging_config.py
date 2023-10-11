@@ -11,7 +11,7 @@ log_file = os.path.join(log_folder, LOG_FILE_NAME)
 
 # Create the Output directory if it doesn't exist
 if not os.path.exists(log_folder):
-	os.makedirs(log_folder)
+    os.makedirs(log_folder)
 
 if os.path.exists(log_file):
     for i in range(MAX_LOG_FILES - 1, 0, -1):  # starts from 9 moving down to 0
