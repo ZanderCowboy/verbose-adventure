@@ -21,10 +21,10 @@ def check_left_and_right_brackets(statement):
     logger.debug("Calling check_left_and_right_brackets(%s)...", statement)
 
     count = 0
-    for i in range(len(statement)):
-        if statement[i] in LEFT_BRACKETS:
+    for _, char in enumerate(statement):
+        if char in LEFT_BRACKETS:
             count += 1
-        elif statement[i] in RIGHT_BRACKETS:
+        elif char in RIGHT_BRACKETS:
             count -= 1
 
     if count == 0:

@@ -78,7 +78,9 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
             if arr[i-1] in LEFT_BRACKETS and arr[i+2] in RIGHT_BRACKETS:
                 # good case
                 continue
-            if arr[i-1] in BINARY_CONNECTIVES or arr[i+2] in BINARY_CONNECTIVES:  # there is no brackets around it
+
+            # there is no brackets around it
+            if arr[i-1] in BINARY_CONNECTIVES or arr[i+2] in BINARY_CONNECTIVES:
                 arr.insert(i, '(')
                 arr.insert(i+3, ')')
     # todo Add a final check to makes sure that no unary connectives was missed.

@@ -35,11 +35,10 @@ def create_conditionals(array_of_elements: list) -> list:
     logger.debug("Conditional symbols were found in %s", array_of_elements)
     conditional_symbol = False
     biconditional_symbol = False
-    for i in range(len(array_of_elements)):
+    for i, char in enumerate(array_of_elements):
         if i == len(array_of_elements):
             break
 
-        char = array_of_elements[i]
         if char == OPEN_ARROW:  # checks to see if we have a biconditional
             if array_of_elements[i + 1] == DASH and array_of_elements[i + 2] == CLOSE_ARROW:
                 array_of_elements.pop(i)
@@ -49,19 +48,19 @@ def create_conditionals(array_of_elements: list) -> list:
             continue
 
         # if we have a conditional
-        elif (char == DASH and array_of_elements[i + 1] == CLOSE_ARROW and
+        if (char == DASH and array_of_elements[i + 1] == CLOSE_ARROW and
                 biconditional_symbol is False):  # if we have a conditional
             array_of_elements.pop(i)
             array_of_elements.pop(i)
             array_of_elements.insert(i, COND_ELEM)
             continue
-        elif char == CLOSE_ARROW and conditional_symbol is False:
+        if char == CLOSE_ARROW and conditional_symbol is False:
             continue
-        else:  # other characters
-            if conditional_symbol is False and biconditional_symbol is False:
-                pass
-            conditional_symbol = False
-            biconditional_symbol = False
+        # other characters
+        if conditional_symbol is False and biconditional_symbol is False:
+            pass
+        conditional_symbol = False
+        biconditional_symbol = False
 
     logger.debug("array_of_elements=%s", array_of_elements)
     logger.debug("Finished creating conditionals.")

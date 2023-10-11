@@ -11,7 +11,7 @@ from components.print_details import print_details
 from engine_logging.logging_config import logger
 
 
-def analyze_statement(statement: str) -> [int, list, list]:
+def analyze_statement(statement: str):
     """
     Analyzes statement to determine the number of variables, and split into an
     array of elements

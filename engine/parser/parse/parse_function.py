@@ -7,7 +7,7 @@ from parser.checks.check_brackets import check_left_and_right_brackets
 from components.print_details import print_details
 
 
-def parse_array(elements: list, variables: list) -> list:
+def parse_array(elements: list, variables: list):
     """
     This takes an array of elements and variables, completes some sanitizing and
     checks and then calls an internal parse function to complete the parsing.
@@ -119,8 +119,7 @@ def find_connective(arr):
     count = 0
     in_bracket = False
 
-    for i in range(len(arr)):
-        elem = arr[i]
+    for i, elem in enumerate(arr):
         if elem in LEFT_BRACKETS:
             in_bracket = True
             count += 1
