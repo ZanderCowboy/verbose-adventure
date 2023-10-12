@@ -10,6 +10,12 @@
 .svn/
 migrate_working_dir/
 
+# Generated
+*.h
+*.cc
+*.cmake
+*.swift
+
 # IntelliJ related
 #*.iml
 *.ipr
