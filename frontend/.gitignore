@@ -31,6 +31,12 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+# Generated Code
+*.h
+*.cc
+*.cmake
+*.swift
+
 
 # Symbolication related
 app.*.symbols
