@@ -65,9 +65,23 @@ class _HomePage extends StatelessWidget {
                   IconButton(
                     onPressed: () {},
                     icon: const Icon(
+                      Icons.arrow_upward_rounded,
+                    ),
+                    tooltip: 'Tools',
+                    color: Colors.green,
+                    hoverColor: Colors.transparent,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
                       Icons.send_rounded,
                     ),
+                    tooltip: 'Send',
                     color: Colors.green,
+                    hoverColor: Colors.transparent,
                   ),
                 ],
               ),
