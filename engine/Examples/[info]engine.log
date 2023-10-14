@@ -1,0 +1,43 @@
+2023-08-28 19:03:32,734 - INFO	- <module> - Starting Engine...
+2023-08-28 19:03:32,734 - INFO	- simulate_main - Statement:	(T v (P ^ Q))
+2023-08-28 19:03:32,734 - INFO	- simulate_main - Before proceeding, doing checks for unequal brackets and illegal characters.
+2023-08-28 19:03:32,734 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-08-28 19:03:32,735 - INFO	- check_for_illegal_characters - PASS: There were no illegal characters found.
+2023-08-28 19:03:32,735 - INFO	- simulate_main - All checks are valid, proceeding with extracting information from statement.
+2023-08-28 19:03:32,735 - INFO	- user_input - Processing statement...
+2023-08-28 19:03:32,735 - INFO	- analyze_statement - Starting to analyze statement...
+2023-08-28 19:03:32,735 - INFO	- find_variables - Finding variables in statement...
+2023-08-28 19:03:32,735 - INFO	- find_variables - Found all variables in statement.
+2023-08-28 19:03:32,735 - INFO	- find_variables - *** Variables:	['T', 'P', 'Q'] ***
+2023-08-28 19:03:32,735 - INFO	- analyze_statement - The statement is converted to an array and any conditionals are sanitized.
+2023-08-28 19:03:32,735 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-08-28 19:03:32,735 - INFO	- print_details - -> Number of Variables: 	3
+2023-08-28 19:03:32,735 - INFO	- print_details - -> Variables: 	['T', 'P', 'Q']
+2023-08-28 19:03:32,735 - INFO	- print_details - -> Array of Elements: 	['(', 'T', 'v', '(', 'P', '^', 'Q', ')', ')']
+2023-08-28 19:03:32,735 - INFO	- print_details - ************************** ANALYSIS **************************
+2023-08-28 19:03:32,735 - INFO	- analyze_statement - Analyzing concluded.
+2023-08-28 19:03:32,735 - INFO	- parse_array - Starting to parse array...
+2023-08-28 19:03:32,735 - INFO	- parse_array - Final checks are ran before parsing concludes.
+2023-08-28 19:03:32,736 - INFO	- check_left_and_right_brackets - PASS: The number of left and right brackets are equal.
+2023-08-28 19:03:32,736 - INFO	- print_details - *************************** PARSE ***************************
+2023-08-28 19:03:32,736 - INFO	- print_details - -> Parsed Array: 	[['T'], 'v', [['P'], '^', ['Q']]]
+2023-08-28 19:03:32,736 - INFO	- print_details - *************************** PARSE ***************************
+2023-08-28 19:03:32,736 - INFO	- parse_array - Finished parsing array.
+2023-08-28 19:03:32,736 - INFO	- user_input - Gathered all information needed including variables and parsed array.
+2023-08-28 19:03:32,736 - INFO	- print_details - ************************** SUMMARY **************************
+2023-08-28 19:03:32,737 - INFO	- print_details - -> number_of_variables: 	3
+2023-08-28 19:03:32,737 - INFO	- print_details - -> variables_as_array: 	['T', 'P', 'Q']
+2023-08-28 19:03:32,737 - INFO	- print_details - -> provided_statement: 	(T v (P ^ Q))
+2023-08-28 19:03:32,737 - INFO	- print_details - -> elements_in_tree: 	[['T'], 'v', [['P'], '^', ['Q']]]
+2023-08-28 19:03:32,737 - INFO	- print_details - ************************** SUMMARY **************************
+2023-08-28 19:03:32,737 - INFO	- evaluate_array_as_tree - Starting evaluation of array of elements...
+2023-08-28 19:03:32,737 - INFO	- create_matrix - Finished creating the initial 'truth' matrix.
+2023-08-28 19:03:32,737 - INFO	- create_matrix - *** Initial Matrix:	[['T', 'T', 'T'], ['T', 'T', 'F'], ['T', 'F', 'T'], ['T', 'F', 'F'], ['F', 'T', 'T'], ['F', 'T', 'F'], ['F', 'F', 'T'], ['F', 'F', 'F']] ***
+2023-08-28 19:03:32,738 - INFO	- print_details - ************************** EVALUATE **************************
+2023-08-28 19:03:32,738 - INFO	- print_details - -> Statement: 	(T v (P ^ Q))
+2023-08-28 19:03:32,738 - INFO	- print_details - -> Final Calculated Array: 	['T', 'T', 'T', 'T', 'T', 'F', 'F', 'F']
+2023-08-28 19:03:32,738 - INFO	- print_details - -> All Variables: 	['T', 'P', 'Q', 'P^Q', 'Tv(P^Q)']
+2023-08-28 19:03:32,738 - INFO	- print_details - -> Final Matrix: 	[['T', 'T', 'T', 'T', 'T'], ['T', 'T', 'F', 'F', 'T'], ['T', 'F', 'T', 'F', 'T'], ['T', 'F', 'F', 'F', 'T'], ['F', 'T', 'T', 'T', 'T'], ['F', 'T', 'F', 'F', 'F'], ['F', 'F', 'T', 'F', 'F'], ['F', 'F', 'F', 'F', 'F']]
+2023-08-28 19:03:32,738 - INFO	- print_details - ************************** EVALUATE **************************
+2023-08-28 19:03:32,738 - INFO	- simulate_main - Finished evaluating statement.
+2023-08-28 19:03:32,739 - INFO	- <module> - Exiting Engine...
