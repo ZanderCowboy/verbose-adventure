@@ -20,9 +20,8 @@ def find_variables(statement: str) -> list:
     variables_array = []
     variables_string = ""
     non_variable_characters = VALID_BRACKETS + VALID_CONNECTIVES
-    for i in range(len(statement)):
+    for i, char in enumerate(statement):
         duplicate = False
-        char = statement[i]
 
         if char not in non_variable_characters:  # if char is not a bracket or a connective
             # Testing for duplicates

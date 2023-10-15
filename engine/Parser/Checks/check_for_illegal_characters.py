@@ -22,8 +22,7 @@ def check_for_illegal_characters(statement):
     """
     logger.debug("Calling check_for_illegal_characters(%s)", statement)
     logger.debug("******************** starting input validation *******************")
-    for i in range(len(statement)):
-        char = statement[i]
+    for _, char in enumerate(statement):
         if char in LEFT_BRACKETS or char in RIGHT_BRACKETS or char in WHITE_SPACES:
             continue
         if validate_input(char):

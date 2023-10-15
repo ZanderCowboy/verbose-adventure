@@ -16,8 +16,7 @@ def create_array_of_elements(statement: str) -> list:
     logger.debug("Calling create_array_of_elements(%s)", statement)
 
     array_of_elements = []
-    for i in range(len(statement)):
-        char = statement[i]
+    for _, char in enumerate(statement):
         array_of_elements.append(char)
 
     logger.debug("array_of_elements=%s", array_of_elements)

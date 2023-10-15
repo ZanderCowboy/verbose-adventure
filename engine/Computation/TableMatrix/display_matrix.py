@@ -42,8 +42,7 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
     print("=" * count_characters)
 
     # prints the T/F values for each row in matrix
-    for i in range(len(returned_matrix)):
-        row = returned_matrix[i]
+    for i, row in enumerate(returned_matrix):
 
         print("| ", end='')
 

@@ -69,7 +69,7 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
     """
     logger.debug("Adding brackets around unary connectives...")
 
-    for i in range(len(arr)):
+    for i, _ in enumerate(arr):
         if arr[i] in UNARY_CONNECTIVES:  # we have a unary connective
             if arr[i+1] in variables:  # unary connective is next to a variable
                 if arr[i-1] in LEFT_BRACKETS and arr[i+2] in RIGHT_BRACKETS:  # there is brackets around it

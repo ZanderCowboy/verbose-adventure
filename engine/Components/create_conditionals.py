@@ -31,11 +31,10 @@ def create_conditionals(array_of_elements: list) -> list:
     logger.debug("Conditional symbols were found in %s", array_of_elements)
     conditional_symbol = False
     biconditional_symbol = False
-    for i in range(len(array_of_elements)):
+    for i, char in enumerate(array_of_elements):
         if i == len(array_of_elements):
             break
 
-        char = array_of_elements[i]
         if char == OPEN_ARROW:  # checks to see if we have a biconditional
             if array_of_elements[i + 1] == DASH and array_of_elements[i + 2] == CLOSE_ARROW:
                 array_of_elements.pop(i)

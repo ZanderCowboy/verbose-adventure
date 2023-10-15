@@ -54,7 +54,7 @@ def disj(left, right):
 
 
 # todo Refactor neg() to remove 'right' parameter
-def neg(left, right):
+def neg(left, _):
     """_summary_
 
     Args:

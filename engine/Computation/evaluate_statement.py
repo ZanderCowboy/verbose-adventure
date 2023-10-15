@@ -113,8 +113,7 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
 
         if len(final_variable_combined) == 1 and counter == 0:
             # append returned_array to matrix
-            for i in range(len(returned_array)):
-                entry_in_return_array = returned_array[i]
+            for i, entry_in_return_array in enumerate(returned_array):
                 matrix[i].append(entry_in_return_array)
 
         logger.debug("In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
@@ -179,8 +178,7 @@ def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
     """
     logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...", matrix, array_evaluated, variables, variable_entry)
 
-    for i in range(len(matrix)):
-        row_entry = matrix[i]
+    for i, row_entry in enumerate(matrix):
         entry_to_add = array_evaluated[i]
         row_entry.append(entry_to_add)
     variables.append(variable_entry[0])  # append new 'variable' to array of variables
