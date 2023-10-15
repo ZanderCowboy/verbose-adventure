@@ -1,4 +1,4 @@
-from Computation.PropositionalRules import *
+from Computation.propositional_rules import *
 from Logging.logging_config import logger
 
 

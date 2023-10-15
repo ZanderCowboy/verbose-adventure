@@ -18,7 +18,7 @@ VALID_CONNECTIVES = "^v!<->"
 
 WHITE_SPACES = " "
 
-# Constants used in CreateConditionals.py
+# Constants used in create_conditionals.py
 OPEN_ARROW = '<'
 DASH = '-'
 CLOSE_ARROW = '>'

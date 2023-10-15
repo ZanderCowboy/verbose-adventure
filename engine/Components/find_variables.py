@@ -1,4 +1,4 @@
-from Components.Constants import VALID_BRACKETS, VALID_CONNECTIVES
+from Components.constants import VALID_BRACKETS, VALID_CONNECTIVES
 from Logging.logging_config import logger
 
 
