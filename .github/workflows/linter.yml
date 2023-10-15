@@ -29,9 +29,11 @@ jobs:
           flutter-version: 3.13.5
           cache: true
 
-      - run: flutter --version
-      - run: flutter pub get
-      - run: flutter analyze
+      - run: |
+          cd frontend
+          flutter --version
+          flutter pub get
+          flutter analyze
 
 
   python:
@@ -51,12 +53,13 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd engine
           python --version
           python -m pip install --upgrade pip
           pip install flake8 pylint pytest
           # pip install -r requirements.txt  
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          
+
       - name: Analysing the code with pylint
         run: |
           pylint $(git ls-files '*.py')
@@ -87,7 +90,8 @@ jobs:
       #   run: mvn -B package --file pom.xml
 
       - run: |
-          java Main.java
+          cd backend
+          javac Main.java
           # ./mvnw clean install  # Assuming you have a Maven wrapper script (mvnw) in your repository
           # Additional steps for testing and other build tasks as needed
 
