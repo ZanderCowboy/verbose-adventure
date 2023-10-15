@@ -1,6 +1,12 @@
 # Changes in code
 
-## V0.0.7
+## v0.0.8
+
+- Ran pylint and fixed all linting issues.
+- Fixed imports.
+- Added GitHub actions for Engine.
+
+## v0.0.7
 
 - Created a new Logging package to contain all logging related code.
 - Created logging_config using Python logging, printing logs to console and files
