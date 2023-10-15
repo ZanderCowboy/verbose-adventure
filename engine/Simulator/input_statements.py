@@ -12,7 +12,7 @@ test_cases = [
 	# "(S ^ (R ^ Q))",  # valid
 	# "((R ^ (Q v (!P))) <-> (((R ^ Q) v (R ^ P)) ^ T))",  # valid
 	# "((R ^ (Q v (P))) <-> (((R ^ Q) v (R ^ P)) ^ T))",  # valid
-	
+
 	# "R ^ (Q v !P) <-> (R ^ Q) v (R ^ P) ^ T"  # valid, but binding rules
 	# should be applied.
 	# "((!R) ^ P)",  # valid
@@ -38,4 +38,3 @@ test_cases = [
 	# "(P_1 ^ P_2)",
 	# "(Q ^ (R_20 -> T_2))"
 ]
-

@@ -9,16 +9,16 @@ from Parser.Checks.check_for_illegal_characters import IllegalCharactersExceptio
 
 # Part 1: Checks for brackets and characters
 try:
-	statement = []
-	if (check_brackets.check_left_and_right_brackets(statement) and
-			check_for_illegal_characters.check_for_illegal_characters(statement)):
-		pass
+    statement = []
+    if (check_brackets.check_left_and_right_brackets(statement) and
+            check_for_illegal_characters.check_for_illegal_characters(statement)):
+        pass
 except UnequalBracketsExcept as ce:
-	print("Unequal Brackets Exception: ", ce)
+    print("Unequal Brackets Exception: ", ce)
 except IllegalCharactersException as ice:
-	print("Illegal Characters Exception: ", ice)
+    print("Illegal Characters Exception: ", ice)
 else:
-	print("No exception occurred!")
+    print("No exception occurred!")
 
 
 # Main

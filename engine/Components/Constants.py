@@ -39,4 +39,3 @@ PRE_CHECK = ['<', '-', '>']
 # Disjunction:	v | ||
 # Conditional:	-> => →(Alt 26)
 # Biconditional:	<-> <=>
-
