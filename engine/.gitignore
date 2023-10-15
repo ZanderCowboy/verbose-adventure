@@ -1,6 +1,6 @@
 # Project Debugging
-/Output/*.log
-/Output/*.log.*
+/output/*.log
+/output/*.log.*
 
 # intellij
 /.idea
