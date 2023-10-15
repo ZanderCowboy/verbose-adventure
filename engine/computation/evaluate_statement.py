@@ -23,14 +23,29 @@ def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_
     counter = 0
     matrix = create_matrix(number_of_variables)
 
-    logger.debug("In evaluate_array_as_tree(): \nelements_in_tree=%s, \ncounter=%d, \nmatrix=%s, "
-                    "\nvariables_as_array=%s", elements_in_tree, counter, matrix, variables_as_array)
-    returned_array, final_variable_combined, returned_matrix, all_variables = (
-        evaluate_array(elements_in_tree, counter, matrix, variables_as_array))
+    logger.debug(
+        "In evaluate_array_as_tree(): \nelements_in_tree=%s, \ncounter=%d, \nmatrix=%s, "
+        "\nvariables_as_array=%s",
+        elements_in_tree,
+        counter,
+        matrix,
+        variables_as_array,
+    )
+    (
+        returned_array,
+        final_variable_combined,
+        returned_matrix,
+        all_variables,
+    ) = evaluate_array(elements_in_tree, counter, matrix, variables_as_array)
 
     all_variables.append(final_variable_combined[0])
 
-    logger.debug("returned_array=%s, returned_matrix=%s, all_variables=%s", returned_array, returned_matrix, all_variables)
+    logger.debug(
+        "returned_array=%s, returned_matrix=%s, all_variables=%s",
+        returned_array,
+        returned_matrix,
+        all_variables,
+    )
     logger.debug("Finished evaluating array.")
     return returned_array, returned_matrix, all_variables
 
@@ -45,12 +60,14 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
     :param variables: List of variables in statement
     :return: returned_array, final_variable_combined, returned_matrix, all_variables
     """
-    logger.debug("Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables)
+    logger.debug(
+        "Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables
+    )
 
     # todo Fix bug for ((!Q) -> (!P))
     # if negation is encountered, add placeholder value in front
     if len(array) == 2:
-        blank = '_'
+        blank = "_"
         array = [blank, array[0], array[1]]
 
     left_array = array[0]
@@ -63,7 +80,9 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_left_array = left_array
 
         counter += 1
-        array_evaluated, left_array, placeholder, placeholder = evaluate_array(temp_left_array, counter, matrix, variables)
+        array_evaluated, left_array, placeholder, placeholder = evaluate_array(
+            temp_left_array, counter, matrix, variables
+        )
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, left_array)
 
@@ -72,7 +91,9 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_right_array = right_array
 
         counter += 1
-        array_evaluated, right_array, placeholder, placeholder = evaluate_array(temp_right_array, counter, matrix, variables)
+        array_evaluated, right_array, placeholder, placeholder = evaluate_array(
+            temp_right_array, counter, matrix, variables
+        )
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, right_array)
 
@@ -116,8 +137,13 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
             for i, entry_in_return_array in enumerate(returned_array):
                 matrix[i].append(entry_in_return_array)
 
-        logger.debug("In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
-                        returned_array, final_variable_combined, matrix, variables)
+        logger.debug(
+            "In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
+            returned_array,
+            final_variable_combined,
+            matrix,
+            variables,
+        )
         logger.debug("Evaluation of array in evaluate_array() is done.")
         return returned_array, final_variable_combined, matrix, variables
 
@@ -141,7 +167,7 @@ def set_new_array_elem(temp_array):
     new_string = ""
 
     # look at left part
-    if left_part[0] == '_':
+    if left_part[0] == "_":
         pass
     elif len(left_part[0]) == 1:
         new_string += left_part[0]
@@ -176,7 +202,13 @@ def add_array_to_matrix(matrix, array_evaluated, variables, variable_entry):
     :param variable_entry: Auxiliary entry to add to array of variables
     :return: Returns an updated array of variables
     """
-    logger.debug("Calling add_array_to_matrix(%s, %s, %s, %s)...", matrix, array_evaluated, variables, variable_entry)
+    logger.debug(
+        "Calling add_array_to_matrix(%s, %s, %s, %s)...",
+        matrix,
+        array_evaluated,
+        variables,
+        variable_entry,
+    )
 
     for i, row_entry in enumerate(matrix):
         entry_to_add = array_evaluated[i]

@@ -1,6 +1,6 @@
 """ Insert """
 from components.regular_expression import validate_input
-from components.constants import *
+from components.constants import LEFT_BRACKETS, RIGHT_BRACKETS, WHITE_SPACES
 from engine_logging.logging_config import logger
 
 
@@ -10,6 +10,7 @@ class IllegalCharactersException(Exception):
     Args:
         Exception (_type_): _description_
     """
+
     pass
 
 
@@ -28,8 +29,13 @@ def check_for_illegal_characters(statement):
         if validate_input(char):
             continue
         else:
-            logger.exception("FAIL: String contains illegal characters, please inspect: char=%s", char)
-            raise IllegalCharactersException("Exception: String contains illegal characters.")
+            logger.exception(
+                "FAIL: String contains illegal characters, please inspect: char=%s",
+                char,
+            )
+            raise IllegalCharactersException(
+                "Exception: String contains illegal characters."
+            )
     logger.debug("******************** finished input validation *******************")
 
     logger.info("PASS: There were no illegal characters found.")

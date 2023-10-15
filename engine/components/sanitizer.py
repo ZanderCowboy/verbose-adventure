@@ -5,7 +5,12 @@
 # todo Change connectives to one common set
 # todo Change lower case letters to upper case
 
-from components.constants import *
+from components.constants import (
+    LEFT_BRACKETS,
+    RIGHT_BRACKETS,
+    UNARY_CONNECTIVES,
+    BINARY_CONNECTIVES,
+)
 from engine_logging.logging_config import logger
 
 
@@ -33,7 +38,9 @@ def clean_whitespaces(statement: str) -> str:
     """
     logger.debug("Calling clean_whitespaces(%s)...", statement)
 
-    logger.debug("Finished removing whitespaces: statement=%s", statement.replace(" ", ""))
+    logger.debug(
+        "Finished removing whitespaces: statement=%s", statement.replace(" ", "")
+    )
     return statement.replace(" ", "")
 
 
@@ -50,7 +57,10 @@ def remove_brackets_around_variables(arr: list, variables: list) -> list:
         if arr[i] in variables:
             left_of_variable = arr[i - 1]
             right_of_variable = arr[i + 1]
-            if left_of_variable in LEFT_BRACKETS and right_of_variable in RIGHT_BRACKETS:
+            if (
+                left_of_variable in LEFT_BRACKETS
+                and right_of_variable in RIGHT_BRACKETS
+            ):
                 arr.pop(i - 1)
                 arr.pop(i)
     # todo Add another loop to make sure that no 'single brackets' are found
@@ -71,13 +81,17 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
 
     for i, _ in enumerate(arr):
         if arr[i] in UNARY_CONNECTIVES:  # we have a unary connective
-            if arr[i+1] in variables:  # unary connective is next to a variable
-                if arr[i-1] in LEFT_BRACKETS and arr[i+2] in RIGHT_BRACKETS:  # there is brackets around it
+            if arr[i + 1] in variables:  # unary connective is next to a variable
+                if (
+                    arr[i - 1] in LEFT_BRACKETS and arr[i + 2] in RIGHT_BRACKETS
+                ):  # there is brackets around it
                     # good case
                     continue
-                elif arr[i-1] in BINARY_CONNECTIVES or arr[i+2] in BINARY_CONNECTIVES:  # there is no brackets around it
-                    arr.insert(i, '(')
-                    arr.insert(i+3, ')')
+                elif (
+                    arr[i - 1] in BINARY_CONNECTIVES or arr[i + 2] in BINARY_CONNECTIVES
+                ):  # there is no brackets around it
+                    arr.insert(i, "(")
+                    arr.insert(i + 3, ")")
     # todo Add a final check to makes sure that no unary connectives was missed.
 
     logger.debug("arr=%s", arr)

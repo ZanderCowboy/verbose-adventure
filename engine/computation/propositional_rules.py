@@ -8,12 +8,14 @@ from engine_logging.logging_config import logger
 # todo 'negation', 'for all', 'there exists' bind most tightly; then disj and
 #  conj; then impl. (which is right-associative)
 
+
 class UnequalArraysExcept(Exception):
     """_summary_
 
     Args:
         Exception (_type_): _description_
     """
+
     pass
 
 
@@ -27,12 +29,16 @@ def conjunction(left, right):
     logger.debug("Calling conjunction(%s, %s)...", left, right)
 
     if len(left) != len(right):  # if they are not equal, raise and skip the rest
-        logger.exception("The left '%s' and right '%s' arrays are unequal! Exiting.", left, right)
-        raise UnequalArraysExcept("The left and right arrays are unequal. Please investigate.")
+        logger.exception(
+            "The left '%s' and right '%s' arrays are unequal! Exiting.", left, right
+        )
+        raise UnequalArraysExcept(
+            "The left and right arrays are unequal. Please investigate."
+        )
 
     num = int(log2(len(left)))
     new_row_values = []
-    for i in range(0, 2 ** num):
+    for i in range(0, 2**num):
         if left[i] == TRUE and right[i] == TRUE:
             new_row_values.append(TRUE)
         else:
@@ -53,12 +59,16 @@ def disjunction(left, right):
     logger.debug("Calling disjunction(%s, %s)...", left, right)
 
     if len(left) != len(right):  # if they are not equal, raise and skip the rest
-        logger.exception("The left '%s' and right '%s' arrays are unequal! Exiting.", left, right)
-        raise UnequalArraysExcept("The left and right arrays are unequal. Please investigate.")
+        logger.exception(
+            "The left '%s' and right '%s' arrays are unequal! Exiting.", left, right
+        )
+        raise UnequalArraysExcept(
+            "The left and right arrays are unequal. Please investigate."
+        )
 
     num = int(log2(len(left)))
     new_row_values = []
-    for i in range(0, 2 ** num):
+    for i in range(0, 2**num):
         if left[i] == FALSE and right[i] == FALSE:
             new_row_values.append(FALSE)
         else:
@@ -79,7 +89,7 @@ def negation(left):
 
     num = int(log2(len(left)))
     new_row_values = []
-    for i in range(0, 2 ** num):
+    for i in range(0, 2**num):
         if left[i] == TRUE:
             new_row_values.append(FALSE)
         elif left[i] == FALSE:
@@ -100,12 +110,16 @@ def conditional(left, right):
     logger.debug("Calling conditional(%s, %s)...", left, right)
 
     if len(left) != len(right):  # if they are not equal, raise and skip the rest
-        logger.exception("The left '%s' and right '%s' arrays are unequal! Exiting.", left, right)
-        raise UnequalArraysExcept("The left and right arrays are unequal. Please investigate.")
+        logger.exception(
+            "The left '%s' and right '%s' arrays are unequal! Exiting.", left, right
+        )
+        raise UnequalArraysExcept(
+            "The left and right arrays are unequal. Please investigate."
+        )
 
     num = int(log2(len(left)))
     new_row_values = []
-    for i in range(0, 2 ** num):
+    for i in range(0, 2**num):
         if left[i] == TRUE and right[i] == FALSE:
             new_row_values.append(FALSE)
         else:
@@ -126,12 +140,16 @@ def biconditional(left, right):
     logger.debug("Calling biconditional(%s, %s)...", left, right)
 
     if len(left) != len(right):  # if they are not equal, raise and skip the rest
-        logger.exception("The left '%s' and right '%s' arrays are unequal! Exiting.", left, right)
-        raise UnequalArraysExcept("The left and right arrays are unequal. Please investigate.")
+        logger.exception(
+            "The left '%s' and right '%s' arrays are unequal! Exiting.", left, right
+        )
+        raise UnequalArraysExcept(
+            "The left and right arrays are unequal. Please investigate."
+        )
 
     num = int(log2(len(left)))
     new_row_values = []
-    for i in range(0, 2 ** num):
+    for i in range(0, 2**num):
         if left[i] == right[i]:
             new_row_values.append(TRUE)
         else:

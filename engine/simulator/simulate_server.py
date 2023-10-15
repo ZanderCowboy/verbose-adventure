@@ -1,17 +1,22 @@
 """
 This can be used to simulate the calls that are made by the GRPC Server
 """
-from parser.checks import check_brackets, check_for_illegal_characters
-from parser.checks.check_brackets import UnequalBracketsExcept
-from parser.checks.check_for_illegal_characters import IllegalCharactersException
-# from input_statements import statement
+from parser.checks.check_brackets import (
+    check_left_and_right_brackets,
+    UnequalBracketsExcept,
+)
+from parser.checks.check_illegal_characters import (
+    check_for_illegal_characters,
+    IllegalCharactersException,
+)
 
 
 # Part 1: Checks for brackets and characters
 try:
     statement = []
-    if (check_brackets.check_left_and_right_brackets(statement) and
-            check_for_illegal_characters.check_for_illegal_characters(statement)):
+    if check_left_and_right_brackets(statement) and check_for_illegal_characters(
+        statement
+    ):
         pass
 except UnequalBracketsExcept as ce:
     print("Unequal Brackets Exception: ", ce)

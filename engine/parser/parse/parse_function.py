@@ -1,10 +1,16 @@
 """ Insert """
-from components.constants import *
+from parser.checks.check_brackets import check_left_and_right_brackets
+from components.constants import (
+    LEFT_BRACKETS,
+    RIGHT_BRACKETS,
+    UNARY_CONNECTIVES,
+    BINARY_CONNECTIVES,
+)
 from components.sanitizer import add_brackets_around_unary_connectives
 from components.sanitizer import remove_brackets_around_variables
-from engine_logging.logging_config import logger
-from parser.checks.check_brackets import check_left_and_right_brackets
 from components.print_details import print_details
+from engine_logging.logging_config import logger
+
 
 
 def parse_array(elements: list, variables: list):
@@ -35,7 +41,7 @@ def parse_array(elements: list, variables: list):
         return tree_structured_array
 
 
-def parse(arr):
+def parse(arr):  # Private Method
     """
     This acts as an internal parse function, taking an array and recursively
     building a tree-like array structure.
@@ -72,7 +78,7 @@ def parse(arr):
 
     # ******************* RIGHT ***********************
     right = []
-    arr_right = arr[position_middle + 1:]
+    arr_right = arr[position_middle + 1 :]
     if len(arr_right) > 1:
         if arr_right[0] in LEFT_BRACKETS:
             right = parse(arr_right)
@@ -88,7 +94,7 @@ def parse(arr):
     return temp_arr
 
 
-def remove_outer_brackets(array):
+def remove_outer_brackets(array):  # Private Method
     """
     This removes the outer brackets around an array.
     :param array: An array with redundant outer brackets
@@ -105,7 +111,7 @@ def remove_outer_brackets(array):
     return array
 
 
-def find_connective(arr):
+def find_connective(arr):  # Private Method
     """
     Given an array with no outer brackets, this find the connective between
     the left section and the right section. Acts as an internal function.

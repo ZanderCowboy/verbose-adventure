@@ -9,6 +9,7 @@ class UnequalBracketsExcept(Exception):
     Args:
         Exception (_type_): _description_
     """
+
     pass
 
 
@@ -31,10 +32,14 @@ def check_left_and_right_brackets(statement):
         logger.info("PASS: The number of left and right brackets are equal.")
         return True
 
-    logger.exception("FAIL: Unequal number of left and right brackets. "
-                        "Please check: count=%d", count)
-    raise UnequalBracketsExcept("Input statement must have an equal number "
-                                "of opening and closing brackets")
+    logger.exception(
+        "FAIL: Unequal number of left and right brackets. Please check: count=%d",
+        count,
+    )
+    raise UnequalBracketsExcept(
+        "Input statement must have an equal number of opening and closing brackets"
+    )
+
 
 # todo Add to Unit Test
 # check_brackets tests
