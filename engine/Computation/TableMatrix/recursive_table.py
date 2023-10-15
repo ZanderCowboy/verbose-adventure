@@ -1,4 +1,4 @@
-from Components.Constants import TRUE, FALSE
+from Components.constants import TRUE, FALSE
 from Logging.logging_config import logger
 
 

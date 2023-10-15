@@ -1,5 +1,5 @@
-from Components.RegularExpression import validate_input
-from Components.Constants import *
+from Components.regular_expression import validate_input
+from Components.constants import *
 from Logging.logging_config import logger
 
 

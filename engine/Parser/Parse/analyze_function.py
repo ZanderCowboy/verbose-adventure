@@ -1,9 +1,9 @@
-from Components.CreateConditionals import create_conditionals
-from Components.CreateElements import create_array_of_elements
-from Components.FindVariables import find_variables
-from Components.Sanitizer import clean_whitespaces
+from Components.create_conditionals import create_conditionals
+from Components.create_elements import create_array_of_elements
+from Components.find_variables import find_variables
+from Components.sanitizer import clean_whitespaces
 from Logging.logging_config import logger
-from Components.PrintDetails import print_details
+from Components.print_details import print_details
 
 
 def analyze_statement(statement: str) -> [int, list, list]:

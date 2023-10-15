@@ -1,12 +1,12 @@
-from Components.PrintDetails import print_details
-from Computation.EvaluateStatement import *
-from Computation.TableMatrix.DisplayMatrix import display_matrix
+from Components.print_details import print_details
+from Computation.evaluate_statement import *
+from Computation.TableMatrix.display_matrix import display_matrix
 from Logging.logging_config import logger
-from Parser.Checks.CheckBrackets import check_left_and_right_brackets
-from Parser.Checks.CheckForIllegalCharacters import check_for_illegal_characters
-from Parser.Checks.CheckBrackets import UnequalBracketsExcept
-from Parser.Checks.CheckForIllegalCharacters import IllegalCharactersException
-from Simulator.UserInput import user_input
+from Parser.Checks.check_brackets import check_left_and_right_brackets
+from Parser.Checks.check_for_illegal_characters import check_for_illegal_characters
+from Parser.Checks.check_brackets import UnequalBracketsExcept
+from Parser.Checks.check_for_illegal_characters import IllegalCharactersException
+from Simulator.user_input import user_input
 from Simulator.input_statements import *
 
 

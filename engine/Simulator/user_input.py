@@ -1,6 +1,6 @@
 from Logging.logging_config import logger
-from Parser.Parse.AnalyzeFunction import analyze_statement
-from Parser.Parse.ParseFunction import parse_array
+from Parser.Parse.analyze_function import analyze_statement
+from Parser.Parse.parse_function import parse_array
 
 
 def user_input(statement: str) -> [int, list, str, list]:

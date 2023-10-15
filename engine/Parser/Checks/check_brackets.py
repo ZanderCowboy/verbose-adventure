@@ -1,4 +1,4 @@
-from Components.Constants import LEFT_BRACKETS, RIGHT_BRACKETS
+from Components.constants import LEFT_BRACKETS, RIGHT_BRACKETS
 from Logging.logging_config import logger
 
 
