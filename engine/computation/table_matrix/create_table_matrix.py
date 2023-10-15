@@ -1,5 +1,5 @@
 """ Insert """
-from computation.TableMatrix.recursive_table import recursive_table
+from computation.table_matrix.recursive_table import recursive_table
 from engine_logging.logging_config import logger
 
 

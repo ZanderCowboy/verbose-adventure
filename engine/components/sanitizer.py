@@ -5,8 +5,8 @@
 # todo Change connectives to one common set
 # todo Change lower case letters to upper case
 
-from Components.constants import *
-from Logging.logging_config import logger
+from components.constants import *
+from engine_logging.logging_config import logger
 
 
 # for example: change & to ^, | to v
