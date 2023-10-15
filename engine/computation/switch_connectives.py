@@ -1,10 +1,11 @@
-"""_summary_
-
-Returns:
-	_type_: _description_
-"""
-from computation.propositional_rules import (conjunction, disjunction, negation, 
-                                             conditional, biconditional)
+""" Insert """
+from computation.propositional_rules import (
+    conjunction,
+    disjunction,
+    negation,
+    conditional,
+    biconditional,
+)
 from engine_logging.logging_config import logger
 
 
@@ -20,17 +21,11 @@ def switch_case(case, temp_left, temp_right):
         _type_: _description_
     """
     logger.debug("Entering switch_case(%s, %s, %s)...", case, temp_left, temp_right)
-    switch_dict = {
-        '^': conj,
-        'v': disj,
-        '!': neg,
-        '->': cond,
-        '<->': bicond
-    }
+    switch_dict = {"^": conj, "v": disj, "!": neg, "->": cond, "<->": bicond}
     return switch_dict.get(case, default_case)(temp_left, temp_right)
 
 
-def conj(left, right):
+def conj(left, right):  # Private Method
     """_summary_
 
     Args:
@@ -44,7 +39,7 @@ def conj(left, right):
     return conjunction(left, right)
 
 
-def disj(left, right):
+def disj(left, right):  # Private Method
     """_summary_
 
     Args:
@@ -58,7 +53,7 @@ def disj(left, right):
     return disjunction(left, right)
 
 
-def neg(left, _):
+def neg(left, _):  # Private Method
     """_summary_
 
     Args:
@@ -67,14 +62,12 @@ def neg(left, _):
 
     Returns:
         _type_: _description_
-        :param left:
-        :param _:
     """
     logger.debug("In neg. case...")
     return negation(left)
 
 
-def cond(left, right):
+def cond(left, right):  # Private Method
     """_summary_
 
     Args:
@@ -88,7 +81,7 @@ def cond(left, right):
     return conditional(left, right)
 
 
-def bicond(left, right):
+def bicond(left, right):  # Private Method
     """_summary_
 
     Args:
@@ -102,7 +95,7 @@ def bicond(left, right):
     return biconditional(left, right)
 
 
-def default_case():
+def default_case():  # Private Method
     """_summary_
 
     Returns:

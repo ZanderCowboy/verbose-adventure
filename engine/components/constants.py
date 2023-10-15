@@ -1,9 +1,5 @@
-"""_summary_
-"""
+""" Insert """
 # Global Variables
-# todo Change to UPPER CASE, for constants
-
-
 LEFT_BRACKETS = "({["
 RIGHT_BRACKETS = ")}]"
 BINARY_CONNECTIVES = ['^', 'v', '->', '<->']
@@ -27,7 +23,7 @@ COND_ELEM = "->"
 BICOND_ELEM = "<->"
 PRE_CHECK = ['<', '-', '>']
 
-# todo What are illegal characters
+
 # What are illegal characters
 # numbers
 # (0 ^ 1)
