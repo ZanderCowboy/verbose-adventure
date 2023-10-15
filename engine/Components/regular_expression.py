@@ -1,9 +1,18 @@
+""" Insert """
 import re
 
 from Logging.logging_config import logger
 
 
 def validate_input(input_string: str) -> bool:
+	"""_summary_
+
+	Args:
+		input_string (str): _description_
+
+	Returns:
+		bool: _description_
+	"""
     logger.debug("Calling validate_input(%s)...", input_string)
 
     # pattern = r"^(?:[a-zA-Z](?:_\d+)?|[a-zA-Z])$|[\^v!<>-]"

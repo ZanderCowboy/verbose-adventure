@@ -1,4 +1,4 @@
-# This file is to give the rules to calculate the propositional logic.
+""" This file is to give the rules to calculate the propositional logic. """
 from math import log2
 from Components.constants import TRUE, FALSE
 from Logging.logging_config import logger
@@ -9,6 +9,11 @@ from Logging.logging_config import logger
 #  conj; then impl. (which is right-associative)
 
 class UnequalArraysExcept(Exception):
+    """_summary_
+
+    Args:
+        Exception (_type_): _description_
+    """
     pass
 
 

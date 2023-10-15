@@ -1,3 +1,4 @@
+""" Insert """
 from Logging.logging_config import logger
 
 

@@ -1,3 +1,4 @@
+""" Insert """
 from Computation.TableMatrix.recursive_table import recursive_table
 from Logging.logging_config import logger
 

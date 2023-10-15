@@ -1,3 +1,4 @@
+""" Insert """
 from math import log2
 
 from Computation.switch_connectives import switch_case

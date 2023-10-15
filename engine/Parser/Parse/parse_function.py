@@ -1,3 +1,4 @@
+""" Insert """
 from Components.constants import *
 from Components.sanitizer import add_brackets_around_unary_connectives
 from Components.sanitizer import remove_brackets_around_variables
@@ -6,7 +7,7 @@ from Parser.Checks.check_brackets import check_left_and_right_brackets
 from Components.print_details import print_details
 
 
-def parse_array(elements: list, variables: list) -> list:
+def parse_array(elements: list, variables: list):
     """
     This takes an array of elements and variables, completes some sanitizing and
     checks and then calls an internal parse function to complete the parsing.

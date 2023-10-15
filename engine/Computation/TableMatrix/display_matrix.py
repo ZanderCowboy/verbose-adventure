@@ -1,7 +1,15 @@
+""" Insert """
 from Logging.logging_config import logger
 
 
 def display_matrix(number_of_variables: int, returned_matrix: list, all_variables: list) -> None:
+    """_summary_
+
+    Args:
+        number_of_variables (int): _description_
+        returned_matrix (list): _description_
+        all_variables (list): _description_
+    """
     logger.debug("Displaying matrix to console...")
 
     auxiliary_variables = []  # Holds all the placeholder variables
@@ -79,6 +87,16 @@ def display_matrix(number_of_variables: int, returned_matrix: list, all_variable
 
 # todo Finish Function
 def get_number_of_spaces(number_of_variables: int, nr_auxiliary_variables: int, all_variables: list) -> int:
+    """_summary_
+
+    Args:
+        number_of_variables (int): _description_
+        nr_auxiliary_variables (int): _description_
+        all_variables (list): _description_
+
+    Returns:
+        int: _description_
+    """
     logger.debug("Calling get_number_of_spaces(%d, %d, %s)...", number_of_variables, nr_auxiliary_variables, all_variables)
 
     space = 3

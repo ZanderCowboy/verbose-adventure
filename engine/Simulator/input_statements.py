@@ -1,3 +1,4 @@
+""" Insert """
 # Test cases that is used in simulate_main.py
 test_cases = [
 	# "(P <-> (P <-> (P <-> (P <-> P))))",

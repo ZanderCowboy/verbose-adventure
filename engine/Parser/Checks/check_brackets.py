@@ -1,8 +1,14 @@
+""" Insert """
 from Components.constants import LEFT_BRACKETS, RIGHT_BRACKETS
 from Logging.logging_config import logger
 
 
 class UnequalBracketsExcept(Exception):
+    """_summary_
+
+    Args:
+        Exception (_type_): _description_
+    """
     pass
 
 

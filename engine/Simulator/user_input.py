@@ -1,9 +1,10 @@
+""" Insert """
 from Logging.logging_config import logger
 from Parser.Parse.analyze_function import analyze_statement
 from Parser.Parse.parse_function import parse_array
 
 
-def user_input(statement: str) -> [int, list, str, list]:
+def user_input(statement: str):
     """
     Takes a given statement, analyzes it and returns the elements and variables.
     :returns: (int) number of variables,
