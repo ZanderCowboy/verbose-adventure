@@ -10,8 +10,6 @@ class UnequalBracketsExcept(Exception):
         Exception (_type_): _description_
     """
 
-    pass
-
 
 def check_left_and_right_brackets(statement):
     """
@@ -39,12 +37,3 @@ def check_left_and_right_brackets(statement):
     raise UnequalBracketsExcept(
         "Input statement must have an equal number of opening and closing brackets"
     )
-
-
-# todo Add to Unit Test
-# check_brackets tests
-# test_check_brackets = ['(',')']
-# test_check_brackets = ['(','(',')',')']
-# test_check_brackets = ['(', '(',')',    '(',')',    ')']
-# test_check_brackets = ['(',  '(',')',  '(','(',')','(',')',')', ')']
-# test_check_brackets = ['(', '(',')', '(',   '(',')',    ')']  # False

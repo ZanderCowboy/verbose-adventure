@@ -1,11 +1,11 @@
 """
 This can be used to simulate the calls that are made by the GRPC Server
 """
-from parser.checks.check_brackets import (
+from engine_parser.checks.check_brackets import (
     check_left_and_right_brackets,
     UnequalBracketsExcept,
 )
-from parser.checks.check_illegal_characters import (
+from engine_parser.checks.check_illegal_characters import (
     check_for_illegal_characters,
     IllegalCharactersException,
 )

@@ -64,7 +64,6 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         "Calling evaluate_array(%s, %d, %s, %s)...", array, counter, matrix, variables
     )
 
-    # todo Fix bug for ((!Q) -> (!P))
     # if negation is encountered, add placeholder value in front
     if len(array) == 2:
         blank = "_"
@@ -80,7 +79,7 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_left_array = left_array
 
         counter += 1
-        array_evaluated, left_array, placeholder, placeholder = evaluate_array(
+        array_evaluated, left_array, _, _ = evaluate_array(
             temp_left_array, counter, matrix, variables
         )
         counter -= 1
@@ -91,7 +90,7 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         temp_right_array = right_array
 
         counter += 1
-        array_evaluated, right_array, placeholder, placeholder = evaluate_array(
+        array_evaluated, right_array, _, _ = evaluate_array(
             temp_right_array, counter, matrix, variables
         )
         counter -= 1
@@ -138,7 +137,8 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
                 matrix[i].append(entry_in_return_array)
 
         logger.debug(
-            "In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, \nmatrix=%s, \nvariables=%s",
+            "In evaluate_array(): \nreturned_array=%s, \nfinal_variable_combined=%s, "
+            "\nmatrix=%s, \nvariables=%s",
             returned_array,
             final_variable_combined,
             matrix,
@@ -147,6 +147,9 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         logger.debug("Evaluation of array in evaluate_array() is done.")
         return returned_array, final_variable_combined, matrix, variables
 
+    logger.debug("**** ERROR! **** \n This should not be reached. "
+                 "Inspect evaluate_array in evaluate_statement.py")
+    return None
 
 def set_new_array_elem(temp_array):
     """

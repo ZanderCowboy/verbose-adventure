@@ -1,10 +1,10 @@
-""" Insert """
-# todo Changes statement to something that we can use
-# todo Change to something that the system can use
-# todo Add brackets
-# todo Change connectives to one common set
-# todo Change lower case letters to upper case
-
+"""
+# Changes statement to something that we can use
+# Change to something that the system can use
+# Add brackets
+# Change connectives to one common set
+# Change lower case letters to upper case
+"""
 from components.constants import (
     LEFT_BRACKETS,
     RIGHT_BRACKETS,
@@ -17,14 +17,13 @@ from engine_logging.logging_config import logger
 # for example: change & to ^, | to v
 
 
-# todo Refactor to sanitize statement
-def add_brackets(statement):
+def add_brackets(_):
     """
     Adds outer brackets to any statement
     :param statement:
     :return:
     """
-    pass
+
     new_string = ""
 
     return new_string
@@ -63,7 +62,6 @@ def remove_brackets_around_variables(arr: list, variables: list) -> list:
             ):
                 arr.pop(i - 1)
                 arr.pop(i)
-    # todo Add another loop to make sure that no 'single brackets' are found
 
     logger.debug("arr=%s", arr)
     logger.debug("Finished removing all brackets around variables.")
@@ -87,12 +85,11 @@ def add_brackets_around_unary_connectives(arr: list, variables: list) -> list:
                 ):  # there is brackets around it
                     # good case
                     continue
-                elif (
+                if (
                     arr[i - 1] in BINARY_CONNECTIVES or arr[i + 2] in BINARY_CONNECTIVES
                 ):  # there is no brackets around it
                     arr.insert(i, "(")
                     arr.insert(i + 3, ")")
-    # todo Add a final check to makes sure that no unary connectives was missed.
 
     logger.debug("arr=%s", arr)
     logger.debug("Finished adding brackets around all unary connectives.")

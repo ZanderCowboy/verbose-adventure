@@ -1,9 +1,9 @@
 """ Insert """
-from parser.checks.check_brackets import (
+from engine_parser.checks.check_brackets import (
     check_left_and_right_brackets,
     UnequalBracketsExcept,
 )
-from parser.checks.check_illegal_characters import (
+from engine_parser.checks.check_illegal_characters import (
     check_for_illegal_characters,
     IllegalCharactersException,
 )
@@ -11,8 +11,8 @@ from engine_logging.logging_config import logger
 from components.print_details import print_details
 from computation.evaluate_statement import evaluate_array_as_tree
 from computation.table_matrix.display_matrix import display_matrix
-from .user_input import user_input
-from .input_statements import test_cases
+from simulator.user_input import user_input
+from simulator.input_statements import test_cases
 
 
 def simulate_main():
@@ -21,7 +21,7 @@ def simulate_main():
     """
     logger.debug("Calling simulate_main()...")
 
-    for idx, statement in enumerate(test_cases, start=1):
+    for _, statement in enumerate(test_cases, start=1):
         logger.info("Statement:\t%s", statement)
 
         # First complete all checks
@@ -36,7 +36,6 @@ def simulate_main():
                 pass
         except UnequalBracketsExcept as ce:
             logger.exception("Unequal Brackets Exception: ", ce)
-            logger.exception("Un", ce)
             continue
         except IllegalCharactersException as ice:
             logger.exception("Illegal Characters Exception: ", ice)
@@ -93,7 +92,6 @@ def simulate_main():
         )
         logger.info("Finished evaluating statement.")
 
-        # todo Ticket: Add and Modify Code for Console Output
         display_matrix(number_of_variables, returned_matrix, all_variables)
 
         logger.debug("Returning from simulate_main()...")

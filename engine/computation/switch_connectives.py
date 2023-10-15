@@ -53,13 +53,12 @@ def disj(left, right):  # Private Method
     return disjunction(left, right)
 
 
-# todo Refactor neg() to remove 'right' parameter
 def neg(left, _):  # Private Method
     """_summary_
 
     Args:
         left (_type_): _description_
-        right (_type_): _description_
+        _ (_type_): _description_
 
     Returns:
         _type_: _description_

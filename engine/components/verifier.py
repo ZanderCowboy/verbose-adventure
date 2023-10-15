@@ -1,4 +1,6 @@
-# todo Check connectives
-# todo Suggest list of connectives
-# todo From sanitizer.py, check code and if not, return to user input or ErrorHandler.py
-# todo If verifier.py is valid, proceed
+"""
+# Check connectives
+# Suggest list of connectives
+# From sanitizer.py, check code and if not, return to user input or ErrorHandler.py
+# If verifier.py is valid, proceed
+"""

@@ -71,7 +71,7 @@ def display_matrix(
                 if temp_length % 2 == 1:  # odd
                     add_len = temp_length / 2 + 1
                 add_space = ""
-                for k in range(int(add_len)):
+                for _ in range(int(add_len)):
                     add_space += " "
                 print(row[j] + add_space + " || ", end="")
 
@@ -83,7 +83,7 @@ def display_matrix(
         elif temp_length % 2 == 0:  # even
             add_len = temp_length / 2
         add_space = ""
-        for k in range(int(add_len)):
+        for _ in range(int(add_len)):
             add_space += " "
         print(row[-1] + add_space + " || ", end="")
         print("\n", end="")
@@ -91,7 +91,6 @@ def display_matrix(
     print("=" * count_characters)
 
 
-# todo Finish Function
 def get_number_of_spaces(
     number_of_variables: int, nr_auxiliary_variables: int, all_variables: list
 ) -> int:

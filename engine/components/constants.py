@@ -1,8 +1,5 @@
 """ Insert """
 # Global Variables
-# todo Change to UPPER CASE, for constants
-
-
 LEFT_BRACKETS = "({["
 RIGHT_BRACKETS = ")}]"
 BINARY_CONNECTIVES = ['^', 'v', '->', '<->']
@@ -13,7 +10,6 @@ TRUE = 'T'
 FALSE = 'F'
 
 # Constants used in the Components package
-# todo Add other connectives such as &&, ||, etc.
 VALID_BRACKETS = "(){}[]"
 VALID_CONNECTIVES = "^v!<->"
 
@@ -28,7 +24,6 @@ BICOND_ELEM = "<->"
 PRE_CHECK = ['<', '-', '>']
 
 
-# todo What are illegal characters
 # What are illegal characters
 # numbers
 # (0 ^ 1)

@@ -38,7 +38,8 @@ def analyze_statement(statement: str):
     array_of_elements = create_conditionals(array_of_elements)
 
     logger.debug(
-        "In analyze_statement(): \nlen(variables_arr)=%d, \nvariables_arr=%s, \narray_of_elements=%s",
+        "In analyze_statement(): \nlen(variables_arr)=%d, "
+        "\nvariables_arr=%s, \narray_of_elements=%s",
         len(variables_arr),
         variables_arr,
         array_of_elements,

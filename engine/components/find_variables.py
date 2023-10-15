@@ -14,7 +14,7 @@ def find_variables(statement: str) -> list:
     """
     logger.info("Finding variables in statement...")
 
-    # todo Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
+    # NOTE: Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
 
     logger.debug("statement=%s", statement)
     variables_array = []

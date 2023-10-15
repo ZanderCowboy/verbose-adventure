@@ -4,19 +4,12 @@ from components.constants import TRUE, FALSE
 from engine_logging.logging_config import logger
 
 
-# todo double negation cancel out
-# todo 'negation', 'for all', 'there exists' bind most tightly; then disj and
-#  conj; then impl. (which is right-associative)
-
-
 class UnequalArraysExcept(Exception):
     """_summary_
 
     Args:
         Exception (_type_): _description_
     """
-
-    pass
 
 
 def conjunction(left, right):
