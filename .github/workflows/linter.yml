@@ -58,7 +58,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pylint pytest
           # pip install -r requirements.txt  
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Analysing the code with pylint
         run: |
@@ -90,7 +90,7 @@ jobs:
       #   run: mvn -B package --file pom.xml
 
       - run: |
-          cd backend
+          cd backend/src
           javac Main.java
           # ./mvnw clean install  # Assuming you have a Maven wrapper script (mvnw) in your repository
           # Additional steps for testing and other build tasks as needed
