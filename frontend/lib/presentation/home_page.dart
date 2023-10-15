@@ -5,16 +5,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool showDrawer = true;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Propositional Calculator'),
         centerTitle: true,
-        // leading: IconButton(
-        //   onPressed: () {},
-        //   icon: const Icon(Icons.menu_open_rounded),
-        // ),
       ),
       drawer: const BuildDrawer(),
       body: const _HomePage(),
