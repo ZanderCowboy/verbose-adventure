@@ -1,4 +1,8 @@
-""" Insert """
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 from engine_logging.logging_config import logger
 
 
@@ -12,6 +16,7 @@ def create_array_of_elements(statement: str) -> list:
     :param statement: string
     :return: Returns an array of elements
     """
+
     logger.debug("Creating an array from a string...")
     logger.debug("Calling create_array_of_elements(%s)", statement)
 

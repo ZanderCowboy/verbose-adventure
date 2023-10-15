@@ -1,6 +1,10 @@
-""" Insert """
-from components.constants import VALID_BRACKETS, VALID_CONNECTIVES
-from engine_logging.logging_config import logger
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
+from engine_logging import logger
+from components import VALID_BRACKETS, VALID_CONNECTIVES
 
 
 def find_variables(statement: str) -> list:
@@ -14,12 +18,13 @@ def find_variables(statement: str) -> list:
     """
     logger.info("Finding variables in statement...")
 
-    # NOTE: Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
+    # todo Check if all whitespaces are removed. If so, continue o.w. call clean_whitespaces()
 
     logger.debug("statement=%s", statement)
     variables_array = []
     variables_string = ""
     non_variable_characters = VALID_BRACKETS + VALID_CONNECTIVES
+    i: int
     for i, char in enumerate(statement):
         duplicate = False
 

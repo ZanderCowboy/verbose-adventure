@@ -1,13 +1,10 @@
-""" Insert """
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
+from components.constants import OPEN_ARROW, DASH, CLOSE_ARROW, COND_ELEM, BICOND_ELEM, PRE_CHECK
 from engine_logging.logging_config import logger
-from components.constants import (
-    OPEN_ARROW,
-    DASH,
-    CLOSE_ARROW,
-    COND_ELEM,
-    BICOND_ELEM,
-    PRE_CHECK,
-)
 
 
 def create_conditionals(array_of_elements: list) -> list:
@@ -29,9 +26,7 @@ def create_conditionals(array_of_elements: list) -> list:
             end_of_line = True
         if char not in PRE_CHECK:  # no symbols present
             if end_of_line:
-                logger.debug(
-                    "Search for conditionals finished and none were found, returning."
-                )
+                logger.debug("Search for conditionals finished and none were found, returning.")
                 return array_of_elements
             continue
         if char in PRE_CHECK:
@@ -45,10 +40,7 @@ def create_conditionals(array_of_elements: list) -> list:
             break
 
         if char == OPEN_ARROW:  # checks to see if we have a biconditional
-            if (
-                array_of_elements[i + 1] == DASH
-                and array_of_elements[i + 2] == CLOSE_ARROW
-            ):
+            if array_of_elements[i + 1] == DASH and array_of_elements[i + 2] == CLOSE_ARROW:
                 array_of_elements.pop(i)
                 array_of_elements.pop(i)
                 array_of_elements.pop(i)
@@ -56,11 +48,8 @@ def create_conditionals(array_of_elements: list) -> list:
             continue
 
         # if we have a conditional
-        if (
-            char == DASH
-            and array_of_elements[i + 1] == CLOSE_ARROW
-            and biconditional_symbol is False
-        ):  # if we have a conditional
+        if (char == DASH and array_of_elements[i + 1] == CLOSE_ARROW and
+                biconditional_symbol is False):  # if we have a conditional
             array_of_elements.pop(i)
             array_of_elements.pop(i)
             array_of_elements.insert(i, COND_ELEM)
