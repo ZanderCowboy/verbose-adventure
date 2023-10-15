@@ -1,9 +1,9 @@
 """ Insert """
 from math import log2
 
-from Computation.switch_connectives import switch_case
-from Computation.TableMatrix.create_table_matrix import create_matrix
-from Logging.logging_config import logger
+from computation.switch_connectives import switch_case
+from computation.table_matrix.create_table_matrix import create_matrix
+from engine_logging.logging_config import logger
 
 
 def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_tree):

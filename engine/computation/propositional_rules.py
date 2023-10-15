@@ -1,7 +1,7 @@
 """ This file is to give the rules to calculate the propositional logic. """
 from math import log2
-from Components.constants import TRUE, FALSE
-from Logging.logging_config import logger
+from components.constants import TRUE, FALSE
+from engine_logging.logging_config import logger
 
 
 # todo double negation cancel out

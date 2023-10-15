@@ -1,6 +1,6 @@
 """ Insert """
-from Components.constants import LEFT_BRACKETS, RIGHT_BRACKETS
-from Logging.logging_config import logger
+from components.constants import LEFT_BRACKETS, RIGHT_BRACKETS
+from engine_logging.logging_config import logger
 
 
 class UnequalBracketsExcept(Exception):

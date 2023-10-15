@@ -1,6 +1,6 @@
 """ Insert """
-from Computation.propositional_rules import *
-from Logging.logging_config import logger
+from computation.propositional_rules import *
+from engine_logging.logging_config import logger
 
 
 def switch_case(case, temp_left, temp_right):

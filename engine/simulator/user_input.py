@@ -1,7 +1,7 @@
 """ Insert """
-from Logging.logging_config import logger
-from Parser.Parse.analyze_function import analyze_statement
-from Parser.Parse.parse_function import parse_array
+from engine_logging.logging_config import logger
+from parser.parse.analyze_function import analyze_statement
+from parser.parse.parse_function import parse_array
 
 
 def user_input(statement: str):

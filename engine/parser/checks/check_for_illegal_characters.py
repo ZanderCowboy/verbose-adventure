@@ -1,7 +1,7 @@
 """ Insert """
-from Components.regular_expression import validate_input
-from Components.constants import *
-from Logging.logging_config import logger
+from components.regular_expression import validate_input
+from components.constants import *
+from engine_logging.logging_config import logger
 
 
 class IllegalCharactersException(Exception):

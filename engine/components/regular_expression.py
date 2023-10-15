@@ -1,7 +1,7 @@
 """ Insert """
 import re
 
-from Logging.logging_config import logger
+from engine_logging.logging_config import logger
 
 
 def validate_input(input_string: str) -> bool:

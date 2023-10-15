@@ -1,10 +1,10 @@
 """ Insert """
-from Components.create_conditionals import create_conditionals
-from Components.create_elements import create_array_of_elements
-from Components.find_variables import find_variables
-from Components.sanitizer import clean_whitespaces
-from Logging.logging_config import logger
-from Components.print_details import print_details
+from components.create_conditionals import create_conditionals
+from components.create_elements import create_array_of_elements
+from components.find_variables import find_variables
+from components.sanitizer import clean_whitespaces
+from engine_logging.logging_config import logger
+from components.print_details import print_details
 
 
 def analyze_statement(statement: str):

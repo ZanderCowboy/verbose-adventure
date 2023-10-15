@@ -1,6 +1,6 @@
 """ Insert """
-from Components.constants import OPEN_ARROW, DASH, CLOSE_ARROW, COND_ELEM, BICOND_ELEM, PRE_CHECK
-from Logging.logging_config import logger
+from components.constants import OPEN_ARROW, DASH, CLOSE_ARROW, COND_ELEM, BICOND_ELEM, PRE_CHECK
+from engine_logging.logging_config import logger
 
 
 def create_conditionals(array_of_elements: list) -> list:

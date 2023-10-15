@@ -1,5 +1,5 @@
 """ Insert """
-from Logging.logging_config import logger
+from engine_logging.logging_config import logger
 
 
 def create_array_of_elements(statement: str) -> list:

@@ -1,6 +1,6 @@
 """ Insert """
-from Components.constants import VALID_BRACKETS, VALID_CONNECTIVES
-from Logging.logging_config import logger
+from components.constants import VALID_BRACKETS, VALID_CONNECTIVES
+from engine_logging.logging_config import logger
 
 
 def find_variables(statement: str) -> list:
