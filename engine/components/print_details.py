@@ -21,7 +21,13 @@ def print_details(name: str, *args):
     max_length = 60
     len_name = len(name)
     amount_stars = max_length - len_name
-    star_line = "*" * int(amount_stars/2) + " " + name.upper() + " " + "*" * int(amount_stars/2)
+    star_line = (
+        "*" * int(amount_stars / 2)
+        + " "
+        + name.upper()
+        + " "
+        + "*" * int(amount_stars / 2)
+    )
 
     logger.info(star_line)
     for arg_name, arg_value in args:

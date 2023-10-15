@@ -3,8 +3,8 @@
 Returns:
     _type_: _description_
 """
-from engine_logging import logger
-from components import VALID_BRACKETS, VALID_CONNECTIVES
+from engine_logging.logging_config import logger
+from components.constants import VALID_BRACKETS, VALID_CONNECTIVES
 
 
 def find_variables(statement: str) -> list:
@@ -28,7 +28,9 @@ def find_variables(statement: str) -> list:
     for i, char in enumerate(statement):
         duplicate = False
 
-        if char not in non_variable_characters:  # if char is not a bracket or a connective
+        if (
+            char not in non_variable_characters
+        ):  # if char is not a bracket or a connective
             # Testing for duplicates
             duplicate_int = statement.find(char, i + 1)
             var_str_find = variables_string.find(char)

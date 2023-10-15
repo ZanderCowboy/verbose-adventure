@@ -147,9 +147,12 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
         logger.debug("Evaluation of array in evaluate_array() is done.")
         return returned_array, final_variable_combined, matrix, variables
 
-    logger.debug("**** ERROR! **** \n This should not be reached. "
-                 "Inspect evaluate_array in evaluate_statement.py")
+    logger.debug(
+        "**** ERROR! **** \n This should not be reached. "
+        "Inspect evaluate_array in evaluate_statement.py"
+    )
     return None
+
 
 def set_new_array_elem(temp_array):
     """
