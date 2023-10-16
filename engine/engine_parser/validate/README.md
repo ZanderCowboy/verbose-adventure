@@ -5,4 +5,3 @@
 ## Logic Rules
 
 ## Connectives
-

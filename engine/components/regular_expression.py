@@ -1,4 +1,8 @@
-""" Insert """
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 import re
 
 from engine_logging.logging_config import logger
@@ -13,8 +17,8 @@ def validate_input(input_string: str) -> bool:
     Returns:
         bool: _description_
     """
-
     logger.debug("Calling validate_input(%s)...", input_string)
+
     pattern = r"^(?:[a-zA-Z](?:_\d+)?|[a-zA-Z])$|[\^v!<>-]"
     result = re.fullmatch(pattern, input_string) is not None
 

@@ -6,8 +6,10 @@ from components.constants import (
     UNARY_CONNECTIVES,
     BINARY_CONNECTIVES,
 )
-from components.sanitizer import add_brackets_around_unary_connectives
-from components.sanitizer import remove_brackets_around_variables
+from components.sanitizer import (
+    add_brackets_around_unary_connectives,
+    remove_brackets_around_variables,
+)
 from components.print_details import print_details
 from engine_logging.logging_config import logger
 
@@ -39,8 +41,10 @@ def parse_array(elements: list, variables: list):
         logger.info("Finished parsing array.")
         return tree_structured_array
 
-    logger.debug("**** ERROR! **** \n This should not be reached. "
-                 "Inspect parse_array in parse_function.py")
+    logger.debug(
+        "**** ERROR! **** \n This should not be reached. "
+        "Inspect parse_array in parse_function.py"
+    )
     return None
 
 
@@ -81,7 +85,7 @@ def parse(arr):  # Private Method
 
     # ******************* RIGHT ***********************
     right = []
-    arr_right = arr[position_middle + 1 :]
+    arr_right = arr[position_middle + 1:]
     if len(arr_right) > 1:
         if arr_right[0] in LEFT_BRACKETS:
             right = parse(arr_right)
@@ -141,6 +145,8 @@ def find_connective(arr):  # Private Method
             logger.debug("Found connective.")
             return elem, i
 
-    logger.debug("**** ERROR! **** \n This should not be reached. "
-                 "Inspect find_connective in parse_function.py")
+    logger.debug(
+        "**** ERROR! **** \n This should not be reached. "
+        "Inspect find_connective in parse_function.py"
+    )
     return None

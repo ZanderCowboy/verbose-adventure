@@ -3,7 +3,7 @@ from engine_logging.logging_config import logger
 
 
 def display_matrix(
-    number_of_variables: int, returned_matrix: list, all_variables: list
+    nr_of_vars: int, returned_matrix: list, all_variables: list
 ) -> None:
     """_summary_
 
@@ -14,25 +14,18 @@ def display_matrix(
     """
     logger.debug("Displaying matrix to console...")
 
-    auxiliary_variables = []  # Holds all the placeholder variables
-    for i in range(number_of_variables, len(all_variables) - 1):
-        auxiliary_variables.append(all_variables[i])
-    number_of_aux_variables = len(auxiliary_variables)
+    aux_vars = []  # Holds all the placeholder variables
+    for i in range(nr_of_vars, len(all_variables) - 1):
+        aux_vars.append(all_variables[i])
+    number_of_aux_variables = len(aux_vars)
 
     # prints part for variables
-    print("| ", end="")
-    for j in range(number_of_variables):
-        if j != number_of_variables - 1:
-            print(all_variables[j] + " | ", end="")
-        else:
-            print(all_variables[j] + " || ", end="")
+    print_variables(nr_of_vars, all_variables)
 
     # prints auxiliary variables
-    index_between_auxiliary_variables_and_last = number_of_variables + len(
-        auxiliary_variables
-    )
-    for j in range(number_of_variables, index_between_auxiliary_variables_and_last):
-        if j != index_between_auxiliary_variables_and_last - 1:
+    idx_between_aux_vars_and_last = nr_of_vars + len(aux_vars)
+    for j in range(nr_of_vars, idx_between_aux_vars_and_last):
+        if j != idx_between_aux_vars_and_last - 1:
             print(all_variables[j] + " | ", end="")
         else:
             print(all_variables[j] + " || ", end="")
@@ -43,7 +36,7 @@ def display_matrix(
     print("\n", end="")
 
     count_characters = get_number_of_spaces(
-        number_of_variables, number_of_aux_variables, all_variables
+        nr_of_vars, number_of_aux_variables, all_variables
     )
     print("=" * count_characters)
 
@@ -52,43 +45,34 @@ def display_matrix(
         print("| ", end="")
 
         # prints part for variables
-        for j in range(number_of_variables):
-            if j != number_of_variables - 1:
+        for j in range(nr_of_vars):
+            if j != nr_of_vars - 1:
                 print(row[j] + " | ", end="")
             else:
                 print(row[j] + " || ", end="")
 
         # prints auxiliary variables
-        index_between_auxiliary_variables_and_last = number_of_variables + len(
-            auxiliary_variables
-        )
-        for j in range(number_of_variables, index_between_auxiliary_variables_and_last):
-            if j != index_between_auxiliary_variables_and_last - 1:
-                print(row[j] + " | ", end="")
-            else:
-                temp_length = len(all_variables[j])
-                add_len = 0
-                if temp_length % 2 == 1:  # odd
-                    add_len = temp_length / 2 + 1
-                add_space = ""
-                for _ in range(int(add_len)):
-                    add_space += " "
-                print(row[j] + add_space + " || ", end="")
+        print_aux_vars(nr_of_vars, aux_vars, row, all_variables)
 
         # prints last column
-        temp_length = len(all_variables[-1])
-        add_len = 0
-        if temp_length % 2 == 1:  # odd
-            add_len = temp_length / 2 + 1
-        elif temp_length % 2 == 0:  # even
-            add_len = temp_length / 2
-        add_space = ""
-        for _ in range(int(add_len)):
-            add_space += " "
-        print(row[-1] + add_space + " || ", end="")
-        print("\n", end="")
+        print_last_column(all_variables, row)
 
     print("=" * count_characters)
+
+
+def print_variables(number_of_variables, all_variables):
+    """_summary_
+
+    Args:
+        number_of_variables (_type_): _description_
+        all_variables (_type_): _description_
+    """
+    print("| ", end="")
+    for j in range(number_of_variables):
+        if j != number_of_variables - 1:
+            print(all_variables[j] + " | ", end="")
+        else:
+            print(all_variables[j] + " || ", end="")
 
 
 def get_number_of_spaces(
@@ -139,3 +123,47 @@ def get_number_of_spaces(
     logger.debug("total_space=%d", total_space)
     logger.debug("Finished calculating the total space.")
     return total_space
+
+
+def print_aux_vars(number_of_variables, auxiliary_variables, row, all_variables):
+    """_summary_
+
+    Args:
+        number_of_variables (_type_): _description_
+        auxiliary_variables (_type_): _description_
+        row (_type_): _description_
+        all_variables (_type_): _description_
+    """
+    idx_between_aux_vars_and_last = number_of_variables + len(auxiliary_variables)
+    for j in range(number_of_variables, idx_between_aux_vars_and_last):
+        if j != idx_between_aux_vars_and_last - 1:
+            print(row[j] + " | ", end="")
+        else:
+            temp_length = len(all_variables[j])
+            add_len = 0
+            if temp_length % 2 == 1:  # odd
+                add_len = temp_length / 2 + 1
+            add_space = ""
+            for _ in range(int(add_len)):
+                add_space += " "
+            print(row[j] + add_space + " || ", end="")
+
+
+def print_last_column(all_variables, row):
+    """_summary_
+
+    Args:
+        all_variables (_type_): _description_
+        row (_type_): _description_
+    """
+    temp_length = len(all_variables[-1])
+    add_len = 0
+    if temp_length % 2 == 1:  # odd
+        add_len = temp_length / 2 + 1
+    elif temp_length % 2 == 0:  # even
+        add_len = temp_length / 2
+    add_space = ""
+    for _ in range(int(add_len)):
+        add_space += " "
+    print(row[-1] + add_space + " || ", end="")
+    print("\n", end="")

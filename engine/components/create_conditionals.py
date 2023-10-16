@@ -1,5 +1,8 @@
-""" Insert """
-from engine_logging.logging_config import logger
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 from components.constants import (
     OPEN_ARROW,
     DASH,
@@ -8,6 +11,7 @@ from components.constants import (
     BICOND_ELEM,
     PRE_CHECK,
 )
+from engine_logging.logging_config import logger
 
 
 def create_conditionals(array_of_elements: list) -> list:

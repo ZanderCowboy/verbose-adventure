@@ -1,0 +1,131 @@
+---
+name: Lint Code Base
+
+on:
+  push:
+    branches: 
+      [main, master]
+  pull_request:
+    branches: 
+      [main, master]
+  workflow_dispatch:
+
+jobs:
+  flutter:
+    name: Flutter Build
+    runs-on: ubuntu-latest
+    env: 
+      FLUTTER_VERSION: "3.13.5"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Flutter Actions
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.13.5
+          cache: true
+
+      - run: |
+          cd frontend
+          flutter --version
+          flutter pub get
+          flutter analyze
+
+
+  python:
+    name: Python Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          cd engine
+          python --version
+          python -m pip install --upgrade pip
+          pip install flake8 pylint pytest
+
+      - name: Analysing the code with pylint
+        run: |
+          pylint $(git ls-files '*.py')
+
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+
+  java:
+    name: Java Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 17
+          # cache: 'maven'
+
+      # - name: Build with Maven
+      #   run: mvn -B package --file pom.xml
+
+      - run: |
+          cd backend/src
+          javac Main.java
+          # ./mvnw clean install  # Assuming you have a Maven wrapper script (mvnw) in your repository
+          # Additional steps for testing and other build tasks as needed
+
+
+
+          
+#   run-lint:
+#     name: Run Lint
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with: 
+#           fetch-depth: 0
+      
+#       - name: Setup Flutter SDK
+#         uses: flutter-actions/setup-flutter@v2
+#         with:
+#           channel: stable
+#           version: 3.13.5
+#           cache: true
+
+#       - uses: subosito/flutter-action@v2
+#         with:
+#           channel: stable
+#           flutter-version: 3.13.5
+#           # cache: true
+      
+#       - run: flutter --version
+
+#       - name: Install dependencies
+#         run: flutter pub get
+
+#       - name: Lint Code Base
+#         uses: github/super-linter@v4
+#         env:
+#           VALIDATE_ALL_CODEBASE: false
+#           DEFAULT_BRANCH: main
+#           GITHUB_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+#           # SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

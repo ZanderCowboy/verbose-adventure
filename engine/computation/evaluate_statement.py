@@ -1,9 +1,22 @@
 """ Insert """
+from dataclasses import dataclass
 from math import log2
 
 from computation.switch_connectives import switch_case
 from computation.table_matrix.create_table_matrix import create_matrix
 from engine_logging.logging_config import logger
+
+
+@dataclass
+class Pieces:
+    """_summary_
+    """
+    variables: list
+    left_array: list
+    right_array: list
+    connective: str
+    matrix: list
+    counter: int
 
 
 def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_tree):
@@ -36,7 +49,9 @@ def evaluate_array_as_tree(number_of_variables, variables_as_array, elements_in_
         final_variable_combined,
         returned_matrix,
         all_variables,
-    ) = evaluate_array(elements_in_tree, counter, matrix, variables_as_array)
+    ) = evaluate_array(
+        elements_in_tree, counter, matrix, variables_as_array
+    )  # type: ignore
 
     all_variables.append(final_variable_combined[0])
 
@@ -76,44 +91,71 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
     # induction case
     # ******************* LEFT ************************
     if len(left_array) != 1:
-        temp_left_array = left_array
+        # temp_left_array = left_array
 
         counter += 1
+        # array_evaluated, left_array, _, _ = evaluate_array(
+        #     temp_left_array, counter, matrix, variables
+        # )
         array_evaluated, left_array, _, _ = evaluate_array(
-            temp_left_array, counter, matrix, variables
+            left_array, counter, matrix, variables
         )
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, left_array)
 
     # ******************* RIGHT ************************
     if len(right_array) != 1:
-        temp_right_array = right_array
+        # temp_right_array = right_array
 
         counter += 1
+        # array_evaluated, right_array, _, _ = evaluate_array(
+        #     temp_right_array, counter, matrix, variables
+        # )
         array_evaluated, right_array, _, _ = evaluate_array(
-            temp_right_array, counter, matrix, variables
+            right_array, counter, matrix, variables
         )
         counter -= 1
         variables = add_array_to_matrix(matrix, array_evaluated, variables, right_array)
 
     # ******************** BASE CASE ************************
+    pieces = Pieces(variables=variables, left_array=left_array, right_array=right_array,
+                    connective=connective, matrix=matrix, counter=counter)
+    return base_case(pieces)
+
+
+# def base_case(variables, piece: Pieces, matrix, counter):
+def base_case(base: Pieces):
+    """_summary_
+
+    Args:
+        variables (_type_): _description_
+        left_array (_type_): _description_
+        right_array (_type_): _description_
+        connective (_type_): _description_
+        matrix (_type_): _description_
+        counter (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    left_array = base.left_array
+    right_array = base.right_array
+    matrix = base.matrix
+
     final_variable_combined = []
 
     if len(left_array) == 1 and len(right_array) == 1:
         # find variables for left and right
-        left_variable = left_array[0]
-        right_variable = right_array[0]
-
         left_variable_position = -1
         right_variable_position = -1
 
         # get position for variable in list of variables as a string
-        for i, item in enumerate(variables):
-            if left_variable == item:
+        for i, item in enumerate(base.variables):
+            if left_array[0] == item:
                 left_variable_position = i
                 break
-        for i, item in enumerate(variables):
-            if right_variable == item:
+        for i, item in enumerate(base.variables):
+            if right_array[0] == item:
                 right_variable_position = i
                 break
 
@@ -124,14 +166,15 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
             row_in_matrix = matrix[i]
             temp_left.append(row_in_matrix[left_variable_position])
             temp_right.append(row_in_matrix[right_variable_position])
-        returned_array = switch_case(connective, temp_left, temp_right)
+
+        returned_array = switch_case(base.connective, temp_left, temp_right)
 
         # get array item for combined variable
         if len(left_array) == 1 and len(right_array) == 1:
-            temp_array = [left_array, connective, right_array]
+            temp_array = [left_array, base.connective, right_array]
             final_variable_combined = set_new_array_elem(temp_array)
 
-        if len(final_variable_combined) == 1 and counter == 0:
+        if len(final_variable_combined) == 1 and base.counter == 0:
             # append returned_array to matrix
             for i, entry_in_return_array in enumerate(returned_array):
                 matrix[i].append(entry_in_return_array)
@@ -142,14 +185,17 @@ def evaluate_array(array: list, counter: int, matrix: list, variables: list):
             returned_array,
             final_variable_combined,
             matrix,
-            variables,
+            base.variables,
         )
         logger.debug("Evaluation of array in evaluate_array() is done.")
-        return returned_array, final_variable_combined, matrix, variables
+        return returned_array, final_variable_combined, matrix, base.variables
 
-    logger.debug("**** ERROR! **** \n This should not be reached. "
-                 "Inspect evaluate_array in evaluate_statement.py")
+    logger.debug(
+    "**** ERROR! **** \n This should not be reached. "
+    "Inspect evaluate_array in evaluate_statement.py"
+    )
     return None
+
 
 def set_new_array_elem(temp_array):
     """

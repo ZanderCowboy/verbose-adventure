@@ -35,15 +35,15 @@ def simulate_main():
             ) and check_for_illegal_characters(statement):
                 pass
         except UnequalBracketsExcept as ce:
-            logger.exception("Unequal Brackets Exception: ", ce)
+            logger.exception("Unequal Brackets Exception: %s", ce)
             continue
         except IllegalCharactersException as ice:
-            logger.exception("Illegal Characters Exception: ", ice)
+            logger.exception("Illegal Characters Exception: %s", ice)
             continue
         else:
             pass
 
-        # todo Look into why statement is sent to user_input() and then
+        # NOTE: Look into why statement is sent to user_input() and then
         #  returned again
 
         logger.info(

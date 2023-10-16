@@ -1,6 +1,10 @@
-""" Insert """
-from components.constants import VALID_BRACKETS, VALID_CONNECTIVES
+"""_summary_
+
+Returns:
+    _type_: _description_
+"""
 from engine_logging.logging_config import logger
+from components.constants import VALID_BRACKETS, VALID_CONNECTIVES
 
 
 def find_variables(statement: str) -> list:
@@ -20,10 +24,13 @@ def find_variables(statement: str) -> list:
     variables_array = []
     variables_string = ""
     non_variable_characters = VALID_BRACKETS + VALID_CONNECTIVES
+    i: int
     for i, char in enumerate(statement):
         duplicate = False
 
-        if char not in non_variable_characters:  # if char is not a bracket or a connective
+        if (
+            char not in non_variable_characters
+        ):  # if char is not a bracket or a connective
             # Testing for duplicates
             duplicate_int = statement.find(char, i + 1)
             var_str_find = variables_string.find(char)

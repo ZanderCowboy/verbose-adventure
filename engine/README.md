@@ -1,71 +1,69 @@
-# verbose-adventure Engine
+# Propositional Logic Calculator
 
-This is a Python gRPC server that will calculate the final truth column that 
+## verbose-adventure Engine
+
+This is a Python gRPC server that will calculate the final truth column that
 will be sent back
-** Add some details **
-
-## Propositional Logic Calculator
-
-Random Repository
-
-Propositional Logic Calculator.
+*Add some details*
 
 ## Description
+
 Use LogicCalculator to do all the relevant checks and calculations
 
+## GRPCServer Package
 
-# GRPCServer Package
 To follow
 This package is responsible for communicating with the GRPC client on the backend
 side but also calling the necessary packages.
 
-### Calling sequence for the packages with a perfect flow.
+### Calling sequence for the packages with a perfect flow
 
+## SIMULATOR Package
 
-# SIMULATOR Package
 This is responsible for simulating the input that is sent from the Backend. This
 includes the User Input and input statements.
 
+## PARSER Package
 
-# PARSER Package
-## Check Errors
+### Check Errors
+
 - Checking for invalid characters such as @, etc.
 - Checking for unequal number of opening and closing brackets.
 
 This takes a string and runs through it to determine if there are any illegal
 characters and also checks that the number of opening and closing brackets
-are equal. 
+are equal.
 
-- If the string is successful, it is sent to the next section that will do the 
+- If the string is successful, it is sent to the next section that will do the
 parsing, turning it from a string into an array.
 - If not, an appropriate error message is send back to the GRPC Server to handle.
 
-## Parse String
-### String to Simple Array
+### Parse String
 
-### Processing Connectives in Array
+#### String to Simple Array
 
-### Restructuring Array into Tree Structured Array
+#### Processing Connectives in Array
 
+#### Restructuring Array into Tree Structured Array
 
-## Validation
-### Processing Connectives
+### Validation
 
-### Processing Brackets
+#### Processing Connectives
 
+#### Processing Brackets
 
-# VALIDATOR Package
-## Logic Rules
+## VALIDATOR Package
 
-## Connectives
+### Logic Rules
 
+### Connectives
 
-# COMPUTATION Package
-## Propositional Rules
+## COMPUTATION Package
 
-##
+### Propositional Rules
 
-# Flow
+## Flow
+
 Start with the GRPCServer
 
 - First checks as pre-flight

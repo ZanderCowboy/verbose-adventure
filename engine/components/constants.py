@@ -2,12 +2,12 @@
 # Global Variables
 LEFT_BRACKETS = "({["
 RIGHT_BRACKETS = ")}]"
-BINARY_CONNECTIVES = ['^', 'v', '->', '<->']
-UNARY_CONNECTIVES = ['!']
+BINARY_CONNECTIVES = ["^", "v", "->", "<->"]
+UNARY_CONNECTIVES = ["!"]
 
 # Constants used in the Computation package
-TRUE = 'T'
-FALSE = 'F'
+TRUE = "T"
+FALSE = "F"
 
 # Constants used in the Components package
 VALID_BRACKETS = "(){}[]"
@@ -16,12 +16,12 @@ VALID_CONNECTIVES = "^v!<->"
 WHITE_SPACES = " "
 
 # Constants used in create_conditionals.py
-OPEN_ARROW = '<'
-DASH = '-'
-CLOSE_ARROW = '>'
+OPEN_ARROW = "<"
+DASH = "-"
+CLOSE_ARROW = ">"
 COND_ELEM = "->"
 BICOND_ELEM = "<->"
-PRE_CHECK = ['<', '-', '>']
+PRE_CHECK = ["<", "-", ">"]
 
 
 # What are illegal characters
