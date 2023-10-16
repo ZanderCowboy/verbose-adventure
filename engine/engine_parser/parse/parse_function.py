@@ -85,7 +85,7 @@ def parse(arr):  # Private Method
 
     # ******************* RIGHT ***********************
     right = []
-    arr_right = arr[position_middle + 1 :]
+    arr_right = arr[position_middle + 1:]
     if len(arr_right) > 1:
         if arr_right[0] in LEFT_BRACKETS:
             right = parse(arr_right)
